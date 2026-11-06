@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/*
+ * Palette: every tone is drawn from the logo maroon, plus one metal. Brass is the
+ * third colour, kept to a few marks (the graph's centre and links, the drawing's
+ * bright edge, side headings, thin rules) so it reads as a finish, not a theme.
+ * Brass sits on maroon; bronze is the same metal darkened to read on paper.
+ */
+@theme {
+  --color-maroon: oklch(0.318 0.085 11.6);
+  --color-maroon-ink: oklch(0.26 0.07 10);
+  --color-paper: oklch(0.962 0.005 20);
+  --color-blush: oklch(0.93 0.01 18);
+  --color-ink: oklch(0.235 0.03 11);
+  --color-dust: oklch(0.47 0.035 11);
+  --color-rose: oklch(0.965 0.012 11);
+  --color-brass: oklch(0.8 0.085 82);
+  --color-bronze: oklch(0.5 0.085 58);
+  --color-line: oklch(0.235 0.03 11 / 0.14);
+  --color-line-rose: oklch(0.965 0.012 11 / 0.2);
+
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-text: var(--font-caslon), Georgia, "Times New Roman", serif;
+  --font-logo: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
+  body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-text); font-size: clamp(16px, 1.05vw, 18px); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  :focus-visible { outline: 2px solid var(--color-bronze); outline-offset: 3px; }
+  ::selection { background: var(--color-maroon); color: var(--color-rose); }
+  [hidden] { display: none !important; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}
+
+/* Component styles sit in a layer, so a Tailwind utility on the same element (a size, a colour) wins. */
+@layer components {
+  /* the wordmark: the logo's stacked lockup, in the logo's own face */
+  .mark { display: inline-flex; flex-direction: column; font-family: var(--font-logo); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.92; font-size: 15px; text-decoration: none; }
+  .mark span:nth-child(2) { padding-left: 4.05em; }
+  .mark span:nth-child(3) { padding-left: 1.4em; }
+
+  /* the hero headline echoes the lockup: three stepped lines */
+  .stagger { font-family: var(--font-display); font-weight: 700; font-variation-settings: "wdth" 88; text-transform: uppercase; letter-spacing: -0.025em; line-height: 0.86; font-size: var(--h1); display: flex; flex-direction: column; }
+  .stagger > span { display: block; overflow: hidden; padding-bottom: 0.04em; }
+  .stagger > span:nth-child(2) { padding-left: 1.05em; }
+  .stagger > span:nth-child(3) { padding-left: 0.4em; }
+  .stagger > span > span { display: block; }
+
+  /* side headings, set like the marginal notes of an Indian Bare Act */
+  .note { font-family: var(--font-text); font-style: italic; font-weight: 400; font-size: 21px; line-height: 1.3; color: var(--color-bronze); }
+  .on-maroon .note { color: var(--color-brass); }
+
+  .lead { font-family: var(--font-display); font-weight: 600; font-variation-settings: "wdth" 90; font-size: clamp(34px, 4.2vw, 60px); line-height: 1.02; letter-spacing: -0.022em; text-wrap: balance; }
+
+  /* the hero graph: spokes to the firm, a ring round the outside, faint threads to the small nodes */
+  .graph line { stroke: var(--color-rose); stroke-opacity: 0.24; stroke-width: 1; stroke-dasharray: 1; vector-effect: non-scaling-stroke; transition: stroke 0.4s, stroke-opacity 0.4s; }
+  .graph line.ring { stroke: var(--color-brass); stroke-opacity: 0.42; }
+  .graph line.sat { stroke-opacity: 0.14; }
+  .graph line.lit { stroke: var(--color-brass); stroke-opacity: 0.95; }
+  .graph circle { fill: var(--color-maroon); stroke: var(--color-rose); stroke-width: 1.5; transition: fill 0.4s, stroke 0.4s; }
+  .graph .sat circle { fill: var(--color-rose); fill-opacity: 0.5; stroke: none; }
+  .graph .hub circle { fill: var(--color-brass); stroke: var(--color-brass); }
+  .graph .hub .pulse { fill: none; stroke: var(--color-brass); }
+  .graph text { fill: var(--color-rose); font-family: var(--font-display); font-size: 18px; font-weight: 500; font-variation-settings: "wdth" 85; paint-order: stroke; stroke: var(--color-maroon); stroke-width: 6px; stroke-linejoin: round; transition: fill 0.4s; }
+  .graph .hub text { font-size: 17px; font-weight: 700; fill: var(--color-brass); letter-spacing: 0.08em; }
+  .graph .node, .graph .hub { cursor: grab; touch-action: none; }
+  .graph .dragging { cursor: grabbing; }
+  @media (max-width: 767px) { .graph text { font-size: 26px; } }
+  .graph .node.lit circle { fill: var(--color-brass); stroke: var(--color-brass); }
+  .graph .node.lit text { fill: var(--color-brass); }
+
+  /* the skyline: outlines bright, the detail inside them dim; a building under the pointer turns brass */
+  .skyline path { fill: none; stroke: var(--color-rose); vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1; transition: stroke 0.5s, stroke-opacity 0.5s; }
+  .skyline .o { stroke-opacity: 0.92; stroke-width: 1.5; }
+  .skyline .d { stroke-opacity: 0.42; stroke-width: 1; }
+  .skyline .ground { stroke: var(--color-brass); stroke-opacity: 0.6; stroke-width: 1; }
+  .skyline .bldg:hover path { stroke: var(--color-brass); }
+  .skyline .bldg:hover .d { stroke-opacity: 0.7; }
+  [data-pan]::-webkit-scrollbar { display: none; }
+
+  /* the compact bar slides in once the hero has gone */
+  .topbar { transform: translateY(-100%); visibility: hidden; transition: transform 0.45s var(--ease-out-expo), visibility 0s 0.45s; }
+  .topbar.on { transform: none; visibility: visible; transition: transform 0.45s var(--ease-out-expo); }
+}
+
+/* Before GSAP runs, what it will reveal stays hidden, so nothing flashes. If the script never arrives, a timer set in the head shows it all. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js:not(.no-motion) [data-reveal], html.js:not(.no-motion) [data-hero] { visibility: hidden; }
+}
