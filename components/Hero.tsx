@@ -191,7 +191,7 @@ export default function Hero() {
           </div>
         </nav>
 
-        <div className="hero-text pointer-events-auto flex flex-1 flex-col justify-center pb-[clamp(32px,6vh,72px)] pt-6 md:w-[52%] md:pt-0 [--h1:14vw] md:[--h1:clamp(52px,7.4vw,124px)]">
+        <div className="hero-text pointer-events-auto flex flex-1 flex-col justify-center pb-[clamp(32px,6vh,72px)] pt-6 md:w-[52%] md:pt-0 [--h1:14vw] md:[--h1:clamp(52px,6.6vw,104px)]">
           <h1 data-hero className="stagger" aria-label="Law for emerging India.">
             <span aria-hidden="true"><span>Law for</span></span>
             <span aria-hidden="true" className="max-md:pl-[.8em]!"><span>emerging</span></span>
