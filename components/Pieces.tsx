@@ -41,7 +41,6 @@ export default function Pieces({ items, show = 5 }: { items: Piece[]; show?: num
                   <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </h4>
-              <p className="font-display text-[13px] text-dust">{p.by}</p>
             </div>
           </li>
         ))}
