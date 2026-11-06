@@ -93,7 +93,6 @@ export const AI_CHECKS = [
 export const ALLIED = [
   ["AI transformation", "Where AI fits, which tools, governance and training."],
   ["Operations", "HR, payroll, finance, procurement, compliance calendars and vendors."],
-  ["Investigations", "Lawful background checks, counterparty diligence and internal inquiries."],
   ["India strategy", "Subsidiary, GCC or service-provider models, and first hires, for foreign start-ups."],
   ["Cross-border compliance", "FEMA, data transfers and intra-group arrangements."],
 ] as const;
