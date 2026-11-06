@@ -8,10 +8,9 @@ import { AI_CHECKS, ALLIED, CREDENTIALS, OFFICE, PARTNERS, PRACTICE, PRINCIPLES,
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS } from "@/lib/writing";
 
-export default function Site({ palette }: { palette: "gold" | "green" }) {
+export default function Site() {
   return (
     <>
-      {palette !== "gold" && <script dangerouslySetInnerHTML={{ __html: `document.documentElement.dataset.palette=${JSON.stringify(palette)}` }} />}
       <Gate />
       <a href="#main" className="fixed left-2 top-2 z-[300] -translate-x-[200%] bg-rose px-3 py-2 font-display font-semibold text-maroon focus:translate-x-0">
         Skip to content
@@ -44,7 +43,7 @@ export default function Site({ palette }: { palette: "gold" | "green" }) {
           </div>
         </section>
 
-        <section id="background" className={`on-maroon overflow-x-clip bg-band text-rose ${SECTION}`}>
+        <section id="background" className={`on-maroon overflow-x-clip bg-maroon text-rose ${SECTION}`}>
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>Background</h2>
             <p data-reveal="lines" className={`${MAIN} lead max-w-[14em]`}>
@@ -228,7 +227,7 @@ export default function Site({ palette }: { palette: "gold" | "green" }) {
         </section>
       </main>
 
-      <footer className="on-maroon bg-band pb-8 pt-[clamp(72px,9vw,120px)] text-rose">
+      <footer className="on-maroon bg-maroon pb-8 pt-[clamp(72px,9vw,120px)] text-rose">
         <div className={WRAP}>
           <a className="mark text-[clamp(28px,4.4vw,56px)]" href="#top" aria-label="Back to top">
             <span>Emerging</span>
@@ -245,19 +244,23 @@ export default function Site({ palette }: { palette: "gold" | "green" }) {
                 The content of this website is general information. It is not legal advice, and you should not rely on it as such. Please take specific advice on your own circumstances. Visiting this website, or writing to us through it, does not create a lawyer-client relationship. Descriptions of past work include matters our lawyers handled before and at ECL. They do not predict future outcomes. Emerging Cities Lawyers LLP is not liable for any action taken in reliance on material on this website. Links to other websites are for convenience only; we are not responsible for their content.
               </p>
               <p className="mt-4 text-[13px] text-rose/60">
-                Building drawings traced from photographs on Wikimedia Commons, two of them by{" "}
+                The drawings of the Supreme Court and Yale Law School are traced from photographs on Wikimedia Commons by{" "}
                 <a href="https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India_01.jpg" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-gold">
                   Subhashish Panigrahi<span className="sr-only"> (opens in a new tab)</span>
                 </a>{" "}
-                and{" "}
-                <a href="https://commons.wikimedia.org/wiki/File:National_Law_School_of_India_University,_Bangalore,_India_-_20130524-05.JPG" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-gold">
-                  Smuconlaw<span className="sr-only"> (opens in a new tab)</span>
-                </a>{" "}
-                under{" "}
+                (
                 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-gold">
                   CC BY-SA 4.0<span className="sr-only"> (opens in a new tab)</span>
                 </a>
-                , which these drawings share.
+                , which that drawing shares) and{" "}
+                <a href="https://commons.wikimedia.org/wiki/File:Sterling_Law_Building_-_Yale_School_of_Law_(54106346409).jpg" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-gold">
+                  ajay_suresh<span className="sr-only"> (opens in a new tab)</span>
+                </a>{" "}
+                (
+                <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-gold">
+                  CC BY 2.0<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+                ).
               </p>
             </div>
           </div>

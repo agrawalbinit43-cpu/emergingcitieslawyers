@@ -7,18 +7,20 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-/* Line drawings traced from photographs (public/drawings/*.png hold only the lines, as alpha; CSS fills them with gold).
+/* Vector line drawings (public/drawings/*.svg, white strokes; CSS uses them as masks over gold). The Supreme Court and Yale
+   are traced from photographs and refined; the Juridicum and NLSIU are constructed from their geometry.
    r is width / height. Unlabelled on the page, as the partners asked; the names are for screen readers. */
 const DRAWINGS = [
-  { src: "/drawings/supreme-court.png", r: 1200 / 817, name: "the Supreme Court of India" },
-  { src: "/drawings/yale.png", r: 1050 / 945, name: "Yale Law School" },
-  { src: "/drawings/juridicum.png", r: 1037 / 1001, name: "the University of Vienna’s Juridicum" },
-  { src: "/drawings/nlsiu.png", r: 1110 / 1150, name: "the National Law School of India University" },
+  { src: "/drawings/supreme-court.svg", r: 1300 / 930, name: "the Supreme Court of India" },
+  { src: "/drawings/yale.svg", r: 1200 / 1425, name: "Yale Law School" },
+  { src: "/drawings/juridicum.svg", r: 1200 / 718, name: "the University of Vienna’s Juridicum" },
+  { src: "/drawings/nlsiu.svg", r: 1100 / 1000, name: "the National Law School of India University" },
 ];
 
 /**
  * The buildings orbit slowly: the one in front is large and bright, the others smaller and dimmer behind it.
- * Drag to turn them; hovering holds them still. They stop while off screen, and stay still for reduced motion.
+ * They keep turning on their own; a drag turns them by hand, then they carry on. Off screen they rest, and they stay
+ * still for visitors who ask for reduced motion.
  */
 export default function Landmarks() {
   const root = useRef<HTMLDivElement>(null);
@@ -42,9 +44,10 @@ export default function Landmarks() {
             x: Math.sin(a) * rx,
             y: (1 - depth) * -36,
             scale: 0.48 + 0.52 * depth,
-            opacity: 0.16 + 0.84 * depth ** 1.6,
             zIndex: Math.round(depth * 100),
           });
+          // only the lines fade with distance; the plate stays solid, so the building in front hides the ones behind
+          gsap.set(c.firstElementChild, { opacity: 0.16 + 0.84 * depth ** 1.6 });
         });
       }
       place();
@@ -77,11 +80,8 @@ export default function Landmarks() {
 
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // a slow continuous turn, about 48 s a revolution; it eases to a stop on hover and while dragging
-        const spin = gsap.to(turn, { a: "-=360", duration: 48, ease: "none", repeat: -1, onUpdate: () => !dragging && place(), paused: true });
-        const hold = (on: boolean) => gsap.to(spin, { timeScale: on ? 0 : 1, duration: 0.8, ease: "power2.out" });
-        stage.addEventListener("pointerenter", () => hold(true));
-        stage.addEventListener("pointerleave", () => !dragging && hold(false));
+        // a slow continuous turn, about 40 s a revolution
+        const spin = gsap.to(turn, { a: "-=360", duration: 40, ease: "none", repeat: -1, onUpdate: () => !dragging && place(), paused: true });
         ScrollTrigger.create({ trigger: stage, start: "top bottom", end: "bottom top", onToggle: (s) => (s.isActive ? spin.play() : spin.pause()) });
       });
 

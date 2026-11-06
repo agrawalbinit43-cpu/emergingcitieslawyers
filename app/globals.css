@@ -3,18 +3,17 @@
 /*
  * Palette: the logo's burgundy with Vintage Wine and Dark Ruby, cream paper, and gold as
  * the third colour: the graph's centre and links, the building drawings, side headings,
- * thin rules. gold-deep is the same gold darkened to read on cream. /green/ adds deep green.
+ * thin rules. gold-deep is the same gold darkened to read on cream.
  */
 @theme {
   --color-maroon: #551c27;      /* the logo's burgundy: the hero */
   --color-maroon-ink: #3f1521;  /* Vintage Wine */
   --color-ruby: #63001f;        /* Dark Ruby */
-  --color-band: #551c27;        /* the Background band and the footer; deep green in the green variation */
   --color-paper: #f8f2e7;       /* cream */
   --color-blush: #f0e6d6;       /* the alternate sections */
   --color-ink: #2a1216;
   --color-dust: #6b5850;
-  --color-rose: #fbf5ec;        /* text on burgundy and green */
+  --color-rose: #fbf5ec;        /* text on burgundy */
   --color-gold: #c9a24e;        /* gold, on dark grounds */
   --color-gold-light: #ead292;
   --color-gold-deep: #7a5a1e;   /* gold dark enough to read on cream */
@@ -28,11 +27,6 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* The gold-and-green variation (/green/): deep green carries the Background band and the footer, peach-cream the alternate sections. */
-:root[data-palette="green"] {
-  --color-band: #0d3d3a;
-  --color-blush: #f6e2cb;
-}
 
 @layer base {
   html { scroll-behavior: smooth; scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
@@ -81,7 +75,7 @@
   .graph .node.lit text { fill: var(--color-gold); }
 
   /* the buildings: each drawing is a mask over a band of metallic gold that slides across it */
-  .landmark { background: var(--color-band); }
+  .landmark { background: var(--color-maroon); }
   .landmark-lines { -webkit-mask: var(--img) center bottom / contain no-repeat; mask: var(--img) center bottom / contain no-repeat;
     background: linear-gradient(110deg, var(--color-gold-deep) 0%, var(--color-gold) 28%, var(--color-gold-light) 42%, var(--color-gold) 56%, var(--color-gold-deep) 100%);
     background-size: 260% 100%; animation: sheen 7s linear infinite; will-change: transform; }
