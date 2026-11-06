@@ -93,7 +93,7 @@ export default function Site() {
 
         <section id="work" className={`bg-blush ${SECTION}`}>
           <div className={`${WRAP} ${ROW}`}>
-            <h2 className={NOTE}>Representative work</h2>
+            <h1 className={NOTE}>Representative work</h1>
           </div>
           <ul className={`${WRAP} mt-10`}>
             {WORK.map(([area, what]) => (
