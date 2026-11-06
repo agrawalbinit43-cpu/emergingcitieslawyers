@@ -22,7 +22,7 @@ export const GRAPH_NODES = [
   { label: "Supreme Court of India", x: 640, y: 432 },
   { label: "Competition Commission", x: 560, y: 668 },
   { label: "Bae, Kim & Lee", x: 668, y: 832 },
-  { label: "Elite Law Firms", x: 316, y: 798 },
+  { label: "BigLaw", x: 316, y: 798 },
   { label: "Deloitte", x: 168, y: 628 },
   { label: "Lucio AI", x: 250, y: 408 },
 ];
@@ -54,14 +54,13 @@ export const CREDENTIALS = [
 ];
 
 export const PRACTICE = [
-  ["Start-ups & venture financing", "Incorporation, founder agreements, ESOPs, term sheets, notes and priced rounds."],
-  ["Funds & private equity", "Structuring, investments, documents and diligence."],
+  ["Start-ups & venture financing", "Incorporation, founder agreements, ESOPs, term sheets, NDAs, and compliances."],
   ["Corporate & commercial", "Structuring, transactions, contracts, governance and secretarial compliance."],
   ["Disputes & litigation", "Supreme Court, High Courts, NCLAT and CCI. Pre-litigation strategy and arbitration."],
-  ["Intellectual property", "Trade mark searches, filings, oppositions and disputes. IP assignment and licensing."],
+  ["Intellectual property", "Trade mark searches, filings, oppositions, and disputes. IP assignment and licensing."],
   ["Tax & transfer pricing", "Corporate tax, GST, withholding, permanent establishment and transfer pricing."],
-  ["India entry & cross-border", "Operating model, entity set-up, foreign investment rules and back office for foreign companies."],
-  ["Competition & antitrust", "Merger filings with the CCI, investigations and digital markets."],
+  ["India entry & cross-border", "Operating model, entity set-up, foreign investment rules, and back office for foreign companies."],
+  ["Competition & antitrust", "Merger filings with the CCI, investigations and antitrust litigation, and digital markets."],
   ["Employment & labour", "Contracts, policies, labour codes, incentive plans and exits."],
   ["Technology, data & AI", "DPDP Act compliance, cross-border data, SaaS and AI contracts, AI governance."],
 ] as const;
@@ -92,7 +91,6 @@ export const AI_CHECKS = [
 ];
 
 export const ALLIED = [
-  ["Leadership", "Founder mentoring, AI product strategy, team building and fundraising readiness."],
   ["AI transformation", "Where AI fits, which tools, governance and training."],
   ["Operations", "HR, payroll, finance, procurement, compliance calendars and vendors."],
   ["Investigations", "Lawful background checks, counterparty diligence and internal inquiries."],
