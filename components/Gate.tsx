@@ -37,7 +37,7 @@ export default function Gate() {
       aria-labelledby="gate-title"
       className="fixed inset-0 z-[200] flex items-center justify-center bg-[oklch(0.2_0.05_11/0.82)] p-5"
     >
-      <div className="max-h-[90vh] w-full max-w-[620px] overflow-auto border-t-4 border-brass bg-paper p-[clamp(28px,4vw,48px)] text-base leading-[1.55]">
+      <div className="max-h-[90vh] w-full max-w-[620px] overflow-auto border-t-4 border-gold bg-paper p-[clamp(28px,4vw,48px)] text-base leading-[1.55]">
         <h2 id="gate-title" className="mb-[18px] font-display text-[clamp(28px,3vw,36px)] font-semibold leading-[1.05] tracking-[-0.02em] text-maroon">
           Before you continue
         </h2>

@@ -60,24 +60,6 @@ export default function Motion() {
       gsap.utils.toArray<HTMLElement>('[data-reveal="draw"]').forEach((el) => {
         gsap.fromTo(el, { autoAlpha: 1, scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.6, ease: "expo.inOut", scrollTrigger: once(el, "top 92%") });
       });
-
-      // the skyline is drawn as if by hand: the ground first, then each building from the centre outwards, outline before detail
-      gsap.utils.toArray<SVGSVGElement>('[data-reveal="sketch"]').forEach((svg) => {
-        const bldgs = gsap.utils.toArray<SVGGElement>(".bldg", svg);
-        const mid = (bldgs.length - 1) / 2;
-        const tl = gsap.timeline({ scrollTrigger: once(svg, "top 80%") });
-        tl.set(svg, { autoAlpha: 1 }).from(svg.querySelector(".ground"), { strokeDashoffset: 1, duration: 1.4, ease: "power2.inOut" }, 0);
-        bldgs.forEach((b, i) => {
-          const at = 0.35 + Math.abs(i - mid) * 0.4;
-          tl.from(b.querySelector(".o"), { strokeDashoffset: 1, duration: 2.4, ease: "power2.inOut" }, at);
-          tl.from(b.querySelector(".d"), { strokeDashoffset: 1, duration: 2.2, ease: "power1.inOut" }, at + 0.9);
-        });
-      });
-    });
-
-    // on a phone the skyline is wider than the screen: start it centred on the Supreme Court
-    document.querySelectorAll<HTMLElement>("[data-pan]").forEach((el) => {
-      el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
     });
 
     // revealed content changes the page's height; measure again once the webfonts land

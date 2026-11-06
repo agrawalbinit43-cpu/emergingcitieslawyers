@@ -20,7 +20,7 @@ export default function Pieces({ items, show = 5 }: { items: Piece[]; show?: num
         {items.map((p, i) => (
           <li key={p.href} hidden={!all && i >= show} className="grid grid-cols-1 gap-x-6 gap-y-1.5 border-t border-line py-[18px] sm:grid-cols-[2fr_5fr]">
             <p className="flex flex-col gap-0.5 text-[15px] leading-[1.4]">
-              <cite className="text-bronze">{p.outlet}</cite>
+              <cite className="text-gold-deep">{p.outlet}</cite>
               {p.dt ? (
                 <time dateTime={p.dt} className="font-display text-[13px] text-dust">
                   {p.date}
@@ -35,7 +35,7 @@ export default function Pieces({ items, show = 5 }: { items: Piece[]; show?: num
                   href={p.href}
                   target="_blank"
                   rel="noopener"
-                  className="underline decoration-line decoration-1 underline-offset-[.2em] transition-colors hover:text-maroon hover:decoration-bronze"
+                  className="underline decoration-line decoration-1 underline-offset-[.2em] transition-colors hover:text-maroon hover:decoration-gold-deep"
                 >
                   {p.title}
                   <span className="sr-only"> (opens in a new tab)</span>
@@ -49,7 +49,7 @@ export default function Pieces({ items, show = 5 }: { items: Piece[]; show?: num
       {!all && extra > 0 && (
         <button
           onClick={more}
-          className="mt-6 cursor-pointer border border-bronze px-[18px] py-2.5 font-display text-sm font-semibold text-maroon transition-colors hover:bg-maroon hover:text-rose"
+          className="mt-6 cursor-pointer border border-gold-deep px-[18px] py-2.5 font-display text-sm font-semibold text-maroon transition-colors hover:bg-maroon hover:text-rose"
         >
           Show {extra} more
         </button>

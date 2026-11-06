@@ -12,5 +12,6 @@ Deploy: Netlify reads `netlify.toml` (build `pnpm build`, publish `out`), or dra
 
 - Copy lives in `lib/content.ts` (sections, practice, work, partners, the hero graph) and `lib/writing.ts` (commentary and journals).
 - Motion: `components/Hero.tsx` (headline, graph draw-in and drift), `components/Motion.tsx` (scroll reveals). Everything settles at once for visitors who ask for reduced motion.
-- The building drawing (`components/Skyline.tsx`) is plain SVG line art in `lib/skyline.ts`: one outline and one detail path per building, drawn in on scroll by `components/Motion.tsx`.
+- Two palettes from one codebase: `/` is burgundy, cream and gold; `/green/` adds deep green (set by `Site`'s `palette`, colours in `app/globals.css`). `/green/` is kept out of search results.
+- The building drawings (`components/Landmarks.tsx`) are line art traced from photographs (`public/drawings/*.png`, lines in the alpha channel) and filled with moving gold by CSS masks. They orbit slowly and can be dragged. Two are traced from CC BY-SA 4.0 photographs, credited in the footer, and share that licence.
 - The Bar Council disclaimer (`components/Gate.tsx`) is required; keep it.

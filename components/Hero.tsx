@@ -58,7 +58,7 @@ export default function Hero() {
         });
       }
 
-      // hovering a named node lights it and every line that touches it, in brass
+      // hovering a named node lights it and every line that touches it, in gold
       const light = (i: number, on: boolean) => {
         els[i].classList.toggle("lit", on);
         EDGES.forEach(({ a, b }, k) => (a === i || b === i) && lines[k].classList.toggle("lit", on));
@@ -115,6 +115,11 @@ export default function Hero() {
             paused: true,
           });
         });
+        // a soft gold light wanders slowly behind the graph
+        const glow = root.current!.querySelector(".hero-glow");
+        const wander = gsap.to(glow, { "--gx": "58%", "--gy": "66%", duration: 9, ease: "sine.inOut", repeat: -1, yoyo: true, paused: true });
+        drift.push(wander);
+
         // the drift only runs while the hero is on screen
         const live = (on: boolean) => {
           drift.forEach((t) => (on ? t.play() : t.pause()));
@@ -164,6 +169,7 @@ export default function Hero() {
 
   return (
     <header ref={root} id="top" className="on-maroon relative flex min-h-svh flex-col overflow-hidden bg-maroon text-rose">
+      <div aria-hidden="true" className="hero-glow pointer-events-none absolute inset-0" style={{ ["--gx" as string]: "76%", ["--gy" as string]: "36%" }} />
       <div className={`${WRAP} pointer-events-none relative z-10 flex flex-1 flex-col`}>
         <nav aria-label="Primary" className="pointer-events-auto flex items-start justify-between py-7">
           <a className="mark" href="#top" aria-label="Emerging Cities Lawyers, home">
@@ -178,7 +184,7 @@ export default function Hero() {
             <button
               onClick={(e) => window.dispatchEvent(new CustomEvent(MENU_EVENT, { detail: e.currentTarget }))}
               aria-controls="menu"
-              className="cursor-pointer border border-line-rose px-3.5 py-2 transition-colors hover:border-brass hover:bg-brass hover:text-maroon"
+              className="cursor-pointer border border-line-rose px-3.5 py-2 transition-colors hover:border-gold hover:bg-gold hover:text-maroon"
             >
               Index
             </button>
