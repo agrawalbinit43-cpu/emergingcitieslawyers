@@ -203,7 +203,7 @@ export default function Hero() {
         </div>      
       </div>
       {/* The graph takes the right half of the hero, top to bottom; on a phone it follows the text. */}
-      <figure data-hero className="graph-wrap px-4 pb-10 md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:pl-[14vw] md:pr-0 md:pb-4 md:pt-20">
+      <figure data-hero className="graph-wrap px-4 pb-10 md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:pl-[10vw] md:pr-0 md:pb-4 md:pt-20">
         <svg className="graph block h-auto w-full overflow-visible md:h-full" viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="img" aria-labelledby="graph-title">
           <title id="graph-title">{`Where our lawyers studied, practised and worked: ${NAMED.map((n) => n.label).join(", ")}.`}</title>
           {EDGES.map(({ a, b, kind }, k) => (
