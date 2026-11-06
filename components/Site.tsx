@@ -159,10 +159,10 @@ export default function Site() {
         <section id="partners" className={`bg-blush ${SECTION}`}>
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>Partners</h2>
-            <div className={`${MAIN} grid grid-cols-1 gap-x-[clamp(32px,4vw,64px)] gap-y-[72px] lg:grid-cols-2`}>
+            <div className={`${MAIN} grid grid-cols-1 gap-x-[clamp(32px,4vw,64px)] gap-y-[72px] md:grid-cols-2`}>
               {PARTNERS.map((p) => (
                 <article key={p.name}>
-                  <div data-reveal="wipe" className="mb-6 aspect-[4/5] w-full max-w-[260px] overflow-hidden bg-paper">
+                  <div data-reveal="wipe" className="mb-6 h-[325px] w-[260px] overflow-hidden bg-paper">
                     <img src={p.photo} alt={p.name} width={480} height={600} loading="lazy" decoding="async" className="h-full w-full object-cover grayscale contrast-[1.05]" />
                   </div>
                   <h3 className="mb-2 font-display text-[clamp(28px,2.6vw,40px)] font-semibold leading-none tracking-[-0.02em] text-maroon [font-variation-settings:'wdth'_90]">{p.name}</h3>
@@ -214,7 +214,7 @@ export default function Site() {
                 {PARTNERS.map((p) => (
                   <a key={p.email} href={`mailto:${p.email}`} data-reveal="rise" className="group flex w-fit max-w-full flex-col gap-1">
                     <span className="font-display text-[15px] font-semibold text-dust">{p.name}</span>
-                    <span className="font-display text-[clamp(22px,3.2vw,44px)] font-semibold leading-[1.1] tracking-[-0.02em] [overflow-wrap:anywhere] [font-variation-settings:'wdth'_90] underline decoration-line decoration-1 underline-offset-[.15em] transition-colors group-hover:text-maroon group-hover:decoration-gold-deep">
+                    <span className="font-display text-[clamp(18px,1.6vw,24px)] font-semibold leading-[1.1] tracking-[-0.02em] [overflow-wrap:anywhere] [font-variation-settings:'wdth'_90] underline decoration-line decoration-1 underline-offset-[.15em] transition-colors group-hover:text-maroon group-hover:decoration-gold-deep">
                       {p.email}
                     </span>
                   </a>
