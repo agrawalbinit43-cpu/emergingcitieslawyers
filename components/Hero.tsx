@@ -198,13 +198,11 @@ export default function Hero() {
             <span aria-hidden="true"><span>India.</span></span>
           </h1>
           <p data-hero className="lede mt-[clamp(28px,5vh,48px)] max-w-[28em] text-[clamp(18px,1.45vw,21px)] leading-[1.6] text-rose/75 [text-wrap:pretty] md:ml-[calc(var(--h1)*.4)]">
-            A law firm for India’s rising companies and the cities beyond its metros. Our lawyers trained at NLSIU, Yale and Vienna, and practise before the Supreme Court.
-          </p>
-        </div>
+            We are a law firm for emerging companies, emerging cities, and audacious individuals. Our lawyers trained at some of the world’s best law schools and organisations, and we aspire to take that standard of counsel beyond big legal budgets.        </div>
       </div>
 
       {/* The graph takes the right half of the hero, top to bottom; on a phone it follows the text. */}
-      <figure data-hero className="graph-wrap px-4 pb-10 md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:px-0 md:pb-4 md:pt-20">
+      <figure data-hero className="graph-wrap px-4 pb-10 md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:pl-[8vw] md:pr-0 md:pb-4 md:pt-20">
         <svg className="graph block h-auto w-full overflow-visible md:h-full" viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="img" aria-labelledby="graph-title">
           <title id="graph-title">{`Where our lawyers studied, practised and worked: ${NAMED.map((n) => n.label).join(", ")}.`}</title>
           {EDGES.map(({ a, b, kind }, k) => (
