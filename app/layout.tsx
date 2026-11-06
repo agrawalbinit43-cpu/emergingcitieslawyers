@@ -24,13 +24,21 @@ export const viewport: Viewport = { themeColor: "#551C27" };
 // If the animation code never runs, the timer shows everything after 3.5 s.
 const BOOT = `document.documentElement.classList.add('js');window.__eclFallback=setTimeout(function(){document.documentElement.classList.add('no-motion')},3500);`;
 
+const GTM = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PQJNPNHX');`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" className={`${archivo.variable} ${caslon.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: BOOT }} />
+        <script dangerouslySetInnerHTML={{ __html: GTM }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQJNPNHX" height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
+        </noscript>
+        {children}
+      </body>
     </html>
   );
 }
