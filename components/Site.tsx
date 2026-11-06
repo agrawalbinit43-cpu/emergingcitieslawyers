@@ -208,7 +208,7 @@ export default function Site() {
             <h2 className={NOTE}>Contact</h2>
             <div className={MAIN}>
               <p data-reveal="lines" className="lead mb-[.55em] text-maroon">
-                Write to a partner.
+                Write to us.
               </p>
               <div className="flex flex-col gap-7">
                 {PARTNERS.map((p) => (
