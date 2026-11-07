@@ -68,7 +68,7 @@ export const PRACTICE = [
 export const WORK = [
   ["Venture financing", "Guided early- to mid-stage founders from incorporation and NDAs through term sheets to convertible note rounds."],
   ["Funds & PE", "Worked on deal structuring and investments for leading fund managers and investors, and advised a US-fund on their India strategy."],
-  ["India entry", "Helped set up a foreign technology company’s back office in India: strategy, entity, compliance, employment, back office and trade marks."],
+  ["India entry", "Helped set up a foreign technology company’s back office in India: strategy, entity, compliance, employment, and trade marks."],
   ["Trade marks", "Acted for a range of clients on trade mark applications, registrations, and disputes."],
   ["Litigation", "Appeared before the Supreme Court, High Courts in several states, company law tribunals, and local courts across commercial, constitutional, and consumer matters."],
   ["Competition", "Acted on merger filings and antitrust litigation before the CCI, and competition law advisory, with a focus on digital markets."],
