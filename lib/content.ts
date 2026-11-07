@@ -40,7 +40,7 @@ export const CREDENTIALS = [
     items: [
       "Supreme Court of India, as Law Clerk to Justice B.V. Nagarathna",
       "Khaitan & Co",
-      "Deloitte, USA",
+      "Deloitte, New York",
       "Lucio AI",
       "Axiom5 Law Chambers",
       "Centre for Policy Research",
