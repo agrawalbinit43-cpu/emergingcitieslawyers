@@ -54,15 +54,15 @@ export const CREDENTIALS = [
 ];
 
 export const PRACTICE = [
-  ["Start-ups & venture financing", "Incorporation, founder agreements, ESOPs, term sheets, NDAs, and compliances."],
-  ["Corporate & commercial", "Structuring, transactions, contracts, governance and secretarial compliance."],
-  ["Disputes & litigation", "Supreme Court, High Courts, NCLAT and CCI. Pre-litigation strategy and arbitration."],
-  ["Intellectual property", "Trade mark searches, filings, oppositions, and disputes. IP assignment and licensing."],
-  ["Tax & transfer pricing", "Corporate tax, GST, withholding, permanent establishment and transfer pricing."],
-  ["India entry & cross-border", "Operating model, entity set-up, foreign investment rules, and back office for foreign companies."],
-  ["Competition & antitrust", "Merger filings with the CCI, investigations and antitrust litigation, and digital markets."],
+  ["Start-ups & venture financing", "Incorporation, founder agreements, ESOPs, term sheets, NDAs and regulatory filings."],
+  ["Corporate & commercial", "Structuring, transactions, contracts, governance and company secretarial work."],
+  ["Disputes & litigation", "Supreme Court, High Courts and NCLAT. Strategy before filing, and arbitration."],
+  ["Intellectual property", "Trade mark searches, filings, oppositions and enforcement. Assignment and licensing."],
+  ["Tax & transfer pricing", "Corporate tax, GST, withholding and permanent establishment."],
+  ["India entry & cross-border", "Operating model, entity set-up, investment rules and back-office support for foreign companies."],
+  ["Competition & antitrust", "Merger filings, investigations and appeals before the CCI, including digital markets."],
   ["Employment & labour", "Contracts, policies, labour codes, incentive plans and exits."],
-  ["Technology, data & AI", "DPDP Act compliance, cross-border data, SaaS and AI contracts, AI governance."],
+  ["Technology, data & AI", "DPDP Act compliance, cross-border transfers, SaaS agreements and AI governance."],
 ] as const;
 
 export const WORK = [
