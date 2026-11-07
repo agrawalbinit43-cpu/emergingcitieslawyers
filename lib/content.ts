@@ -58,7 +58,6 @@ export const PRACTICE = [
   ["Corporate & commercial", "Structuring, transactions, contracts, governance and company secretarial work."],
   ["Disputes & litigation", "Supreme Court, High Courts and NCLAT. Strategy before filing, and arbitration."],
   ["Intellectual property", "Trade mark searches, filings, oppositions and enforcement. Assignment and licensing."],
-  ["Tax & transfer pricing", "Corporate tax, GST, withholding and permanent establishment."],
   ["India entry & cross-border", "Operating model, entity set-up, investment rules and back-office support for foreign companies."],
   ["Competition & antitrust", "Merger filings, investigations and appeals before the Competition Commission of India (CCI), including digital markets."],
   ["Employment & labour", "Contracts, policies, labour codes, incentive plans and exits."],
