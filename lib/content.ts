@@ -60,27 +60,27 @@ export const PRACTICE = [
   ["Intellectual property", "Trade mark searches, filings, oppositions and enforcement. Assignment and licensing."],
   ["Tax & transfer pricing", "Corporate tax, GST, withholding and permanent establishment."],
   ["India entry & cross-border", "Operating model, entity set-up, investment rules and back-office support for foreign companies."],
-  ["Competition & antitrust", "Merger filings, investigations and appeals before the CCI, including digital markets."],
+  ["Competition & antitrust", "Merger filings, investigations and appeals before the Competition Commission of India (CCI), including digital markets."],
   ["Employment & labour", "Contracts, policies, labour codes, incentive plans and exits."],
   ["Technology, data & AI", "DPDP Act compliance, cross-border transfers, SaaS agreements and AI governance."],
 ] as const;
 
 export const WORK = [
-  ["Venture financing", "Start-ups from incorporation and NDAs to term sheets and convertible note rounds."],
-  ["Funds & PE", "Deal structuring and investments for funds and private equity investors."],
-  ["India entry", "A foreign technology company’s set-up in India: strategy, entity, compliance, employment, back office and trade marks."],
-  ["Trade marks", "Applications, registrations and disputes for MSMEs, companies and funds."],
-  ["Litigation", "The Supreme Court, High Courts in several states and the CCI, in commercial, civil, constitutional, criminal and consumer matters."],
-  ["Tax", "Tax questions, including transfer pricing for cross-border arrangements."],
-  ["Competition", "Merger notices before the CCI, and competition disputes before the Commission."],
-  ["Corporate advisory", "Technology and consumer start-ups, funds, school trusts, societies and energy companies."],
+  ["Venture financing", "Guided early- to mid-stage founders from incorporation and NDAs through term sheets to convertible note rounds."],
+  ["Funds & PE", "Worked on deal structuring and investments for leading fund managers and investors, and advised a US-fund on their India strategy."],
+  ["India entry", "Helped set up a foreign technology company’s back office in India: strategy, entity, compliance, employment, back office and trade marks."],
+  ["Trade marks", "Acted for a range of clients on trade mark applications, registrations, and disputes."],
+  ["Litigation", "Appeared before the Supreme Court, High Courts in several states, company law tribunals, and local courts across commercial, constitutional, and consumer matters."],
+  ["Competition", "Acted on merger filings and antitrust litigation before the CCI, and competition law advisory, with a focus on digital markets."],
+  ["Employment", "Advised a major fund and a mid-stage startup on employment and labour law compliance."],
+  ["Corporate advisory", "Advised technology and consumer start-ups, school trusts, societies and energy companies across corporate compliance, transactions, and disputes."],
 ] as const;
 
 export const PRINCIPLES = [
   ["Clear", "The answer first, in plain language."],
   ["Practical", "No work or cost the problem doesn’t need."],
   ["Responsive", "Quick turnarounds, straight from the lawyers doing the work."],
-  ["Open on fees", "Fixed fees or simple retainers, agreed upfront."],
+  ["Fee transparency", "Fixed fees or simple retainers, agreed upfront."],
 ] as const;
 
 export const AI_CHECKS = [
@@ -115,7 +115,7 @@ export const PARTNERS = [
     photo: "/img/prannv-dhawan.jpg",
     role: "Disputes, constitutional and public law, tax",
     bio: [
-      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he was a Research Associate at the Centre for Policy Research.",
+      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the tax advisory and transfer pricing team at Deloitte, New York, and was a Research Associate at the Centre for Policy Research.",
       "At Yale Law School he studied corporate and international tax. His thesis compared the tax exemption of universities in India and the United States.",
     ],
     edu: ["LL.M., Yale Law School", "B.A. LL.B. (Hons.), National Law School of India University"],
