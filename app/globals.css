@@ -97,3 +97,11 @@
 @media (prefers-reduced-motion: no-preference) {
   html.js:not(.no-motion) [data-reveal], html.js:not(.no-motion) [data-hero] { visibility: hidden; }
 }
+
+@layer components {
+  /* a gold thread that slowly draws downward beside the "Scroll" cue */
+  .cue-line { position: relative; display: block; width: 1px; height: 36px; background: color-mix(in oklch, var(--color-rose) 25%, transparent); overflow: hidden; }
+  .cue-line::after { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 14px; background: var(--color-gold); animation: cue 2.4s cubic-bezier(.65,0,.35,1) infinite; }
+  @keyframes cue { 0% { transform: translateY(-14px); } 100% { transform: translateY(36px); } }
+  @media (prefers-reduced-motion: reduce) { .cue-line::after { animation: none; transform: translateY(8px); } }
+}

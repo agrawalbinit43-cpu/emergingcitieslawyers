@@ -240,6 +240,12 @@ export default function Hero() {
           })}
         </svg>
       </figure>
+      <div data-hero className="cue pointer-events-none absolute bottom-6 left-[clamp(20px,4vw,56px)] z-10 hidden items-center gap-4 font-display text-xs font-semibold uppercase tracking-[0.14em] text-rose/60 md:flex">
+        <span aria-hidden="true" className="cue-line" />
+        <span>Scroll</span>
+        <span aria-hidden="true" className="text-gold/70">/</span>
+        <span className="font-normal normal-case tracking-normal text-rose/50">Where our lawyers studied and worked. Drag any point.</span>
+      </div>
     </header>
   );
 }
