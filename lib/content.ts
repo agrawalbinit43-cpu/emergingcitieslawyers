@@ -71,7 +71,7 @@ export const WORK = [
   ["India entry", "Helped set up a foreign technology company’s back office in India: strategy, entity, compliance, employment, and trade marks."],
   ["Trade marks", "Acted for a range of clients on trade mark applications, registrations, and disputes."],
   ["Litigation", "Appeared before the Supreme Court, High Courts in several states, company law tribunals, and local courts across commercial, constitutional, and consumer matters."],
-  ["Competition", "Acted on merger filings and antitrust litigation before the CCI, and competition law advisory, with a focus on digital markets."],
+  ["Competition", "Acted on merger filings and antitrust litigation before the CCI. Advised on competition law, with a focus on digital markets."],
   ["Employment", "Advised a major fund and a mid-stage startup on employment and labour law compliance."],
   ["Corporate advisory", "Advised technology and consumer start-ups, school trusts, societies and energy companies across corporate compliance, transactions, and disputes."],
 ] as const;
