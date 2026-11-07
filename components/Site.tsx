@@ -27,16 +27,16 @@ export default function Site() {
                 Emerging businesses. Emerging cities. The same standard of counsel.
               </p>
               <p data-reveal="rise" className="max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6] [text-wrap:pretty]">
-                Young companies and fast-growing cities face the same legal questions as established ones. Good counsel, however, is harder for them to find. We handle the deals, the regulation, and the disputes.
+                Young companies and fast-growing cities face the same legal questions as established ones. Good counsel is harder for them to find. We handle the deals, the regulation and the disputes.
               </p>
               <dl className="mt-12 grid max-w-[52em] grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
                 <div data-reveal="rise">
                   <dt className="mb-1 font-display font-semibold text-maroon">Who we act for</dt>
-                  <dd className="text-base leading-[1.55]">Start-ups, SMEs, family businesses, funds (PE, VC and debt), foreign companies setting up in India, and international organisations.</dd>
+                  <dd className="text-base leading-[1.55]">Start-ups, SMEs, family businesses, funds (PE, VC and debt), foreign companies entering India, and international organisations.</dd>
                 </div>
                 <div data-reveal="rise">
                   <dt className="mb-1 font-display font-semibold text-maroon">How we work</dt>
-                  <dd className="text-base leading-[1.55]">Quality counsel-driven, AI and technology layer for better, faster delivery, and transparency around time spent.</dd>
+                  <dd className="text-base leading-[1.55]">Counsel-led work, AI and technology for faster delivery, and transparency around time spent.</dd>
                 </div>
               </dl>
             </div>
