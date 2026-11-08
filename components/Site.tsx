@@ -114,20 +114,6 @@ export default function Site() {
           </div>
         </section>
 
-        <section id="work" className={SECTION}>
-          <div className={`${WRAP} ${ROW}`}>
-            <h2 className={NOTE}>Representative work</h2>
-          </div>
-          <ul className={`${WRAP} mt-10`}>
-            {WORK.map(([area, what]) => (
-              <li key={area} data-reveal="rise" className={`${ROW} items-baseline gap-y-1.5 border-t border-line py-[22px] last:border-b`}>
-                <p className="col-span-12 font-display font-semibold text-gold-deep md:col-span-3">{area}</p>
-                <p className="col-span-12 max-w-[36em] text-[clamp(18px,1.4vw,21px)] leading-[1.5] md:col-span-9 md:col-start-4">{what}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-
         <section id="partners" className="on-maroon overflow-x-clip bg-maroon pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)] text-rose">
           <div className={WRAP}>
             <Landmarks />
@@ -164,6 +150,20 @@ export default function Site() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section id="work" className={`bg-blush ${SECTION}`}>
+          <div className={`${WRAP} ${ROW}`}>
+            <h2 className={NOTE}>Representative work</h2>
+          </div>
+          <ul className={`${WRAP} mt-10`}>
+            {WORK.map(([area, what]) => (
+              <li key={area} data-reveal="rise" className={`${ROW} items-baseline gap-y-1.5 border-t border-line py-[22px] last:border-b`}>
+                <p className="col-span-12 font-display font-semibold text-gold-deep md:col-span-3">{area}</p>
+                <p className="col-span-12 max-w-[36em] text-[clamp(18px,1.4vw,21px)] leading-[1.5] md:col-span-9 md:col-start-4">{what}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section id="writing" className={SECTION}>

@@ -98,7 +98,7 @@ export default function Landmarks() {
       data-reveal="rise"
       role="img"
       aria-label={`Line drawings of ${DRAWINGS.map((d) => d.name).join(", ")}`}
-      className="landmarks relative h-[clamp(360px,52vw,660px)] w-full cursor-grab touch-pan-y select-none"
+      className="landmarks relative h-[clamp(260px,34vw,420px)] w-full cursor-grab touch-pan-y select-none"
     >
       {DRAWINGS.map((d) => (
         // the plate behind the lines is the section's own colour, so the building in front hides the ones behind it
