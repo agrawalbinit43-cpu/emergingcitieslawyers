@@ -7,7 +7,7 @@ import { WRAP } from "@/lib/ui";
 
 export const metadata: Metadata = {
   title: "Pro bono | Emerging Cities Lawyers LLP",
-  description: "If you urgently need a lawyer and cannot afford one, tell us about your situation. Where we can, we will find you counsel who will act free of charge.",
+  description: "If you urgently need a lawyer and cannot afford one, tell us about your situation. We will find you counsel who will act free of charge.",
   alternates: { canonical: "/pro-bono" },
   openGraph: { title: "Pro bono | Emerging Cities Lawyers LLP", url: "/pro-bono", images: ["/assets/og.png"] },
 };
