@@ -2,7 +2,6 @@
 
 export const SECTIONS = [
   { id: "about", label: "About" },
-  { id: "background", label: "Background" },
   { id: "practice", label: "Practice" },
   { id: "approach", label: "Approach" },
   { id: "work", label: "Work" },
@@ -28,30 +27,6 @@ export const GRAPH_NODES = [
 ];
 /** Every node links to the hub; these few links join nodes of the same kind, without closing into a ring. */
 export const GRAPH_LINKS: [number, number][] = [[0, 8], [1, 2], [3, 4], [6, 5], [7, 6]];
-
-export const CREDENTIALS = [
-  { title: "Studied at", items: ["National Law School of India University, Bengaluru", "Yale Law School", "University of Vienna"] },
-  {
-    title: "Appeared before",
-    items: ["Supreme Court of India", "High Courts across several states", "National Company Law Appellate Tribunal (NCLAT)", "Competition Commission of India (CCI)"],
-  },
-  {
-    title: "Worked at",
-    items: [
-      "Supreme Court of India, as Law Clerk to Justice B.V. Nagarathna",
-      "Khaitan & Co",
-      "Deloitte, New York",
-      "Lucio AI",
-      "Axiom5 Law Chambers",
-      "Centre for Policy Research",
-      "Bae, Kim & Lee, Seoul",
-    ],
-  },
-  {
-    title: "Advised",
-    items: ["United Nations Development Programme (UNDP)", "Digital Cooperation Organisation, Saudi Arabia", "Open Society Foundations", "Cortex Capital", "Cyril Shroff Centre for AI, Law & Regulation"],
-  },
-];
 
 export const PRACTICE = [
   ["Start-ups & venture financing", "Incorporation, founder agreements, ESOPs, term sheets, NDAs and regulatory filings."],
@@ -102,8 +77,8 @@ export const PARTNERS = [
     photo: "/img/binit-agrawal.jpg",
     role: "Corporate, transactions, competition, technology",
     bio: [
-      "Binit advises on VC and PE deals, corporate work, competition law and technology regulation. He worked in the PE/VC and technology M&A practice of a leading firm, and filed merger notices before the CCI at a competition boutique. As Head of Strategy at Lucio, a legal AI company, he led its expansion abroad, fundraising and hiring.",
-      "He has advised UNDP, the Digital Cooperation Organisation, Open Society Foundations, GIZ and Cortex Capital, and is an Affiliate Fellow of the Cyril Shroff Centre for AI, Law & Regulation.",
+      "Binit advises on VC and PE deals, corporate work, competition law and technology regulation. He worked in the PE/VC team at Khaitan & Co, and filed merger notices before the CCI at Axiom5 Law Chambers, a competition boutique. He also trained for six months with the technology and corporate teams of Bae, Kim & Lee in Seoul. As Head of Strategy at Lucio, a legal AI company, he led its expansion abroad, fundraising and hiring.",
+      "His clients have included UNDP, the Digital Cooperation Organisation in Saudi Arabia, Open Society Foundations and GIZ. He is an Affiliate Fellow of the Cyril Shroff Centre for AI, Law & Regulation, and has appeared before the Supreme Court, several High Courts and the NCLAT.",
     ],
     edu: ["B.A. LL.B. (Hons.), National Law School of India University", "M.A. LL.M., University of Vienna (European Master in Law and Economics)"],
     email: "ba@emergingcitieslawyers.com",
@@ -114,7 +89,7 @@ export const PARTNERS = [
     photo: "/img/prannv-dhawan.jpg",
     role: "Disputes, constitutional and public law, tax",
     bio: [
-      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the tax advisory and transfer pricing team at Deloitte, New York, and was a Research Associate at the Centre for Policy Research.",
+      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the tax advisory and transfer pricing team at Deloitte, New York, and was a Research Associate at the Centre for Policy Research. He has also advised Cortex Capital.",
       "At Yale Law School he studied corporate and international tax. His thesis compared the tax exemption of universities in India and the United States.",
     ],
     edu: ["LL.M., Yale Law School", "B.A. LL.B. (Hons.), National Law School of India University"],

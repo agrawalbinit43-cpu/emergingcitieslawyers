@@ -4,7 +4,7 @@ import Motion from "@/components/Motion";
 import Nav from "@/components/Nav";
 import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
-import { AI_CHECKS, ALLIED, CREDENTIALS, OFFICE, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
+import { AI_CHECKS, ALLIED, OFFICE, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS } from "@/lib/writing";
 
@@ -39,35 +39,6 @@ export default function Site() {
                   <dd className="text-base leading-[1.55]">Counsel-led work, AI and technology for faster delivery, and transparency around time spent.</dd>
                 </div>
               </dl>
-            </div>
-          </div>
-        </section>
-
-        <section id="background" className={`on-maroon overflow-x-clip bg-maroon text-rose ${SECTION}`}>
-          <div className={`${WRAP} ${ROW}`}>
-            <h2 className={NOTE}>Background</h2>
-            <p data-reveal="lines" className={`${MAIN} lead max-w-[14em]`}>
-              Where our lawyers studied, practised and advised.
-            </p>
-          </div>
-          <div className={`${WRAP} mt-[clamp(24px,4vw,56px)]`}>
-            <Landmarks />
-          </div>
-          <div className={WRAP}>
-            <div data-reveal="draw" className="mt-[clamp(40px,5vw,64px)] h-px bg-gold/50" />
-            <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-              {CREDENTIALS.map((c) => (
-                <div key={c.title} data-reveal="rise">
-                  <h3 className="mb-3 font-display font-semibold text-gold">{c.title}</h3>
-                  <ul>
-                    {c.items.map((it) => (
-                      <li key={it} className="py-[5px] text-base leading-[1.45] text-rose/75">
-                        {it}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -156,8 +127,13 @@ export default function Site() {
           </ul>
         </section>
 
-        <section id="partners" className={`bg-blush ${SECTION}`}>
-          <div className={`${WRAP} ${ROW}`}>
+        <section id="partners" className="bg-blush pb-[clamp(88px,10vw,144px)]">
+          <div className="on-maroon overflow-x-clip bg-maroon py-[clamp(48px,6vw,88px)]">
+            <div className={WRAP}>
+              <Landmarks />
+            </div>
+          </div>
+          <div className={`${WRAP} ${ROW} mt-[clamp(72px,8vw,112px)]`}>
             <h2 className={NOTE}>Partners</h2>
             <div className={`${MAIN} grid grid-cols-1 gap-x-[clamp(32px,4vw,64px)] gap-y-[72px] md:grid-cols-2`}>
               {PARTNERS.map((p) => (
