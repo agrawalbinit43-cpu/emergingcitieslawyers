@@ -92,7 +92,7 @@ export default function Hero() {
         fade = gsap
           .timeline({ onComplete: () => void (shown = -1) })
           .fromTo(tip, { autoAlpha: 0, y: still() ? 0 : 6 }, { autoAlpha: 1, y: 0, duration: still() ? 0 : 0.35, ease: "power2.out" })
-          .to(tip, { autoAlpha: 0, duration: still() ? 0 : 0.5, ease: "power1.in" }, "+=4.5");
+          .to(tip, { autoAlpha: 0, duration: still() ? 0 : 0.5, ease: "power1.in" }, "+=3");
       };
       const toSvg = (e: PointerEvent) => {
         const pt = svg.createSVGPoint();
@@ -217,6 +217,9 @@ export default function Hero() {
           <div className="flex items-center gap-7 font-display text-sm font-semibold">
             <a href="#contact" className="hidden underline-offset-4 hover:underline md:inline">
               Contact
+            </a>
+            <a href="/pro-bono" className="hidden underline-offset-4 hover:underline md:inline">
+              Pro bono
             </a>
             <button
               onClick={(e) => window.dispatchEvent(new CustomEvent(MENU_EVENT, { detail: e.currentTarget }))}

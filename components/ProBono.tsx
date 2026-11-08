@@ -38,13 +38,13 @@ export default function ProBono() {
   }
 
   return (
-    <section id="pro-bono" className={`bg-blush ${SECTION}`}>
+    <section id="pro-bono" className={`bg-blush ${SECTION} min-h-[70svh]`}>
       <div className={`${WRAP} ${ROW}`}>
-        <h2 className={NOTE}>Pro bono</h2>
+        <p className={NOTE}>Pro bono</p>
         <div className={MAIN}>
-          <p data-reveal="lines" className="lead mb-[.55em] max-w-[14em] text-maroon">
+          <h1 data-reveal="lines" className="lead mb-[.55em] max-w-[14em] text-maroon">
             Legal help when you cannot pay for it.
-          </p>
+          </h1>
           <p data-reveal="rise" className="max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6] [text-wrap:pretty]">
             If you urgently need a lawyer and cannot afford one, tell us about your situation below. We read each request. Where we can, we will find you counsel who will act free of charge.
           </p>

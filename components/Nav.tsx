@@ -73,6 +73,9 @@ export default function Nav() {
                 {label}
               </a>
             ))}
+            <a href="/pro-bono" className="border-b border-transparent py-1.5 text-dust transition-colors hover:text-ink">
+              Pro bono
+            </a>
           </nav>
           <button
             onClick={(e) => {
@@ -109,6 +112,14 @@ export default function Nav() {
                 </a>
               </li>
             ))}
+            <li className="border-t border-line-rose">
+              <a
+                href="/pro-bono"
+                className="block py-3 font-display text-[clamp(30px,5vw,56px)] font-semibold leading-[1.05] tracking-[-0.02em] transition-[padding,color] duration-500 ease-out-expo [font-variation-settings:'wdth'_90] hover:pl-3 hover:text-gold"
+              >
+                Pro bono
+              </a>
+            </li>
           </ol>
         </div>
       </div>
