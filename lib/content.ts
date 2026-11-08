@@ -12,19 +12,19 @@ export const SECTIONS = [
 ] as const;
 
 /** The hero graph: where the firm's lawyers studied, practised and worked, around the firm. Starting positions in a 760 × 880 viewBox,
- *  set at uneven distances so it reads as a network rather than a ring; visitors can drag every named node. */
+ *  set at uneven distances so it reads as a network rather than a ring; visitors can drag every named node, and a click shows its note. */
 export const GRAPH_VIEW = { w: 760, h: 880 };
-export const GRAPH_HUB = { label: "ECL", x: 410, y: 480 };
+export const GRAPH_HUB = { label: "ECL", x: 410, y: 480, note: "Emerging Cities Lawyers: where it all comes together." };
 export const GRAPH_NODES = [
-  { label: "Yale", x: 150, y: 220 },
-  { label: "NLSIU", x: 440, y: 62 },
-  { label: "Vienna", x: 692, y: 178 },
-  { label: "Supreme Court of India", x: 640, y: 432 },
-  { label: "Competition Commission", x: 560, y: 668 },
-  { label: "Bae, Kim & Lee", x: 668, y: 832 },
-  { label: "BigLaw", x: 316, y: 798 },
-  { label: "Deloitte", x: 168, y: 628 },
-  { label: "Lucio AI", x: 250, y: 408 },
+  { label: "Yale", x: 150, y: 220, note: "Yale Law School is one of the world’s foremost law schools. Prannv earned his LL.M. there." },
+  { label: "NLSIU", x: 440, y: 62, note: "National Law School of India University is India’s best law school. Binit and Prannv both studied law there." },
+  { label: "Vienna", x: 692, y: 178, note: "The University of Vienna is among Europe’s oldest universities. Binit earned a European Master in Law and Economics there." },
+  { label: "Supreme Court of India", x: 640, y: 432, note: "Binit and Prannv have appeared before the Supreme Court in varied disputes, and Prannv clerked for Justice B.V. Nagarathna." },
+  { label: "Competition Commission", x: 560, y: 668, note: "The CCI is India’s antitrust regulator. Binit has appeared before it on merger filings and antitrust cases." },
+  { label: "Bae, Kim & Lee", x: 668, y: 832, note: "Bae, Kim & Lee is one of South Korea’s largest law firms. Binit trained there for 6 months in its technology and corporate teams." },
+  { label: "BigLaw", x: 316, y: 798, note: "Khaitan & Co is one of India’s oldest and largest law firms. Binit worked in its PE/VC team in Bengaluru." },
+  { label: "Deloitte", x: 168, y: 628, note: "Prannv worked in the tax advisory and transfer pricing team at Deloitte’s New York office." },
+  { label: "Lucio AI", x: 250, y: 408, note: "Lucio is a USD 5 million-funded legal AI company. As its Head of Strategy, Binit led UK/EU markets, hiring, product, and growth." },
 ];
 /** Every node links to the hub; these few links join nodes of the same kind, without closing into a ring. */
 export const GRAPH_LINKS: [number, number][] = [[0, 8], [1, 2], [3, 4], [6, 5], [7, 6]];

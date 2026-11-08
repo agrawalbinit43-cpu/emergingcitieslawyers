@@ -50,6 +50,7 @@ export default function Hero() {
       function render() {
         const P = Array.from({ length: COUNT }, (_, i) => pos(i));
         els.forEach((el, i) => el.setAttribute("transform", `translate(${P[i].x.toFixed(1)} ${P[i].y.toFixed(1)})`));
+        place();
         EDGES.forEach(({ a, b }, k) => {
           lines[k].setAttribute("x1", P[a].x.toFixed(1));
           lines[k].setAttribute("y1", P[a].y.toFixed(1));
@@ -64,7 +65,35 @@ export default function Hero() {
         EDGES.forEach(({ a, b }, k) => (a === i || b === i) && lines[k].classList.toggle("lit", on));
       };
       // every named node, and the hub, can be dragged and left anywhere in the graph
-      let drag: { i: number; dx: number; dy: number } | null = null;
+      let drag: { i: number; dx: number; dy: number; sx: number; sy: number } | null = null;
+
+      // a click (a press that barely moves) shows that point's note for a few seconds
+      const tip = root.current!.querySelector<HTMLElement>(".tip")!;
+      const fig = root.current!.querySelector<HTMLElement>(".graph-wrap")!;
+      const still = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let shown = -1;
+      let fade: gsap.core.Timeline | null = null;
+      const place = () => {
+        if (shown < 0) return;
+        const d = els[shown].querySelector(".dot")!.getBoundingClientRect();
+        const f = fig.getBoundingClientRect();
+        const w = tip.offsetWidth;
+        const left = gsap.utils.clamp(8, f.width - w - 8, d.left + d.width / 2 - f.left - w / 2);
+        // points near the top get their note below the label; the rest get it above the dot
+        const below = d.top - f.top < tip.offsetHeight + 24;
+        const top = below ? d.bottom - f.top + 40 : d.top - f.top - tip.offsetHeight - 14;
+        gsap.set(tip, { left, top });
+      };
+      const show = (i: number) => {
+        shown = i;
+        tip.textContent = (i < HUB_I ? NAMED[i] : HUB).note;
+        place();
+        fade?.kill();
+        fade = gsap
+          .timeline({ onComplete: () => void (shown = -1) })
+          .fromTo(tip, { autoAlpha: 0, y: still() ? 0 : 6 }, { autoAlpha: 1, y: 0, duration: still() ? 0 : 0.35, ease: "power2.out" })
+          .to(tip, { autoAlpha: 0, duration: still() ? 0 : 0.5, ease: "power1.in" }, "+=4.5");
+      };
       const toSvg = (e: PointerEvent) => {
         const pt = svg.createSVGPoint();
         pt.x = e.clientX;
@@ -78,7 +107,7 @@ export default function Hero() {
           e.preventDefault();
           n.setPointerCapture(e.pointerId);
           const p = toSvg(e);
-          drag = { i, dx: base[i].x - p.x, dy: base[i].y - p.y };
+          drag = { i, dx: base[i].x - p.x, dy: base[i].y - p.y, sx: e.clientX, sy: e.clientY };
           n.classList.add("dragging");
           light(i, true);
         });
@@ -88,15 +117,23 @@ export default function Hero() {
           base[i].x = gsap.utils.clamp(24, VIEW.w - 24, p.x + drag.dx);
           base[i].y = gsap.utils.clamp(24, VIEW.h - 24, p.y + drag.dy);
           render();
+          place();
         });
-        const drop = () => {
+        const drop = (e: PointerEvent) => {
           if (drag?.i !== i) return;
+          const tap = e.type === "pointerup" && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < 6;
           drag = null;
+          if (tap) show(i);
           n.classList.remove("dragging");
           light(i, false);
         };
         n.addEventListener("pointerup", drop);
         n.addEventListener("pointercancel", drop);
+        n.addEventListener("keydown", (e) => {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          e.preventDefault();
+          show(i);
+        });
       });
 
       const mm = gsap.matchMedia();
@@ -203,14 +240,14 @@ export default function Hero() {
         </div>      
       </div>
       {/* The graph takes the right half of the hero, top to bottom; on a phone it follows the text. */}
-      <figure data-hero className="graph-wrap px-4 pb-10 md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:pl-[8vw] md:pr-0 md:pb-4 md:pt-20">
-        <svg className="graph block h-auto w-full overflow-visible md:h-full" viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="img" aria-labelledby="graph-title">
+      <figure data-hero className="graph-wrap relative px-4 pb-10 md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:pl-[8vw] md:pr-0 md:pb-4 md:pt-20">
+        <svg className="graph block h-auto w-full overflow-visible md:h-full" viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="group" aria-labelledby="graph-title">
           <title id="graph-title">{`Where our lawyers studied, practised and worked: ${NAMED.map((n) => n.label).join(", ")}.`}</title>
           {EDGES.map(({ a, b, kind }, k) => (
             <line key={k} className={kind} x1={anchor(a).x} y1={anchor(a).y} x2={anchor(b).x} y2={anchor(b).y} pathLength={1} />
           ))}
           {NAMED.map((n, i) => (
-            <g key={n.label} data-n={i} className="node" transform={`translate(${n.x} ${n.y})`}>
+            <g key={n.label} data-n={i} className="node" tabIndex={0} role="button" aria-label={`${n.label}. ${n.note}`} transform={`translate(${n.x} ${n.y})`}>
               <g className="dot">
                 <circle r={6} />
               </g>
@@ -219,7 +256,7 @@ export default function Hero() {
               </text>
             </g>
           ))}
-          <g data-n={HUB_I} className="hub" transform={`translate(${HUB.x} ${HUB.y})`}>
+          <g data-n={HUB_I} className="hub" tabIndex={0} role="button" aria-label={HUB.note} transform={`translate(${HUB.x} ${HUB.y})`}>
             <circle className="pulse" r={11} />
             <g className="dot">
               <circle r={11} />
@@ -239,12 +276,13 @@ export default function Hero() {
             );
           })}
         </svg>
+        <p aria-hidden="true" className="tip pointer-events-none invisible absolute left-0 top-0 z-20 w-max max-w-[min(300px,80vw)] border-l-2 border-gold bg-maroon/95 px-3.5 py-2.5 text-[13px] leading-[1.5] text-rose shadow-[0_8px_30px_rgba(0,0,0,.35)] backdrop-blur-sm [text-wrap:pretty]" />
       </figure>
       <div data-hero className="cue pointer-events-none absolute bottom-6 left-[clamp(20px,4vw,56px)] z-10 hidden items-center gap-4 font-display text-xs font-semibold uppercase tracking-[0.14em] text-rose/60 md:flex">
         <span aria-hidden="true" className="cue-line" />
         <span>Scroll</span>
         <span aria-hidden="true" className="text-gold/70">/</span>
-        <span className="font-normal normal-case tracking-normal text-rose/50">Where our lawyers studied and worked. Drag any point.</span>
+        <span className="font-normal normal-case tracking-normal text-rose/50">Where our lawyers studied and worked. Click or drag any point.</span>
       </div>
     </header>
   );

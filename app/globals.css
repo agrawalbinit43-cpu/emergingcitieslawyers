@@ -70,6 +70,8 @@
   .graph .hub text { font-size: 17px; font-weight: 700; fill: var(--color-gold); letter-spacing: 0.08em; }
   .graph .node, .graph .hub { cursor: grab; touch-action: none; }
   .graph .dragging { cursor: grabbing; }
+  .graph .node:focus, .graph .hub:focus { outline: none; }
+  .graph .node:focus-visible circle, .graph .hub:focus-visible .dot circle { stroke: var(--color-gold); stroke-width: 3; }
   @media (max-width: 767px) { .graph text { font-size: 26px; } }
   .graph .node.lit circle { fill: var(--color-gold); stroke: var(--color-gold); }
   .graph .node.lit text { fill: var(--color-gold); }
