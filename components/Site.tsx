@@ -4,6 +4,7 @@ import Motion from "@/components/Motion";
 import Nav from "@/components/Nav";
 import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
+import ProBono from "@/components/ProBono";
 import { AI_CHECKS, ALLIED, OFFICE, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS } from "@/lib/writing";
@@ -19,7 +20,7 @@ export default function Site() {
       <Hero />
 
       <main id="main">
-        <section id="about" className={SECTION}>
+        <section id="about" className="pb-[clamp(16px,2vw,32px)] pt-[clamp(88px,10vw,144px)]">
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>About</h2>
             <div className={MAIN}>
@@ -43,7 +44,7 @@ export default function Site() {
           </div>
         </section>
 
-        <section id="practice" className={SECTION}>
+        <section id="practice" className="pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)]">
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>Practice</h2>
             <div className={MAIN}>
@@ -127,13 +128,11 @@ export default function Site() {
           </ul>
         </section>
 
-        <section id="partners" className="bg-blush pb-[clamp(88px,10vw,144px)]">
-          <div className="on-maroon overflow-x-clip bg-maroon py-[clamp(48px,6vw,88px)]">
-            <div className={WRAP}>
-              <Landmarks />
-            </div>
+        <section id="partners" className="on-maroon overflow-x-clip bg-maroon pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)] text-rose">
+          <div className={WRAP}>
+            <Landmarks />
           </div>
-          <div className={`${WRAP} ${ROW} mt-[clamp(72px,8vw,112px)]`}>
+          <div className={`${WRAP} ${ROW} mt-[clamp(16px,2.5vw,40px)]`}>
             <h2 className={NOTE}>Partners</h2>
             <div className={`${MAIN} grid grid-cols-1 gap-x-[clamp(32px,4vw,64px)] gap-y-[72px] md:grid-cols-2`}>
               {PARTNERS.map((p) => (
@@ -141,23 +140,23 @@ export default function Site() {
                   <div data-reveal="wipe" className="mb-6 h-[325px] w-[260px] overflow-hidden bg-paper">
                     <img src={p.photo} alt={p.name} width={480} height={600} loading="lazy" decoding="async" className="h-full w-full object-cover grayscale contrast-[1.05]" />
                   </div>
-                  <h3 className="mb-2 font-display text-[clamp(28px,2.6vw,40px)] font-semibold leading-none tracking-[-0.02em] text-maroon [font-variation-settings:'wdth'_90]">{p.name}</h3>
-                  <p className="mb-[18px] font-display text-[15px] font-medium text-dust">{p.role}</p>
+                  <h3 className="mb-2 font-display text-[clamp(28px,2.6vw,40px)] font-semibold leading-none tracking-[-0.02em] text-rose [font-variation-settings:'wdth'_90]">{p.name}</h3>
+                  <p className="mb-[18px] font-display text-[15px] font-medium text-gold">{p.role}</p>
                   {p.bio.map((b) => (
-                    <p key={b.slice(0, 24)} className="mb-4 max-w-[34em] text-base leading-[1.65]">
+                    <p key={b.slice(0, 24)} className="mb-4 max-w-[34em] text-base leading-[1.65] text-rose/85">
                       {b}
                     </p>
                   ))}
-                  <p className="mb-4 max-w-[34em] text-base italic leading-[1.65] text-dust">
+                  <p className="mb-4 max-w-[34em] text-base italic leading-[1.65] text-rose/65">
                     {p.edu[0]}
                     <br />
                     {p.edu[1]}
                   </p>
                   <p className="flex flex-wrap gap-x-5 gap-y-1.5 font-display text-[15px] font-semibold">
-                    <a href={`mailto:${p.email}`} className="underline underline-offset-4 transition-colors hover:text-maroon hover:decoration-gold-deep">
+                    <a href={`mailto:${p.email}`} className="text-rose underline decoration-gold/60 underline-offset-4 transition-colors hover:text-gold hover:decoration-gold">
                       {p.email}
                     </a>
-                    <a href={p.linkedin} target="_blank" rel="noopener" className="underline underline-offset-4 transition-colors hover:text-maroon hover:decoration-gold-deep">
+                    <a href={p.linkedin} target="_blank" rel="noopener" className="text-rose underline decoration-gold/60 underline-offset-4 transition-colors hover:text-gold hover:decoration-gold">
                       LinkedIn<span className="sr-only"> (opens in a new tab)</span>
                     </a>
                   </p>
@@ -179,7 +178,9 @@ export default function Site() {
           </div>
         </section>
 
-        <section id="contact" className={`bg-blush ${SECTION}`}>
+        <ProBono />
+
+        <section id="contact" className={SECTION}>
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>Contact</h2>
             <div className={MAIN}>
