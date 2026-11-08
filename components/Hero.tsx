@@ -92,7 +92,7 @@ export default function Hero() {
         fade = gsap
           .timeline({ onComplete: () => void (shown = -1) })
           .fromTo(tip, { autoAlpha: 0, y: still() ? 0 : 6 }, { autoAlpha: 1, y: 0, duration: still() ? 0 : 0.35, ease: "power2.out" })
-          .to(tip, { autoAlpha: 0, duration: still() ? 0 : 0.5, ease: "power1.in" }, "+=3");
+          .to(tip, { autoAlpha: 0, y: still() ? 0 : -4, duration: still() ? 0 : 1, ease: "sine.inOut" }, "+=1.15");
       };
       const toSvg = (e: PointerEvent) => {
         const pt = svg.createSVGPoint();
@@ -244,7 +244,7 @@ export default function Hero() {
       </div>
       {/* The graph takes the right half of the hero, top to bottom; on a phone it follows the text. */}
       <figure data-hero className="graph-wrap relative px-4 pb-10 md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:pl-[8vw] md:pr-0 md:pb-4 md:pt-20">
-        <svg className="graph block h-auto w-full overflow-visible md:h-full" viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="group" aria-labelledby="graph-title">
+        <svg className="graph block h-auto w-full -translate-x-[5%] overflow-visible md:h-full md:translate-x-0" viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="group" aria-labelledby="graph-title">
           <title id="graph-title">{`Where our lawyers studied, practised and worked: ${NAMED.map((n) => n.label).join(", ")}.`}</title>
           {EDGES.map(({ a, b, kind }, k) => (
             <line key={k} className={kind} x1={anchor(a).x} y1={anchor(a).y} x2={anchor(b).x} y2={anchor(b).y} pathLength={1} />
