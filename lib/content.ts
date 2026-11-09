@@ -25,9 +25,11 @@ export const GRAPH_NODES = [
   { label: "Deloitte", x: 168, y: 628, note: "Prannv worked in the tax advisory and transfer pricing team at Deloitte’s New York office." },
   { label: "Lucio AI", x: 250, y: 408, note: "Lucio is a USD 5 million-funded legal AI company. As its Head of Strategy, Binit led UK/EU markets, hiring, product, and growth." },
   { label: "Information Society Project", x: 495, y: 262, note: "The Information Society Project is Yale Law School’s centre for law and technology. Prannv was a Resident Fellow there." },
+  { label: "Centre for Policy Research", x: 110, y: 520, note: "The Centre for Policy Research is one of India’s leading public policy think tanks. Prannv was a Research Associate there." },
+  { label: "UNDP", x: 720, y: 560, note: "The United Nations Development Programme works on development in about 170 countries. Binit has advised it on digital trade, data and intellectual property." },
 ];
 /** Every node links to the hub; these few links join nodes of the same kind, without closing into a ring. */
-export const GRAPH_LINKS: [number, number][] = [[0, 8], [0, 9], [1, 2], [3, 4], [6, 5], [7, 6]];
+export const GRAPH_LINKS: [number, number][] = [[0, 8], [0, 9], [7, 10], [4, 11], [1, 2], [3, 4], [6, 5], [7, 6]];
 
 export const PRACTICE = [
   ["Start-ups & venture financing", "Incorporation, founder agreements, ESOPs, term sheets, NDAs and regulatory filings."],
