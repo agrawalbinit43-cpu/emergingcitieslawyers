@@ -160,7 +160,11 @@ export default function Site() {
             {WORK.map(([area, what]) => (
               <li key={area} data-reveal="rise" className={`${ROW} items-baseline gap-y-1.5 border-t border-line py-[22px] last:border-b`}>
                 <p className="col-span-12 font-display font-semibold text-gold-deep md:col-span-3">{area}</p>
-                <p className="col-span-12 max-w-[36em] text-[clamp(18px,1.4vw,21px)] leading-[1.5] md:col-span-9 md:col-start-4">{what}</p>
+                <div className="col-span-12 max-w-[36em] space-y-3 text-[clamp(18px,1.4vw,21px)] leading-[1.5] md:col-span-9 md:col-start-4">
+                  {what.split("\n\n").map((para) => (
+                    <p key={para}>{para}</p>
+                  ))}
+                </div>
               </li>
             ))}
           </ul>
