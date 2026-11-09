@@ -22,7 +22,7 @@ export const GRAPH_NODES = [
   { label: "Competition Commission", x: 560, y: 668, note: "The CCI is India’s antitrust regulator. Binit has appeared before it on merger filings and antitrust cases." },
   { label: "Bae, Kim & Lee", x: 668, y: 832, note: "Bae, Kim & Lee is one of South Korea’s largest law firms. Binit trained there for 6 months in its technology and corporate teams." },
   { label: "BigLaw", x: 316, y: 798, note: "Khaitan & Co is one of India’s oldest and largest law firms. Binit worked in its PE/VC team in Bengaluru." },
-  { label: "Deloitte", x: 168, y: 628, note: "Prannv worked in the tax advisory and transfer pricing team at Deloitte’s New York office." },
+  { label: "Deloitte", x: 168, y: 628, note: "Prannv worked in the international tax team at Deloitte’s New York office." },
   { label: "Lucio AI", x: 250, y: 408, note: "Lucio is a USD 5 million-funded legal AI company. As its Head of Strategy, Binit led UK/EU markets, hiring, product, and growth." },
   { label: "Information Society Project", x: 495, y: 262, note: "The Information Society Project is Yale Law School’s centre for law and technology. Prannv was a Resident Fellow there." },
   { label: "Centre for Policy Research", x: 110, y: 520, note: "The Centre for Policy Research is one of India’s leading public policy think tanks. Prannv was a Research Associate there." },
@@ -101,7 +101,7 @@ export const PARTNERS = [
     photo: "/img/prannv-dhawan.jpg",
     role: "Disputes, constitutional and public law, tax",
     bio: [
-      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the tax advisory and transfer pricing team at Deloitte, New York. He was a Research Associate at the Centre for Policy Research and a Visiting Researcher at the Centre de Sciences Humaines. He has also advised Cortex Capital.",
+      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the international tax team at Deloitte, New York. He was a Research Associate at the Centre for Policy Research and a Visiting Researcher at the Centre de Sciences Humaines. He has also advised Cortex Capital.",
       "At Yale Law School he studied corporate and international tax. He was a Resident Fellow at the Information Society Project and is associated with the Paul Tsai China Center. He served as Editor of the Yale Journal on Regulation and the Yale Law & Policy Review. Through the Lowenstein International Human Rights Clinic, he advised domestic and international civil society organisations. He was also part of the Ludwig Program in Public Sector Leadership and holds the MacMillan Translation Fellowship.",
     ],
     edu: ["LL.M., Yale Law School", "B.A. LL.B. (Hons.), National Law School of India University"],
