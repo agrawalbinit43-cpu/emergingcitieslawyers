@@ -32,9 +32,9 @@ export const JOURNALS: Piece[] = [
   { outlet: "Fordham Environmental Law Review", date: "Vol. 32(1), 2020", dt: "2020", title: "Regaining control over the climate change narrative: how to stop right-wing populism from eroding rule of law in the climate struggle in India", by: "Binit Agrawal", href: "https://ir.lawnet.fordham.edu/elr/vol32/iss1/4/" },
 ];
 
-/** Talks, panels and podcasts, newest first. Each links to the LinkedIn post about it. */
+/** Talks, panels and podcasts, newest first. Each links to the episode or the LinkedIn post about it. */
 export const SPEAKING: Piece[] = [
-  { outlet: "SCiDA podcast", date: "Mar 2026", dt: "2026-03", title: "AI and competition law, with Anush Ganesh and Kena Zheng", by: "Binit Agrawal", href: "https://www.linkedin.com/feed/update/urn:li:activity:7442132855998222336/" },
+  { outlet: "SCiDA podcast", date: "Mar 2026", dt: "2026-03", title: "AI and competition law, with Anush Ganesh and Kena Zheng", by: "Binit Agrawal", href: "https://open.spotify.com/episode/5ul2nRRIz96HvsZUau6ba4" },
   { outlet: "Competition Law & AI Summit, London", date: "2025", dt: "2025", title: "Panel on data, copyright and competition in AI markets", by: "Binit Agrawal", href: "https://www.linkedin.com/feed/update/urn:li:activity:7402289816320868352/" },
   { outlet: "UNDP Sri Lanka & Geneva Graduate Institute", date: "Nov 2025", dt: "2025-11", title: "Two sessions on legal AI for judges of the Supreme Court of Sri Lanka", by: "Binit Agrawal", href: "https://www.linkedin.com/feed/update/urn:li:activity:7396805789665067008/" },
   { outlet: "International Chamber of Commerce", date: "2025", dt: "2025", title: "Panel on legal AI tools for arbitration professionals", by: "Binit Agrawal", href: "https://www.linkedin.com/feed/update/urn:li:activity:7323669873916608512/" },
