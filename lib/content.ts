@@ -24,9 +24,10 @@ export const GRAPH_NODES = [
   { label: "BigLaw", x: 316, y: 798, note: "Khaitan & Co is one of India’s oldest and largest law firms. Binit worked in its PE/VC team in Bengaluru." },
   { label: "Deloitte", x: 168, y: 628, note: "Prannv worked in the tax advisory and transfer pricing team at Deloitte’s New York office." },
   { label: "Lucio AI", x: 250, y: 408, note: "Lucio is a USD 5 million-funded legal AI company. As its Head of Strategy, Binit led UK/EU markets, hiring, product, and growth." },
+  { label: "Information Society Project", x: 495, y: 262, note: "The Information Society Project is Yale Law School’s centre for law and technology. Prannv was a Resident Fellow there." },
 ];
 /** Every node links to the hub; these few links join nodes of the same kind, without closing into a ring. */
-export const GRAPH_LINKS: [number, number][] = [[0, 8], [1, 2], [3, 4], [6, 5], [7, 6]];
+export const GRAPH_LINKS: [number, number][] = [[0, 8], [0, 9], [1, 2], [3, 4], [6, 5], [7, 6]];
 
 export const PRACTICE = [
   ["Start-ups & venture financing", "Incorporation, founder agreements, ESOPs, term sheets, NDAs and regulatory filings."],
@@ -42,12 +43,21 @@ export const PRACTICE = [
 export const WORK = [
   ["Venture financing", "Guided early- to mid-stage founders from incorporation and NDAs through term sheets to convertible note rounds."],
   ["Funds & PE", "Worked on deal structuring and investments for leading fund managers and investors, and advised a US-fund on their India strategy."],
+  ["Acquisitions", "Advised AnswersAI on an acquisition."],
   ["India entry", "Helped set up a foreign technology company’s back office in India: strategy, entity, compliance, employment, and trade marks."],
   ["Trade marks", "Acted for a range of clients on trade mark applications, registrations, and disputes."],
   ["Litigation", "Appeared before the Supreme Court, High Courts in several states, company law tribunals, and local courts across commercial, constitutional, and consumer matters."],
+  ["Constitutional law", "Acted in Supreme Court cases on Pegasus spyware surveillance and the Waqf (Amendment) Act, and on caste surveys and reservations."],
+  ["Public bodies", "Represented the State of Punjab and the Government of NCT of Delhi before the Supreme Court, including against a ₹1,000 crore NGT penalty that the Court stayed."],
+  ["Service disputes", "Acted on pay and recruitment disputes, including pay parity between Assam Rifles riflemen and the BSF."],
+  ["Health & medical education", "Assisted the amicus in the Indian Medical Association case on misleading drug advertisements. Acted for a medical teachers’ association on who may teach in medical colleges."],
+  ["Criminal law & liberty", "Acted in UAPA bail matters and on prison safety before the Supreme Court."],
+  ["Arbitration & mediation", "Acted in a DIAC arbitration that ended in settlement, and in court-annexed mediation."],
   ["Competition", "Acted on merger filings and antitrust litigation before the CCI. Advised on competition law, with a focus on digital markets."],
   ["Employment", "Advised a major fund and a mid-stage startup on employment and labour law compliance."],
   ["Corporate advisory", "Advised technology and consumer start-ups, school trusts, societies and energy companies across corporate compliance, transactions, and disputes."],
+  ["MSME compliance", "Advised the Punjab Dyers Association on compliance with MSME laws."],
+  ["Government advisory", "Advised the Climate Change Council, Government of Meghalaya, on enforcement."],
 ] as const;
 
 export const PRINCIPLES = [
@@ -89,8 +99,8 @@ export const PARTNERS = [
     photo: "/img/prannv-dhawan.jpg",
     role: "Disputes, constitutional and public law, tax",
     bio: [
-      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the tax advisory and transfer pricing team at Deloitte, New York, and was a Research Associate at the Centre for Policy Research. He has also advised Cortex Capital.",
-      "At Yale Law School he studied corporate and international tax. His thesis compared the tax exemption of universities in India and the United States.",
+      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the tax advisory and transfer pricing team at Deloitte, New York. He was a Research Associate at the Centre for Policy Research and a Visiting Researcher at the Centre de Sciences Humaines. He has also advised Cortex Capital.",
+      "At Yale Law School he studied corporate and international tax. His thesis compared the tax exemption of universities in India and the United States. He was a Resident Fellow at the Information Society Project and is associated with the Paul Tsai China Center. He served as Editor of the Yale Journal on Regulation and the Yale Law & Policy Review. Through the Lowenstein International Human Rights Clinic, he advised domestic and international civil society organisations. He is also part of the Ludwig Program in Public Sector Leadership and holds the MacMillan Translation Fellowship.",
     ],
     edu: ["LL.M., Yale Law School", "B.A. LL.B. (Hons.), National Law School of India University"],
     email: "pd@emergingcitieslawyers.com",
