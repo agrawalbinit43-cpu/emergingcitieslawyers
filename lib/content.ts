@@ -103,4 +103,23 @@ export const PARTNERS = [
   },
 ];
 
-export const OFFICE = "161, S Block, GK-2, Delhi 110048";
+export const OFFICES = [
+  {
+    city: "Delhi",
+    address: "161, S Block, GK-2, Delhi 110048",
+  },
+  {
+    city: "Bangalore",
+    address: "1st Floor, The Horizon, Richmond Town, Bangalore, 560025",
+  },
+  {
+    city: "Ludhiana",
+    address: "South City, Ayali Khurd, Ludhiana, Punjab 142027",
+  },
+  {
+    city: "Raipur",
+    address: "1st Floor, G8, ATM Chowk, Avanti Vihar, Sector 1, Shankar Nagar, Raipur, Chhattisgarh 492001",
+  },
+] as const;
+
+export const OFFICE = OFFICES[0].address;

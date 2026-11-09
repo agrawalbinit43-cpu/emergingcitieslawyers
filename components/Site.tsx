@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
 import Footer from "@/components/Footer";
-import { AI_CHECKS, ALLIED, OFFICE, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
+import { AI_CHECKS, ALLIED, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS, SPEAKING } from "@/lib/writing";
 
@@ -201,7 +201,14 @@ export default function Site() {
                   </a>
                 ))}
               </div>
-              <p className="mt-10 text-base text-dust">{OFFICE}</p>
+              <ul className="mt-12 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+                {OFFICES.map((o) => (
+                  <li key={o.city} data-reveal="rise" className="flex flex-col gap-1">
+                    <span className="font-display text-[15px] font-semibold text-maroon">{o.city}</span>
+                    <span className="text-base text-dust">{o.address}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
