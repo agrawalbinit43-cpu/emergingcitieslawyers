@@ -168,7 +168,7 @@ export default function Site() {
 
         <section id="writing" className={SECTION}>
           <div className={`${WRAP} ${ROW}`}>
-            <h2 className={NOTE}>Writing &amp; research</h2>
+            <h2 className={NOTE}>Thought leadership</h2>
             <div className={MAIN}>
               <h3 className="mb-2 font-display text-[21px] font-semibold">Commentary</h3>
               <Pieces items={COMMENTARY} />
