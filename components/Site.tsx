@@ -4,7 +4,6 @@ import Motion from "@/components/Motion";
 import Nav from "@/components/Nav";
 import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
-import Outlets from "@/components/Outlets";
 import Footer from "@/components/Footer";
 import { AI_CHECKS, ALLIED, OFFICE, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
@@ -172,9 +171,6 @@ export default function Site() {
         </section>
 
         <section id="writing" className={SECTION}>
-          <div className={WRAP}>
-            <Outlets />
-          </div>
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>Thought leadership</h2>
             <div className={MAIN}>

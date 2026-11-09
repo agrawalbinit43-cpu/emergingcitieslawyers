@@ -107,21 +107,3 @@
   @keyframes cue { 0% { transform: translateY(-14px); } 100% { transform: translateY(36px); } }
   @media (prefers-reduced-motion: reduce) { .cue-line::after { animation: none; transform: translateY(8px); } }
 }
-
-/* Outlets band in Thought leadership (components/Outlets.tsx): outline lettering in gold-deep, a slow marquee. */
-@layer components {
-  .outlets-band { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-  .outlet { white-space: nowrap; line-height: 1.1; font-size: 32px; color: transparent; -webkit-text-stroke: 1px var(--color-gold-deep); }
-  @media (min-width: 768px) { .outlet { font-size: clamp(36px, 4.6vw, 68px); } }
-  .outlet-serif { font-family: var(--font-text); }
-  .outlet-sans { font-family: var(--font-display); font-weight: 500; font-stretch: 85%; text-transform: uppercase; letter-spacing: 0.01em; }
-  .outlet-dot { width: 6px; height: 6px; background: var(--color-gold-deep); transform: rotate(45deg); margin-inline: clamp(40px, 4vw, 72px); flex: none; }
-  @media (prefers-reduced-motion: reduce) {
-    .outlets-band { -webkit-mask-image: none; mask-image: none; }
-    .outlets-track { width: auto; }
-    .outlets-track > .outlets-line + .outlets-line { display: none; }
-    .outlets-line { flex-wrap: wrap; justify-content: center; row-gap: 16px; flex-shrink: 1; }
-    .outlet { font-size: clamp(24px, 3vw, 40px); }
-    .outlet-dot { margin-inline: 24px; }
-  }
-}
