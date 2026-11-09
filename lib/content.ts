@@ -45,7 +45,6 @@ export const PRACTICE = [
 export const WORK = [
   ["Venture financing", "Guided early- to mid-stage founders from incorporation and NDAs through term sheets to convertible note rounds."],
   ["Funds & PE", "Worked on deal structuring and investments for leading fund managers and investors, and advised a US-fund on their India strategy."],
-  ["Acquisitions", "Advised AnswersAI on an acquisition."],
   ["India entry", "Helped set up a foreign technology company’s back office in India: strategy, entity, compliance, employment, and trade marks."],
   ["Trade marks", "Acted for a range of clients on trade mark applications, registrations, and disputes."],
   ["Litigation", "Appeared before the Supreme Court, High Courts in several states, company law tribunals, and local courts across commercial, constitutional, and consumer matters."],
@@ -57,7 +56,7 @@ export const WORK = [
   ["Arbitration & mediation", "Acted in a DIAC arbitration that ended in settlement, and in court-annexed mediation."],
   ["Competition", "Acted on merger filings and antitrust litigation before the CCI. Advised on competition law, with a focus on digital markets."],
   ["Employment", "Advised a major fund and a mid-stage startup on employment and labour law compliance."],
-  ["Corporate advisory", "Advised technology and consumer start-ups, school trusts, societies and energy companies across corporate compliance, transactions, and disputes."],
+  ["Corporate advisory", "Advised technology and consumer start-ups, school trusts, societies and energy companies on corporate compliance, transactions and disputes, including an AI start-up on an acquisition."],
   ["MSME compliance", "Advised the Punjab Dyers Association on compliance with MSME laws."],
   ["Government advisory", "Advised the Climate Change Council, Government of Meghalaya, on enforcement."],
 ] as const;
