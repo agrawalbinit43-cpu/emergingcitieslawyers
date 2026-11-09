@@ -90,7 +90,7 @@ export const PARTNERS = [
     role: "Corporate, transactions, competition, technology",
     bio: [
       "Binit advises on VC and PE deals, corporate work, competition law and technology regulation. He worked in the PE/VC team at Khaitan & Co, and filed merger notices before the CCI at Axiom5 Law Chambers, a competition boutique. He also trained for six months with the technology and corporate teams of Bae, Kim & Lee in Seoul. As Head of Strategy at Lucio, a legal AI company, he led its expansion abroad, fundraising and hiring.",
-      "His clients have included UNDP, the Digital Cooperation Organisation in Saudi Arabia, Open Society Foundations and GIZ. He is an Affiliate Fellow of the Cyril Shroff Centre for AI, Law & Regulation, and has appeared before the Supreme Court, several High Courts and the NCLAT.",
+      "He has worked as a consultant with UNDP, the Digital Cooperation Organisation in Saudi Arabia, Open Society Foundations and GIZ. He is an Affiliate Fellow of the Cyril Shroff Centre for AI, Law & Regulation, and has appeared before the Supreme Court, several High Courts and the NCLAT.",
     ],
     edu: ["B.A. LL.B. (Hons.), National Law School of India University", "M.A. LL.M., University of Vienna (European Master in Law and Economics)"],
     email: "ba@emergingcitieslawyers.com",
