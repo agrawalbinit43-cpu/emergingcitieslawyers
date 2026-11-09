@@ -7,7 +7,7 @@ import Landmarks from "@/components/Landmarks";
 import Footer from "@/components/Footer";
 import { AI_CHECKS, ALLIED, OFFICE, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
-import { COMMENTARY, JOURNALS } from "@/lib/writing";
+import { COMMENTARY, JOURNALS, SPEAKING } from "@/lib/writing";
 
 export default function Site() {
   return (
@@ -178,6 +178,8 @@ export default function Site() {
               <Pieces items={COMMENTARY} />
               <h3 className="mb-2 mt-[72px] font-display text-[21px] font-semibold">Journals &amp; books</h3>
               <Pieces items={JOURNALS} />
+              <h3 className="mb-2 mt-[72px] font-display text-[21px] font-semibold">Speaking</h3>
+              <Pieces items={SPEAKING} />
             </div>
           </div>
         </section>
