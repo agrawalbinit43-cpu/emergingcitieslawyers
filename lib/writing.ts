@@ -34,6 +34,7 @@ export const JOURNALS: Piece[] = [
 
 /** Talks, panels and podcasts, newest first. Each links to the episode or the LinkedIn post about it. */
 export const SPEAKING: Piece[] = [
+  { outlet: "Yale Amicus", date: "24 Oct 2026", dt: "2026-10-24", title: "Interview with Joel Vincent on how young people build agency within political institutions and beyond them", by: "Prannv Dhawan", href: "https://www.youtube.com/watch?v=z5utDEMmgdo&t=202s" },
   { outlet: "SCiDA podcast", date: "Mar 2026", dt: "2026-03", title: "AI and competition law, with Anush Ganesh and Kena Zheng", by: "Binit Agrawal", href: "https://open.spotify.com/episode/5ul2nRRIz96HvsZUau6ba4" },
   { outlet: "Competition Law & AI Summit, London", date: "2025", dt: "2025", title: "Panel on data, copyright and competition in AI markets", by: "Binit Agrawal", href: "https://www.linkedin.com/feed/update/urn:li:activity:7402289816320868352/" },
   { outlet: "UNDP Sri Lanka & Geneva Graduate Institute", date: "Nov 2025", dt: "2025-11", title: "Two sessions on legal AI for judges of the Supreme Court of Sri Lanka", by: "Binit Agrawal", href: "https://www.linkedin.com/feed/update/urn:li:activity:7396805789665067008/" },
