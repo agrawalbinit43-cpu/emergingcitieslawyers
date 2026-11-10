@@ -67,12 +67,12 @@ export default function Hero() {
       // every named node, and the hub, can be dragged and left anywhere in the graph
       let drag: { i: number; dx: number; dy: number; sx: number; sy: number } | null = null;
 
-      // a click (a press that barely moves) shows that point's note for a few seconds
+      // hovering or focusing a point shows its note until the pointer leaves; a tap does the same on touch screens
       const tip = root.current!.querySelector<HTMLElement>(".tip")!;
       const fig = root.current!.querySelector<HTMLElement>(".graph-wrap")!;
       const still = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       let shown = -1;
-      let fade: gsap.core.Timeline | null = null;
+      let fade: gsap.core.Tween | null = null;
       const place = () => {
         if (shown < 0) return;
         const d = els[shown].querySelector(".dot")!.getBoundingClientRect();
@@ -89,10 +89,12 @@ export default function Hero() {
         tip.textContent = (i < HUB_I ? NAMED[i] : HUB).note;
         place();
         fade?.kill();
-        fade = gsap
-          .timeline({ onComplete: () => void (shown = -1) })
-          .fromTo(tip, { autoAlpha: 0, y: still() ? 0 : 6 }, { autoAlpha: 1, y: 0, duration: still() ? 0 : 0.35, ease: "power2.out" })
-          .to(tip, { autoAlpha: 0, y: still() ? 0 : -4, duration: still() ? 0 : 1, ease: "sine.inOut" }, "+=1.15");
+        fade = gsap.fromTo(tip, { autoAlpha: 0, y: still() ? 0 : 6 }, { autoAlpha: 1, y: 0, duration: still() ? 0 : 0.3, ease: "power2.out" });
+      };
+      const hide = (i: number) => {
+        if (shown !== i) return;
+        fade?.kill();
+        fade = gsap.to(tip, { autoAlpha: 0, duration: still() ? 0 : 0.25, ease: "sine.out", onComplete: () => void (shown = -1) });
       };
       const toSvg = (e: PointerEvent) => {
         const pt = svg.createSVGPoint();
@@ -101,8 +103,17 @@ export default function Hero() {
         return pt.matrixTransform(svg.getScreenCTM()!.inverse());
       };
       els.slice(0, HUB_I + 1).forEach((n, i) => {
-        n.addEventListener("pointerenter", () => light(i, true));
-        n.addEventListener("pointerleave", () => drag?.i !== i && light(i, false));
+        n.addEventListener("pointerenter", (e) => {
+          light(i, true);
+          if (e.pointerType === "mouse" || e.pointerType === "pen") show(i);
+        });
+        n.addEventListener("pointerleave", () => {
+          if (drag?.i === i) return;
+          light(i, false);
+          hide(i);
+        });
+        n.addEventListener("focus", () => show(i));
+        n.addEventListener("blur", () => hide(i));
         n.addEventListener("pointerdown", (e) => {
           e.preventDefault();
           n.setPointerCapture(e.pointerId);
@@ -123,7 +134,7 @@ export default function Hero() {
           if (drag?.i !== i) return;
           const tap = e.type === "pointerup" && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < 6;
           drag = null;
-          if (tap) show(i);
+          if (tap && e.pointerType === "touch") show(i);
           n.classList.remove("dragging");
           light(i, false);
         };
@@ -244,8 +255,7 @@ export default function Hero() {
       </div>
       {/* The graph takes the right half of the hero, top to bottom; on a phone it follows the text. */}
       <figure data-hero className="graph-wrap relative px-4 pb-10 md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:pl-[8vw] md:pr-0 md:pb-4 md:pt-20">
-        <svg className="graph block h-auto w-full -translate-x-[5%] overflow-visible md:h-full md:translate-x-0" viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="group" aria-labelledby="graph-title">
-          <title id="graph-title">{`Where our lawyers studied, practised and worked: ${NAMED.map((n) => n.label).join(", ")}.`}</title>
+        <svg className="graph block h-auto w-full -translate-x-[5%] overflow-visible md:h-full md:translate-x-0" viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="group" aria-label={`Where our lawyers studied, practised and worked: ${NAMED.map((n) => n.label).join(", ")}.`}>
           {EDGES.map(({ a, b, kind }, k) => (
             <line key={k} className={kind} x1={anchor(a).x} y1={anchor(a).y} x2={anchor(b).x} y2={anchor(b).y} pathLength={1} />
           ))}
@@ -285,7 +295,7 @@ export default function Hero() {
         <span aria-hidden="true" className="cue-line" />
         <span>Scroll</span>
         <span aria-hidden="true" className="text-gold/70">/</span>
-        <span className="font-normal normal-case tracking-normal text-rose/50">Where our lawyers studied and worked. Click or drag any point.</span>
+        <span className="font-normal normal-case tracking-normal text-rose/50">Where our lawyers studied and worked. Hover over or drag any point.</span>
       </div>
     </header>
   );
