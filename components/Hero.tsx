@@ -102,15 +102,23 @@ export default function Hero() {
         pt.y = e.clientY;
         return pt.matrixTransform(svg.getScreenCTM()!.inverse());
       };
+      // on touch screens, a tap anywhere outside the points closes the open note
+      const tapOut = (e: PointerEvent) => {
+        if (e.pointerType !== "touch" || shown < 0) return;
+        if ((e.target as Element).closest?.(".graph .node, .graph .hub")) return;
+        hide(shown);
+      };
+      document.addEventListener("pointerdown", tapOut);
       els.slice(0, HUB_I + 1).forEach((n, i) => {
         n.addEventListener("pointerenter", (e) => {
           light(i, true);
           if (e.pointerType === "mouse" || e.pointerType === "pen") show(i);
         });
-        n.addEventListener("pointerleave", () => {
+        n.addEventListener("pointerleave", (e) => {
           if (drag?.i === i) return;
           light(i, false);
-          hide(i);
+          // a finger lifting off also "leaves" the point; on touch the note stays until the next tap elsewhere
+          if (e.pointerType !== "touch") hide(i);
         });
         n.addEventListener("focus", () => show(i));
         n.addEventListener("blur", () => hide(i));
@@ -211,6 +219,7 @@ export default function Hero() {
           gsap.ticker.remove(render);
         };
       });
+      return () => document.removeEventListener("pointerdown", tapOut);
     },
     { scope: root },
   );
