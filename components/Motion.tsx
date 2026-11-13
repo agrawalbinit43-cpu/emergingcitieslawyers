@@ -19,11 +19,19 @@ declare global {
  *   data-reveal="rise"   fades up; neighbours entering together are staggered
  *   data-reveal="wipe"   a picture opens from the bottom as it settles from a slight zoom
  *   data-reveal="draw"   a rule draws from the left
+ *   data-reveal="slide"  slides in from the left; rows entering together are staggered
+ * Every section's side heading also gets a short gold rule that draws in beneath it.
  */
 export default function Motion() {
   useGSAP(() => {
     clearTimeout(window.__eclFallback);
     const mm = gsap.matchMedia();
+
+    const rules = gsap.utils.toArray<HTMLElement>("h2.note").map((h) => {
+      const r = h.querySelector<HTMLElement>(".note-rule") ?? h.appendChild(Object.assign(document.createElement("span"), { className: "note-rule" }));
+      r.setAttribute("aria-hidden", "true");
+      return r;
+    });
 
     mm.add("(prefers-reduced-motion: reduce)", () => {
       gsap.set("[data-reveal]", { autoAlpha: 1 });
@@ -49,6 +57,15 @@ export default function Motion() {
         once: true,
         onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, y: 0, duration: 1.1, ease: "expo.out", stagger: 0.08, overwrite: true }),
       });
+
+      gsap.set('[data-reveal="slide"]', { autoAlpha: 0, x: -40 });
+      ScrollTrigger.batch('[data-reveal="slide"]', {
+        start: "top 92%",
+        once: true,
+        onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, x: 0, duration: 1.1, ease: "expo.out", stagger: 0.07, overwrite: true }),
+      });
+
+      rules.forEach((r) => gsap.fromTo(r, { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "expo.inOut", scrollTrigger: once(r, "top 90%") }));
 
       gsap.utils.toArray<HTMLElement>('[data-reveal="wipe"]').forEach((el) => {
         const img = el.querySelector("img");

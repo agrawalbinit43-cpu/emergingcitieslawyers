@@ -2,6 +2,7 @@
 
 export const SECTIONS = [
   { id: "about", label: "About" },
+  { id: "ai", label: "AI" },
   { id: "practice", label: "Practice" },
   { id: "approach", label: "Approach" },
   { id: "partners", label: "Partners" },
@@ -32,14 +33,14 @@ export const GRAPH_NODES = [
 export const GRAPH_LINKS: [number, number][] = [[0, 8], [0, 9], [7, 10], [4, 11], [1, 2], [3, 4], [6, 5], [7, 6]];
 
 export const PRACTICE = [
-  ["Start-ups & venture financing", "Incorporation, founder agreements, ESOPs, term sheets, NDAs and regulatory filings."],
-  ["Corporate & commercial", "Structuring, transactions, contracts, governance and company secretarial work."],
-  ["Disputes & litigation", "Supreme Court, High Courts and NCLAT. Strategy before filing, and arbitration."],
-  ["Intellectual property", "Trade mark searches, filings, oppositions and enforcement. Assignment and licensing."],
-  ["India entry & cross-border", "Operating model, entity set-up, investment rules and back-office support for foreign companies."],
-  ["Competition & antitrust", "Merger filings, investigations and appeals before the Competition Commission of India (CCI), including digital markets."],
-  ["Employment & labour", "Contracts, policies, labour codes, incentive plans and exits."],
-  ["Technology, data & AI", "DPDP Act compliance, cross-border transfers, SaaS agreements and AI governance."],
+  ["Start-ups & venture financing", "Incorporation, ESOPs, term sheets and funding rounds."],
+  ["Corporate & commercial", "Transactions, governance and company secretarial work."],
+  ["Disputes & litigation", "Supreme Court, High Courts, NCLAT and arbitration."],
+  ["Intellectual property", "Trade mark filings, oppositions and enforcement."],
+  ["India entry & cross-border", "Entity set-up and back offices for foreign companies."],
+  ["Competition & antitrust", "Merger filings and CCI cases, including digital markets."],
+  ["Employment & labour", "Contracts, policies, labour codes and exits."],
+  ["Technology, data & AI", "DPDP compliance, SaaS agreements and AI governance."],
 ] as const;
 
 export const WORK = [
@@ -62,11 +63,17 @@ export const PRINCIPLES = [
   ["Fee transparency", "Fixed fees or simple retainers, agreed upfront."],
 ] as const;
 
+/** The AI section: three illustrated cards (components/AiScenes.tsx draws them, in this order). */
+export const AI_CARDS = [
+  ["On our machines", "Our harnesses run open-source models locally. Sensitive files stay on our devices."],
+  ["Built in-house", "We assemble our tools from open-source parts, so we know what each step does with your work."],
+  ["Faster, for less", "AI takes the research and first drafts. You pay for judgement, never for the software."],
+] as const;
+
 export const AI_CHECKS = [
-  "A lawyer checks every AI-assisted draft and answers for it.",
-  "Your engagement letter names the tools we use.",
+  "A lawyer reviews and signs every draft.",
+  "Your engagement letter names our tools.",
   "You can opt out of any of them.",
-  "No separate charge for them.",
 ];
 
 export const ALLIED = [

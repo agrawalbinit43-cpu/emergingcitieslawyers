@@ -5,7 +5,8 @@ import Nav from "@/components/Nav";
 import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
 import Footer from "@/components/Footer";
-import { AI_CHECKS, ALLIED, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
+import AiScenes from "@/components/AiScenes";
+import { AI_CARDS, AI_CHECKS, ALLIED, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS, SPEAKING } from "@/lib/writing";
 
@@ -30,17 +31,54 @@ export default function Site() {
               <p data-reveal="rise" className="max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6] [text-wrap:pretty]">
                 Young companies and fast-growing cities face the same legal questions as established ones. Good counsel is harder for them to find. We handle the deals, the regulation and the disputes.
               </p>
-              <dl className="mt-12 grid max-w-[52em] grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
-                <div data-reveal="rise">
-                  <dt className="mb-1 font-display font-semibold text-maroon">Who we act for</dt>
-                  <dd className="text-base leading-[1.55]">Start-ups, SMEs, family businesses, funds (PE, VC and debt), foreign companies entering India, and international organisations.</dd>
-                </div>
-                <div data-reveal="rise">
-                  <dt className="mb-1 font-display font-semibold text-maroon">How we work</dt>
-                  <dd className="text-base leading-[1.55]">Counsel-led work, AI and technology for faster delivery, and transparency around time spent.</dd>
-                </div>
+              <dl data-reveal="rise" className="mt-12 max-w-[34em]">
+                <dt className="mb-1 font-display font-semibold text-maroon">Who we act for</dt>
+                <dd className="text-base leading-[1.55]">Start-ups, AI and technology companies, SMEs, family businesses, funds (PE, VC and debt), foreign companies entering India, and international organisations.</dd>
               </dl>
             </div>
+          </div>
+        </section>
+
+        <section id="ai" className={`bg-blush ${SECTION}`}>
+          <div className={`${WRAP} ${ROW}`}>
+            <h2 className={NOTE}>AI-native</h2>
+            <div className={MAIN}>
+              <p data-reveal="lines" className="lead mb-[.55em] max-w-[14em] text-maroon">
+                AI does the groundwork. Lawyers own the advice.
+              </p>
+              <p data-reveal="rise" className="max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6] [text-wrap:pretty]">
+                We build AI tools for legal work and run them on our own devices. Work moves faster and stays private.
+              </p>
+            </div>
+          </div>
+          <div className={WRAP}>
+            <ul className="mt-[clamp(40px,5vw,64px)] grid grid-cols-1 gap-6 md:grid-cols-3">
+              {AI_CARDS.map(([name, what], i) => (
+                <li key={name} data-reveal="rise" className="flex flex-col border border-line bg-paper">
+                  <AiScenes scene={i} />
+                  <div className="border-t border-line p-6">
+                    <h3 className="mb-2 font-display text-[21px] font-semibold text-maroon">{name}</h3>
+                    <p className="text-base leading-[1.55]">{what}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={`${WRAP} ${ROW} mt-[clamp(56px,6vw,88px)]`}>
+            <h3 className={NOTE}>Our checks</h3>
+            <ul className={`${MAIN} grid max-w-[52em] grid-cols-1 gap-x-10 sm:grid-cols-3`}>
+              {AI_CHECKS.map((c) => (
+                <li key={c} data-reveal="rise" className="relative border-t border-line py-3 pl-[30px] text-base leading-[1.5] before:absolute before:left-0.5 before:top-[1.2em] before:h-[7px] before:w-[13px] before:-rotate-45 before:border-b-2 before:border-l-2 before:border-gold-deep">
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={`${WRAP} ${ROW} mt-[clamp(56px,6vw,88px)]`}>
+            <h3 className={NOTE}>For AI companies</h3>
+            <p data-reveal="rise" className={`${MAIN} max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6]`}>
+              We act for AI start-ups and tech companies from first incorporation to later rounds. We also help them build products that work for lawyers.
+            </p>
           </div>
         </section>
 
@@ -80,22 +118,6 @@ export default function Site() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className={`${WRAP} ${ROW} mt-[clamp(72px,8vw,112px)]`}>
-            <h3 className={NOTE}>An AI-native practice</h3>
-            <div className={MAIN}>
-              <p data-reveal="rise" className="max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6]">
-                We call it <em className="text-gold-deep">service as software</em>: AI in research, drafting and review, so good work comes faster and costs less.
-              </p>
-              <ul className="mt-7 grid max-w-[52em] grid-cols-1 gap-x-10 sm:grid-cols-2">
-                {AI_CHECKS.map((c) => (
-                  <li key={c} data-reveal="rise" className="relative border-t border-line py-3 pl-[30px] text-base leading-[1.5] before:absolute before:left-0.5 before:top-[1.2em] before:h-[7px] before:w-[13px] before:-rotate-45 before:border-b-2 before:border-l-2 before:border-gold-deep">
-                    {c}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
           <div className={`${WRAP} ${ROW} mt-[clamp(72px,8vw,112px)]`}>
@@ -158,12 +180,25 @@ export default function Site() {
           </div>
           <ul className={`${WRAP} mt-10`}>
             {WORK.map(([area, what]) => (
-              <li key={area} data-reveal="rise" className={`${ROW} items-baseline gap-y-1.5 border-t border-line py-[22px] last:border-b`}>
+              <li key={area} data-reveal="slide" className={`${ROW} items-baseline gap-y-1.5 border-t border-line py-[22px] last:border-b`}>
                 <p className="col-span-12 font-display font-semibold text-gold-deep md:col-span-3">{area}</p>
                 <div className="col-span-12 max-w-[36em] space-y-3 text-[clamp(18px,1.4vw,21px)] leading-[1.5] md:col-span-9 md:col-start-4">
-                  {what.split("\n\n").map((para) => (
+                  {what.split("\n\n").slice(0, 3).map((para) => (
                     <p key={para}>{para}</p>
                   ))}
+                  {what.split("\n\n").length > 3 && (
+                    <details className="group">
+                      <summary className="w-fit cursor-pointer list-none font-display text-[15px] font-semibold text-gold-deep underline decoration-gold-deep/50 underline-offset-4 hover:decoration-gold-deep [&::-webkit-details-marker]:hidden">
+                        <span className="group-open:hidden">More</span>
+                        <span className="hidden group-open:inline">Less</span>
+                      </summary>
+                      <div className="mt-3 space-y-3">
+                        {what.split("\n\n").slice(3).map((para) => (
+                          <p key={para}>{para}</p>
+                        ))}
+                      </div>
+                    </details>
+                  )}
                 </div>
               </li>
             ))}
