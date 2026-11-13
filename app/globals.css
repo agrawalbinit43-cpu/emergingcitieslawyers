@@ -153,6 +153,41 @@
   @keyframes t0 { 0% { transform: scaleX(1); } 2%, 4% { transform: scaleX(0); } 20%, 90% { transform: scaleX(1); } 96%, 100% { transform: scaleX(0); } }
   @keyframes t1 { 0%, 22% { transform: scaleX(0); } 38%, 90% { transform: scaleX(1); } 96%, 100% { transform: scaleX(0); } }
   @keyframes t2 { 0%, 42% { transform: scaleX(0); } 58%, 90% { transform: scaleX(1); } 96%, 100% { transform: scaleX(0); } }
+
+  /* Card 4 (v5): platform and firm loop; each pass adds a line to the tailored document */
+  .scene .c6-led { fill: var(--color-gold-deep); }
+  .scene .c6-arc { fill: none; stroke: var(--color-maroon); stroke-width: 1; opacity: .35; stroke-dasharray: 2 4; stroke-linecap: round; }
+  .scene .gold-arc { stroke: var(--color-gold-deep); opacity: .6; }
+  .scene .c6-head { fill: none; stroke: var(--color-maroon); stroke-width: 1.25; opacity: .5; stroke-linecap: round; stroke-linejoin: round; }
+  .scene .gold-head { stroke: var(--color-gold-deep); opacity: .75; }
+  .scene .c6-ln { stroke: var(--color-gold-deep); stroke-width: 1.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .scene .c6-sect { fill: var(--color-maroon); }
+  .scene .c6-ring { fill: none; stroke: var(--color-gold-deep); stroke-width: 1; opacity: .35; transform-box: fill-box; transform-origin: center; }
+  .scene .c6-dot { opacity: 0; offset-rotate: 0deg; }
+  .scene .c6-top { fill: var(--color-maroon); }
+  .scene .c6-bot { fill: var(--color-gold-deep); }
+  @media (prefers-reduced-motion: no-preference) {
+    .scene .c6-top { animation: c6-top 6s ease-in-out infinite; }
+    .scene .c6-bot { animation: c6-bot 6s ease-in-out infinite; }
+    .scene .c6-ln0 { animation: c6-ln0 6s ease-out infinite; }
+    .scene .c6-ln1 { animation: c6-ln1 6s ease-out infinite; }
+    .scene .c6-ln2 { animation: c6-ln2 6s ease-out infinite; }
+    .scene .c6-sect { animation: c6-sect 6s ease-out infinite; }
+    .scene .c6-ring { animation: c6-ring 6s ease-out infinite; }
+  }
+  /* passes: top 0-20%, bottom 22-42%, top 44-64%; mark 66%; hold; reset 94-100% */
+  @keyframes c6-top {
+    0% { offset-distance: 0%; opacity: 0; } 3% { opacity: 1; } 18% { opacity: 1; } 20% { offset-distance: 100%; opacity: 0; }
+    20.1%, 43.9% { offset-distance: 0%; opacity: 0; } 47% { opacity: 1; } 62% { opacity: 1; } 64% { offset-distance: 100%; opacity: 0; } 100% { offset-distance: 100%; opacity: 0; }
+  }
+  @keyframes c6-bot {
+    0%, 22% { offset-distance: 0%; opacity: 0; } 25% { opacity: 1; } 40% { opacity: 1; } 42% { offset-distance: 100%; opacity: 0; } 100% { offset-distance: 100%; opacity: 0; }
+  }
+  @keyframes c6-ln0 { 0%, 9% { stroke-dashoffset: 1; } 16%, 94% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+  @keyframes c6-ln1 { 0%, 31% { stroke-dashoffset: 1; } 38%, 94% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+  @keyframes c6-ln2 { 0%, 53% { stroke-dashoffset: 1; } 60%, 94% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+  @keyframes c6-sect { 0%, 63% { opacity: 0; } 69%, 94% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes c6-ring { 0%, 64% { opacity: 0; transform: scale(.85); } 72% { opacity: .5; transform: scale(1); } 90% { opacity: .35; } 96%, 100% { opacity: 0; transform: scale(1); } }
   @keyframes k0 { 0%, 20% { stroke-dashoffset: 1; opacity: 0; } 26%, 90% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { opacity: 0; stroke-dashoffset: 1; } }
   @keyframes k1 { 0%, 40% { stroke-dashoffset: 1; opacity: 0; } 46%, 90% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { opacity: 0; stroke-dashoffset: 1; } }
   @keyframes k2 { 0%, 60% { stroke-dashoffset: 1; opacity: 0; } 66%, 90% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { opacity: 0; stroke-dashoffset: 1; } }

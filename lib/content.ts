@@ -65,9 +65,10 @@ export const PRINCIPLES = [
 
 /** The AI section: three illustrated cards (components/AiScenes.tsx draws them, in this order). */
 export const AI_CARDS = [
-  ["On our machines", "Our AI harnesses and agents run locally. Sensitive files stay on our devices."],
-  ["Built in-house", "We assemble our tools from open-source parts, so we know what each step does with your work."],
-  ["Faster, for less", "AI does everything it is good at. You pay for legal acumen, never for the software or for work that is better automated."],
+  ["On our machines", "Our AI tools and agents run locally. Sensitive files stay with us."],
+  ["Built in-house", "We assemble our tools from open-source parts, so we know what each step does with your files."],
+  ["Faster", "AI handles what it does best. You pay for legal judgement, never for software or for tasks a machine does better."],
+  ["Co-created", "We team up with AI platforms to tailor products for legal work, then use them on your matters."],
 ] as const;
 
 export const AI_CHECKS = [

@@ -47,12 +47,12 @@ export default function Site() {
                 AI does the groundwork. Lawyers own the advice.
               </p>
               <p data-reveal="rise" className="max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6] [text-wrap:pretty]">
-                We build AI tools for legal work and run them on our own devices. Work moves faster and stays private.
+                We build AI tools for legal practice and run them on our own devices. Matters move faster and stay private.
               </p>
             </div>
           </div>
           <div className={WRAP}>
-            <ul className="mt-[clamp(40px,5vw,64px)] grid grid-cols-1 gap-6 md:grid-cols-3">
+            <ul className="mt-[clamp(40px,5vw,64px)] grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
               {AI_CARDS.map(([name, what], i) => (
                 <li key={name} data-reveal="rise" className="flex flex-col border border-line bg-paper">
                   <AiScenes scene={i} />
@@ -73,9 +73,6 @@ export default function Site() {
                 </li>
               ))}
             </ul>
-            <p data-reveal="rise" className={`${MAIN} mt-10 max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6]`}>
-              We work closely with AI service providers to help them tailor their products for the legal services market.
-            </p>
           </div>
         </section>
 

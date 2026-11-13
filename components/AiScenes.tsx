@@ -1,15 +1,16 @@
 /**
- * ECL AI section scenes, v2 (viewBox 320x200). Pair with scenes-v2.css.
+ * ECL AI section scenes (viewBox 320x200). Card 4 v5: platform and firm loop.
  * Rest state (reduced motion): card 1 closed lock, no dots; card 2 hub only; card 3 all three rows typed and ticked.
  * All three devices are centred on y=100 so the cards share a horizon.
  */
 export default function AiScenes({ scene }: { scene: number }) {
   return (
-    <div aria-hidden="true" className="scene aspect-[16/10] w-full">
+    <div aria-hidden="true" className="scene aspect-[16/10] w-full px-2">
       <svg viewBox="0 0 320 200" className="h-full w-full">
         {scene === 0 && <Local />}
         {scene === 1 && <Parts />}
         {scene === 2 && <Laptop />}
+        {scene === 3 && <Loop />}
       </svg>
     </div>
   );
@@ -101,6 +102,50 @@ function Laptop() {
           </g>
         );
       })}
+    </>
+  );
+}
+
+/* Card 4 (v5, Web Studio): the AI platform (server stack, left) and the firm (laptop, right) pass work round a loop.
+   Upper arc: platform to firm (maroon dot). Lower arc: firm back to platform (gold dot).
+   Each pass adds a line to the document in the middle; on the last pass it gets its section mark and a gold ring.
+   Doc x140-180 y74-126, centred on y=100. Rest state: full document, mark and ring shown, dots hidden. */
+const LOOP_TOP = "M84 76 Q160 6 236 76";
+const LOOP_BOTTOM = "M236 124 Q160 194 84 124";
+
+function Loop() {
+  return (
+    <>
+      {/* platform: three-unit server stack */}
+      {[66, 90, 114].map((y) => (
+        <g key={y}>
+          <rect className="ink" x="16" y={y} width="68" height="20" rx="3" />
+          <circle className="c6-led" cx="27" cy={y + 10} r="2" />
+          <line className="ink faint" x1="38" y1={y + 10} x2="74" y2={y + 10} />
+        </g>
+      ))}
+      {/* firm: laptop */}
+      <Device x={236} y={70} w={70} h={50} />
+      <line className="ink faint" x1="246" y1="84" x2="296" y2="84" />
+      <line className="ink faint" x1="246" y1="94" x2="288" y2="94" />
+      <line className="ink faint" x1="246" y1="104" x2="292" y2="104" />
+
+      <path className="c6-arc" d={LOOP_TOP} />
+      <path className="c6-arc gold-arc" d={LOOP_BOTTOM} />
+      <path className="c6-head" d="M233.6 68.4 L236 76 L228.2 74.2" />
+      <path className="c6-head gold-head" d="M86.4 131.6 L84 124 L91.8 125.8" />
+
+      {/* the tailored document */}
+      <path className="ink" d="M134 64 h40 l12 12 v60 h-52 z" />
+      <path className="ink" d="M174 64 v12 h12" />
+      {[88, 99, 110].map((y, i) => (
+        <line key={y} className={`c6-ln c6-ln${i}`} x1="143" y1={y} x2={i === 2 ? 164 : 177} y2={y} pathLength={1} />
+      ))}
+      <text className="c6-sect" x="142" y="130">§</text>
+      <circle className="c6-ring" cx="160" cy="100" r="46" />
+
+      <circle className="c6-dot c6-top" r="3.5" style={{ offsetPath: `path("${LOOP_TOP}")` }} />
+      <circle className="c6-dot c6-bot" r="3.5" style={{ offsetPath: `path("${LOOP_BOTTOM}")` }} />
     </>
   );
 }
