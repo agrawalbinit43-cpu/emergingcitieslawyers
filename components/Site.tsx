@@ -73,6 +73,9 @@ export default function Site() {
                 </li>
               ))}
             </ul>
+            <p data-reveal="rise" className={`${MAIN} mt-10 max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6]`}>
+              We work closely with AI service providers to help them tailor their products for the legal services market.
+            </p>
           </div>
         </section>
 
