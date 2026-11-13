@@ -67,7 +67,7 @@ export const PRINCIPLES = [
 export const AI_CARDS = [
   ["On our machines", "Our AI harnesses and agents run locally. Sensitive files stay on our devices."],
   ["Built in-house", "We assemble our tools from open-source parts, so we know what each step does with your work."],
-  ["Faster, for less", "AI takes the research and first drafts. You pay for judgement, never for the software."],
+  ["Faster, for less", "AI does everything it is good at. You pay for legal acumen, never for the software or for work that is better automated."],
 ] as const;
 
 export const AI_CHECKS = [
