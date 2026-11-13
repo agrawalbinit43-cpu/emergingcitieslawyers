@@ -258,7 +258,7 @@ export default function Hero() {
             <span aria-hidden="true"><span>India.</span></span>
           </h1>
           <p data-hero className="lede mt-[clamp(28px,5vh,48px)] max-w-[28em] text-[clamp(18px,1.45vw,21px)] leading-[1.6] text-rose/75 [text-wrap:pretty] md:ml-[calc(var(--h1)*.4)]">
-            We are a law firm for emerging companies, emerging cities, and audacious individuals. Our lawyers trained at some of the world’s best law schools and organisations. We aspire to take that standard of counsel beyond big legal budgets. We use AI for everything automatable, and seek to pioneer a braver legal practice.
+            We are an AI-native law firm for emerging companies, emerging cities, and audacious individuals. Our lawyers trained at some of the world’s best law schools and organisations. We aspire to take that standard of counsel beyond big legal budgets. We use AI for everything automatable, and seek to pioneer a braver legal practice.
           </p>
         </div>      
       </div>
