@@ -34,6 +34,7 @@ export const JOURNALS: Piece[] = [
 
 /** Talks, panels and podcasts, newest first. Each links to the episode or the LinkedIn post about it. */
 export const SPEAKING: Piece[] = [
+  { outlet: "LawMic podcast", date: "13 Nov 2026", dt: "2026-11-13", title: "NVIDIA’s Jensen Huang case: what it means for AI governance, accountability and national security", by: "Binit Agrawal", href: "https://www.youtube.com/watch?v=0Z2elDlPufY&t=374s" },
   { outlet: "Yale Amicus", date: "24 Oct 2026", dt: "2026-10-24", title: "Interview with Yale Undergraduate Law Journal on how young people build agency within political institutions and beyond them", by: "Prannv Dhawan", href: "https://www.youtube.com/watch?v=z5utDEMmgdo&t=202s" },
   { outlet: "SCiDA podcast", date: "Mar 2026", dt: "2026-03", title: "AI and competition law, with Anush Ganesh and Kena Zheng", by: "Binit Agrawal", href: "https://open.spotify.com/episode/5ul2nRRIz96HvsZUau6ba4" },
   { outlet: "Competition Law & AI Summit, London", date: "2025", dt: "2025", title: "Panel on data, copyright and competition in AI markets", by: "Binit Agrawal", href: "https://www.linkedin.com/feed/update/urn:li:activity:7402289816320868352/" },
