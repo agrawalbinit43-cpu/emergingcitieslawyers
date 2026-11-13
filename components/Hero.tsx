@@ -203,7 +203,6 @@ export default function Hero() {
         const tl = gsap.timeline({ paused: true, defaults: { ease: "expo.out" } });
         tl.set(reveal, { autoAlpha: 1 })
           .from(".stagger > span > span", { yPercent: 110, duration: 1.3, stagger: 0.1 }, 0)
-          .from(".ai-tag", { autoAlpha: 0, y: 10, duration: 1 }, 0.15)
           .from(".lede", { autoAlpha: 0, y: 18, duration: 1.2 }, 0.45)
           .from(".graph line", { strokeDashoffset: 1, duration: 1.8, stagger: { each: 0.03, from: "start" } }, 0.3)
           .from(".graph .dot", { scale: 0, transformOrigin: "50% 50%", duration: 1, stagger: 0.04 }, 0.4)
@@ -253,17 +252,13 @@ export default function Hero() {
         </nav>
 
         <div className="hero-text pointer-events-auto flex flex-1 flex-col justify-center pb-[clamp(32px,6vh,72px)] pt-6 md:w-[52%] md:pt-0 [--h1:14vw] md:[--h1:clamp(52px,6.6vw,104px)]">
-          <p data-hero className="ai-tag mb-8 flex w-fit items-center gap-2.5 border border-gold/55 px-4 pb-2 pt-[9px] font-display text-[11px] font-semibold uppercase leading-none tracking-[0.2em] text-gold [font-variation-settings:'wdth'_112]">
-            <span aria-hidden="true" className="ai-dot" />
-            AI-native law firm
-          </p>
           <h1 data-hero className="stagger" aria-label="Law for emerging India.">
             <span aria-hidden="true"><span>Law for</span></span>
             <span aria-hidden="true" className="max-md:pl-[.8em]!"><span>emerging</span></span>
             <span aria-hidden="true"><span>India.</span></span>
           </h1>
           <p data-hero className="lede mt-[clamp(28px,5vh,48px)] max-w-[28em] text-[clamp(18px,1.45vw,21px)] leading-[1.6] text-rose/75 [text-wrap:pretty] md:ml-[calc(var(--h1)*.4)]">
-            We are a law firm for emerging companies, emerging cities, and audacious individuals. Our lawyers trained at some of the world’s best law schools and organisations. We aspire to take that standard of counsel beyond big legal budgets. We use AI at every step, and seek to pioneer a braver legal practice.
+            We are a law firm for emerging companies, emerging cities, and audacious individuals. Our lawyers trained at some of the world’s best law schools and organisations. We aspire to take that standard of counsel beyond big legal budgets. We use AI for everything automatable, and seek to pioneer a braver legal practice.
           </p>
         </div>      
       </div>
