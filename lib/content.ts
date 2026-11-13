@@ -65,7 +65,7 @@ export const PRINCIPLES = [
 
 /** The AI section: three illustrated cards (components/AiScenes.tsx draws them, in this order). */
 export const AI_CARDS = [
-  ["On our machines", "Our harnesses run open-source models locally. Sensitive files stay on our devices."],
+  ["On our machines", "Our AI harnesses and agents run locally. Sensitive files stay on our devices."],
   ["Built in-house", "We assemble our tools from open-source parts, so we know what each step does with your work."],
   ["Faster, for less", "AI takes the research and first drafts. You pay for judgement, never for the software."],
 ] as const;
