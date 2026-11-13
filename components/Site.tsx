@@ -74,12 +74,6 @@ export default function Site() {
               ))}
             </ul>
           </div>
-          <div className={`${WRAP} ${ROW} mt-[clamp(56px,6vw,88px)]`}>
-            <h3 className={NOTE}>For AI companies</h3>
-            <p data-reveal="rise" className={`${MAIN} max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6]`}>
-              We act for AI start-ups and tech companies from first incorporation to later rounds. We also help them build products that work for lawyers.
-            </p>
-          </div>
         </section>
 
         <section id="practice" className="pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)]">
