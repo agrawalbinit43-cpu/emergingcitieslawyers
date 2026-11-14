@@ -1,6 +1,6 @@
 /**
  * ECL AI section scenes (viewBox 320x200). Card 4 v5: platform and firm loop.
- * Rest state (reduced motion): card 1 closed lock, no dots; card 2 hub only; card 3 all three rows typed and ticked.
+ * Rest state (reduced motion): card 1 closed lock, no dots; card 2 hub only; card 3 bars full, ticked, hand stopped.
  * All three devices are centred on y=100 so the cards share a horizon.
  */
 export default function AiScenes({ scene }: { scene: number }) {
@@ -77,28 +77,29 @@ function Parts() {
   );
 }
 
-/* Card 3. Rows at y 76/104/132. Review gets a ring round its tick: the lawyer's sign-off. */
+/* Card 3 (v7): a stopwatch and three tasks. Research, draft and review run side by side;
+   the hand moves only a short way before all three are ticked, then review gets the lawyer's sign-off ring.
+   Rest state (reduced motion): bars full, ticks and ring shown, hand at its stop. */
 const STEPS = ["research", "draft", "review"];
 
 function Laptop() {
   return (
     <>
-      <Device x={58} y={28} w={204} h={128} />
-      <line className="ink faint" x1="58" y1="46" x2="262" y2="46" />
-      {[0, 1, 2].map((i) => (
-        <circle key={i} className="ink faint" cx={70 + i * 9} cy="37" r="2" />
-      ))}
+      <circle className="ink" cx="62" cy="102" r="40" />
+      <path className="ink" d="M56 56 h12 M62 56 v6 M92 68 l6 -6" />
+      <path className="c7-wedge" d="M62 102 L62 68 A34 34 0 0 1 95.5 96.1 Z" />
+      <path className="ink faint" d="M62 68 v4 M96 102 h-4 M62 136 v-4 M28 102 h4" />
+      <line className="c7-hand" x1="62" y1="102" x2="62" y2="70" />
+      <circle className="c7-hub" cx="62" cy="102" r="3" />
       {STEPS.map((s, i) => {
-        const y = 80 + i * 28;
+        const y = 80 + i * 32;
         return (
-          <g key={s} className={`row${i}`}>
-            <text className="type-prompt" x="78" y={y}>›</text>
-            <clipPath id={`type-${i}`}>
-              <rect className="typing" x="94" y={y - 16} width="100" height="22" />
-            </clipPath>
-            <text className="type-text" x="94" y={y} clipPath={`url(#type-${i})`}>{s}</text>
-            {i === 2 && <circle className="signoff" cx="231" cy={y - 5} r="11" />}
-            <path className="tick" d={`M225 ${y - 5} l4.5 4.5 l9 -9`} pathLength={1} />
+          <g key={s}>
+            <text className="type-text" x="124" y={y - 9}>{s}</text>
+            <line className="c7-track" x1="124" y1={y} x2="268" y2={y} />
+            <line className={`c7-bar c7-b${i}`} x1="124" y1={y} x2="268" y2={y} pathLength={1} />
+            {i === 2 && <circle className="c7-sign" cx="287" cy={y - 3} r="11" />}
+            <path className={`c7-tick c7-t${i}`} d={`M281 ${y - 1} l4 4 l8 -8`} pathLength={1} />
           </g>
         );
       })}
