@@ -26,12 +26,16 @@ const BOOT = `document.documentElement.classList.add('js');window.__eclFallback=
 
 const GTM = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PQJNPNHX');`;
 
+// Leadfeeder visitor tracking (site id lAxoEaKjXOB4OYGd).
+const LEADFEEDER = `(function(ss,ex){window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));};(function(d,s){fs=d.getElementsByTagName(s)[0];function ce(src){var cs=d.createElement(s);cs.src=src;cs.async=1;fs.parentNode.insertBefore(cs,fs);};ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');})(document,'script');})('lAxoEaKjXOB4OYGd');`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" className={`${archivo.variable} ${caslon.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: BOOT }} />
         <script dangerouslySetInnerHTML={{ __html: GTM }} />
+        <script dangerouslySetInnerHTML={{ __html: LEADFEEDER }} />
       </head>
       <body>
         <noscript>
