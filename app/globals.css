@@ -81,7 +81,7 @@
   .graph .node.lit text { fill: var(--color-gold); }
 
   /* Practice: the landmarks drift slowly behind the text, faint maroon line on paper */
-  .drift { -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 22%, rgb(0 0 0 / .35) 32% 86%, #000 94%, transparent); mask: linear-gradient(90deg, transparent, #000 8%, #000 22%, rgb(0 0 0 / .35) 32% 86%, #000 94%, transparent); }
+  .drift { -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 22%, rgb(0 0 0 / .55) 32% 86%, #000 94%, transparent); mask: linear-gradient(90deg, transparent, #000 8%, #000 22%, rgb(0 0 0 / .55) 32% 86%, #000 94%, transparent); }
   .drift-track { animation: drift 140s linear infinite; will-change: transform; }
   .drift-lines { -webkit-mask: var(--img) center bottom / contain no-repeat; mask: var(--img) center bottom / contain no-repeat; background: var(--color-maroon); }
   @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
