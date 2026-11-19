@@ -72,7 +72,7 @@ export const AI_CARDS = [
 ] as const;
 
 export const AI_CHECKS = [
-  "A lawyer reviews and signs every draft.",
+  "Our lawyers remain responsible for every draft.",
   "Your engagement letter names our tools.",
   "You can opt out of any of them.",
 ];

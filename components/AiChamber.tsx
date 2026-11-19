@@ -223,7 +223,7 @@ export default function AiChamber() {
           <svg viewBox="0 0 172 44" className="sig w-full overflow-visible">
             <path d={SIGN} fill="none" stroke="var(--color-gold-deep)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <span className="block border-t border-maroon/40 pt-2 whitespace-nowrap text-[13px] italic text-dust">Reviewed and signed by a lawyer</span>
+          <span className="block border-t border-maroon/40 pt-2 whitespace-nowrap text-[13px] italic text-dust">Always reviewed and signed off by a lawyer</span>
         </div>
       </div>
     </div>
