@@ -6,8 +6,8 @@ import Nav from "@/components/Nav";
 import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
 import Footer from "@/components/Footer";
-import AiScenes from "@/components/AiScenes";
-import { AI_CARDS, AI_CHECKS, ALLIED, CLIENTS, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
+import AiChamber from "@/components/AiChamber";
+import { ALLIED, CLIENTS, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS, SPEAKING } from "@/lib/writing";
 
@@ -73,28 +73,8 @@ export default function Site() {
               </p>
             </div>
           </div>
-          <div className={WRAP}>
-            <ul className="mt-[clamp(40px,5vw,64px)] grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-              {AI_CARDS.map(([name, what], i) => (
-                <li key={name} data-reveal="rise" className="flex flex-col border border-line bg-paper">
-                  <AiScenes scene={i} />
-                  <div className="border-t border-line p-6">
-                    <h3 className="mb-2 font-display text-[21px] font-semibold text-maroon">{name}</h3>
-                    <p className="text-base leading-[1.55]">{what}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={`${WRAP} ${ROW} mt-[clamp(56px,6vw,88px)]`}>
-            <h3 className={NOTE}>Our checks</h3>
-            <ul className={`${MAIN} grid max-w-[52em] grid-cols-1 gap-x-10 sm:grid-cols-3`}>
-              {AI_CHECKS.map((c) => (
-                <li key={c} data-reveal="rise" className="relative border-t border-line py-3 pl-[30px] text-base leading-[1.5] before:absolute before:left-0.5 before:top-[1.2em] before:h-[7px] before:w-[13px] before:-rotate-45 before:border-b-2 before:border-l-2 before:border-gold-deep">
-                  {c}
-                </li>
-              ))}
-            </ul>
+          <div className={`${WRAP} mt-[clamp(40px,5vw,64px)]`}>
+            <AiChamber />
           </div>
         </section>
 

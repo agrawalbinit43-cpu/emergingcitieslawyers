@@ -63,7 +63,7 @@ export const PRINCIPLES = [
   ["Fee transparency", "Fixed fees or simple retainers, agreed upfront."],
 ] as const;
 
-/** The AI section: three illustrated cards (components/AiScenes.tsx draws them, in this order). */
+/** The AI section: four line-drawing cards (components/AiChamber.tsx draws them, in this order). */
 export const AI_CARDS = [
   ["On our machines", "Our AI tools and agents run locally. Sensitive files stay with us."],
   ["Built in-house", "We assemble our tools from open-source parts, so we know what each step does with your files."],
