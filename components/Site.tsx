@@ -39,7 +39,7 @@ export default function Site() {
           </div>
 
           {/* the drawings run edge to edge in one moving row, like a skyline passing */}
-          <div className="mt-[clamp(56px,7vw,104px)]">
+          <div className="mt-[clamp(24px,3vw,48px)]">
             <CityLine />
           </div>
 
@@ -49,7 +49,7 @@ export default function Site() {
               {CLIENTS.map((c) => {
                 const [name, extra] = c.split(" (");
                 return (
-                  <li key={c} data-reveal="rise" className="flex min-h-14 items-center border-t border-maroon/20 py-3 font-display text-[18px] font-medium leading-[1.3] text-maroon [font-variation-settings:'wdth'_92]">
+                  <li key={c} data-reveal="rise" className="flex min-h-14 items-center border-t border-maroon/20 py-3 font-display text-[clamp(19px,1.56vw,22.5px)] font-medium leading-[1.3] text-maroon [font-variation-settings:'wdth'_92]">
                     <span>
                       {name}
                       {extra && <span className="text-dust"> ({extra}</span>}
@@ -80,7 +80,7 @@ export default function Site() {
 
         <section id="practice" className="relative isolate overflow-clip pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)]">
           {/* the landmarks where our lawyers trained and argue, drifting faintly behind the practice list */}
-          <Landmarks className="absolute inset-x-0 bottom-0 -z-10 h-[min(78%,620px)] opacity-[.17]" />
+          <Landmarks className="absolute inset-x-0 bottom-0 -z-10 h-[min(78%,620px)] opacity-[.2]" />
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>Practice</h2>
             <div className={MAIN}>
