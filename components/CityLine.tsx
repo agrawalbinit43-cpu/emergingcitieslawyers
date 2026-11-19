@@ -23,12 +23,12 @@ const DRAWINGS = [
    One group follows each building, in order; h is again against the tallest building. */
 const STREET: { file: string; r: number; h: number }[][] = [
   [{ file: "tree-a", r: 240 / 220, h: 0.55 }],
-  [{ file: "lamp", r: 80 / 260, h: 0.61 }, { file: "mast", r: 90 / 260, h: 0.65 }],
+  [{ file: "lamp", r: 80 / 260, h: 0.58 }, { file: "mast", r: 90 / 260, h: 0.58 }],
   [{ file: "tree-b", r: 200 / 190, h: 0.45 }],
-  [{ file: "mast", r: 90 / 260, h: 0.65 }, { file: "tree-a", r: 240 / 220, h: 0.55 }],
-  [{ file: "tree-b", r: 200 / 190, h: 0.45 }, { file: "lamp", r: 80 / 260, h: 0.61 }],
+  [{ file: "mast", r: 90 / 260, h: 0.58 }, { file: "tree-a", r: 240 / 220, h: 0.55 }],
+  [{ file: "tree-b", r: 200 / 190, h: 0.45 }, { file: "lamp", r: 80 / 260, h: 0.58 }],
   [{ file: "tree-a", r: 240 / 220, h: 0.55 }],
-  [{ file: "lamp", r: 80 / 260, h: 0.61 }, { file: "mast", r: 90 / 260, h: 0.65 }],
+  [{ file: "lamp", r: 80 / 260, h: 0.58 }, { file: "mast", r: 90 / 260, h: 0.58 }],
 ];
 
 /** three copies, so the strip never runs out on a wide screen; the loop moves by exactly one copy */

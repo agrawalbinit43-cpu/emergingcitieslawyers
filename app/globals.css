@@ -52,7 +52,7 @@
   .stagger > span > span { display: block; }
 
   /* side headings: numbered capitals in the margin, so each section names itself at a glance */
-  .note { font-family: var(--font-display); font-weight: 650; font-size: clamp(15px, 1.15vw, 17px); line-height: 1.35; letter-spacing: 0.13em; text-transform: uppercase; color: var(--color-maroon); }
+  .note { font-family: var(--font-display); font-weight: 600; font-size: clamp(13px, 1vw, 14px); line-height: 1.35; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-maroon); }
   .on-maroon .note { color: var(--color-rose); }
   main { counter-reset: sec; }
   main h2.note::before { counter-increment: sec; content: counter(sec, decimal-leading-zero) " / "; color: var(--color-gold-deep); letter-spacing: 0.06em; }
@@ -81,7 +81,7 @@
   .graph .node.lit text { fill: var(--color-gold); }
 
   /* Practice: the landmarks drift slowly behind the text, faint maroon line on paper */
-  .drift { -webkit-mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .drift { -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 22%, rgb(0 0 0 / .35) 32% 86%, #000 94%, transparent); mask: linear-gradient(90deg, transparent, #000 8%, #000 22%, rgb(0 0 0 / .35) 32% 86%, #000 94%, transparent); }
   .drift-track { animation: drift 140s linear infinite; will-change: transform; }
   .drift-lines { -webkit-mask: var(--img) center bottom / contain no-repeat; mask: var(--img) center bottom / contain no-repeat; background: var(--color-maroon); }
   @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -227,7 +227,7 @@
   @keyframes k2 { 0%, 60% { stroke-dashoffset: 1; opacity: 0; } 66%, 90% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { opacity: 0; stroke-dashoffset: 1; } }
 
   /* a short gold rule under each side heading, drawn by Motion.tsx */
-  .note-rule { display: block; width: 40px; height: 1.5px; margin-top: 12px; background: var(--color-gold-deep); transform-origin: 0 50%; }
+  .note-rule { display: block; width: 24px; height: 1.5px; margin-top: 12px; background: var(--color-gold-deep); transform-origin: 0 50%; }
 }
 
 /* AI section: pen drawings with looping line animation (AiChamber.tsx). Strokes keep their screen width at any size.
