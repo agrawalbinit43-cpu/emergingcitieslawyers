@@ -84,6 +84,13 @@
   @keyframes sheen { from { background-position: 100% 0; } to { background-position: -160% 0; } }
   @media (max-width: 640px) { .landmark { height: 58%; } }
   .landmarks.is-dragging { cursor: grabbing; }
+  /* About: a city landmark drawn in maroon line on paper */
+  .city-stage { --city-h: clamp(190px, 16vw, 240px); overflow-x: auto; scrollbar-width: none;
+    -webkit-mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .city-stage.is-moving { overflow: hidden; }
+  .city-slot { width: var(--slot, 100vw); }
+  @media (min-width: 768px) { .city-slot { width: auto; } }
+  .city-lines { -webkit-mask: var(--img) left bottom / contain no-repeat; mask: var(--img) left bottom / contain no-repeat; background: var(--color-maroon); }
 
   /* a soft gold light drifting in the hero (Hero.tsx moves --gx, --gy) */
   .hero-glow { background: radial-gradient(42% 52% at var(--gx, 72%) var(--gy, 40%), color-mix(in oklch, var(--color-gold) 15%, transparent), transparent 72%); }

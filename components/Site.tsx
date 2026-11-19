@@ -1,3 +1,4 @@
+import CityLine from "@/components/CityLine";
 import Gate from "@/components/Gate";
 import Hero from "@/components/Hero";
 import Motion from "@/components/Motion";
@@ -6,9 +7,10 @@ import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
 import Footer from "@/components/Footer";
 import AiScenes from "@/components/AiScenes";
-import { AI_CARDS, AI_CHECKS, ALLIED, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
+import { AI_CARDS, AI_CHECKS, ALLIED, CLIENTS, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS, SPEAKING } from "@/lib/writing";
+
 
 export default function Site() {
   return (
@@ -21,21 +23,41 @@ export default function Site() {
       <Hero />
 
       <main id="main">
-        <section id="about" className="pb-[clamp(16px,2vw,32px)] pt-[clamp(88px,10vw,144px)]">
+        <section id="about" className="pb-[clamp(56px,7vw,104px)] pt-[clamp(88px,10vw,144px)]">
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>About</h2>
             <div className={MAIN}>
-              <p data-reveal="lines" className="lead mb-[.55em] max-w-[14em] text-maroon">
-                Emerging businesses. Emerging cities. The same standard of counsel.
+              <p data-reveal="lines" className="lead mb-[.55em] text-maroon">
+                <span className="block">Emerging businesses.</span>
+                <span className="block">Emerging cities.</span>
+                <span className="block">The same standard of counsel.</span>
               </p>
               <p data-reveal="rise" className="max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6] [text-wrap:pretty]">
                 Young companies and fast-growing cities face the same legal questions as established ones. Good counsel is harder for them to find. We handle the deals, the regulation and the disputes.
               </p>
-              <dl data-reveal="rise" className="mt-12 max-w-[34em]">
-                <dt className="mb-1 font-display font-semibold text-maroon">Who we act for</dt>
-                <dd className="text-base leading-[1.55]">Start-ups, AI and technology companies, SMEs, family businesses, funds (PE, VC and debt), foreign companies entering India, and international organisations.</dd>
-              </dl>
             </div>
+          </div>
+
+          {/* the drawings run edge to edge in one moving row, like a skyline passing */}
+          <div className="mt-[clamp(56px,7vw,104px)]">
+            <CityLine />
+          </div>
+
+          <div className={`${WRAP} ${ROW} mt-[clamp(48px,6vw,88px)]`}>
+            <h3 className="note col-span-12 mb-6 md:col-span-3 md:mb-0">Who we act for</h3>
+            <ul className="col-span-12 grid grid-cols-1 gap-x-6 border-b border-maroon/20 sm:grid-cols-2 md:col-span-9">
+              {CLIENTS.map((c) => {
+                const [name, extra] = c.split(" (");
+                return (
+                  <li key={c} data-reveal="rise" className="flex min-h-14 items-center border-t border-maroon/20 py-3 font-display text-[18px] font-medium leading-[1.3] text-maroon [font-variation-settings:'wdth'_92]">
+                    <span>
+                      {name}
+                      {extra && <span className="text-dust"> ({extra}</span>}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </section>
 

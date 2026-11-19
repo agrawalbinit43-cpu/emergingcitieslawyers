@@ -131,3 +131,15 @@ export const OFFICES = [
 ] as const;
 
 export const OFFICE = OFFICES[0].address;
+
+/** Who the firm acts for, as the About section lists them. */
+export const CLIENTS = [
+  "Start-ups",
+  "AI and technology companies",
+  "SMEs",
+  "Family businesses",
+  "Funds (PE, VC and debt)",
+  "Foreign companies entering India",
+  "International organisations",
+  "Individuals",
+];
