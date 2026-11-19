@@ -184,13 +184,13 @@ export default function AiChamber() {
 
   return (
     <div ref={root}>
-      <div className="grid grid-cols-1 gap-y-14 md:grid-cols-2 md:gap-y-[clamp(48px,5vw,72px)]">
+      <div className="grid grid-cols-1 gap-y-14 md:grid-cols-2 md:gap-y-[clamp(28px,3vw,44px)]">
         {SCENES.map(({ file, W, H, Art, alt }, i) => {
           const [name, what] = AI_CARDS[i];
           const r = W / H;
           return (
             <figure key={file} className="relative md:px-[clamp(18px,2.2vw,36px)] md:[&:nth-child(even)]:border-l md:[&:nth-child(even)]:border-maroon/25">
-              <div className="flex aspect-[16/10] items-end justify-center border-b border-maroon/40 [container-type:size] md:-mx-[clamp(18px,2.2vw,36px)]">
+              <div className="flex aspect-[16/10] md:aspect-auto md:h-[clamp(200px,30svh,360px)] items-end justify-center border-b border-maroon/40 [container-type:size] md:-mx-[clamp(18px,2.2vw,36px)]">
                 <div className="sk relative" role="img" aria-label={`Line drawing: ${alt}`} style={{ ["--d" as string]: `${i * 2}s`, aspectRatio: String(r), width: `min(94cqw, ${(r * 90).toFixed(1)}cqh)` }}>
                   <div className="sk-ink city-lines absolute inset-0 [mask-size:100%_100%]" style={{ ["--img" as string]: `url(/drawings/ai-${file}.svg)` }} />
                   <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full" aria-hidden="true">
@@ -198,10 +198,10 @@ export default function AiChamber() {
                   </svg>
                 </div>
               </div>
-              <figcaption className="pt-6">
-                <span className="mb-2 block font-text text-[20px] italic text-gold-deep">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mb-2 font-display text-[19px] font-semibold text-maroon">{name}</h3>
-                <p className="max-w-[28em] text-base leading-[1.55]">{what}</p>
+              <figcaption className="pt-6 md:pt-4">
+                <span className="mb-2 block font-text text-[20px] italic text-gold-deep md:mb-1 md:mr-3 md:inline">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mb-2 font-display text-[19px] font-semibold text-maroon md:inline">{name}</h3>
+                <p className="max-w-[28em] text-base leading-[1.55] md:mt-1.5">{what}</p>
               </figcaption>
             </figure>
           );
