@@ -52,7 +52,7 @@
   .stagger > span > span { display: block; }
 
   /* side headings: numbered capitals in the margin, so each section names itself at a glance */
-  .note { font-family: var(--font-display); font-weight: 600; font-size: clamp(13px, 1vw, 14px); line-height: 1.35; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-maroon); }
+  .note { font-family: var(--font-display); font-weight: 600; font-size: clamp(16px, 1.25vw, 17.5px); line-height: 1.35; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-maroon); }
   .on-maroon .note { color: var(--color-rose); }
   main { counter-reset: sec; }
   main h2.note::before { counter-increment: sec; content: counter(sec, decimal-leading-zero) " / "; color: var(--color-gold-deep); letter-spacing: 0.06em; }

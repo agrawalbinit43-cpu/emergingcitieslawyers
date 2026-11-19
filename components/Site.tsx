@@ -49,7 +49,7 @@ export default function Site() {
               {CLIENTS.map((c) => {
                 const [name, extra] = c.split(" (");
                 return (
-                  <li key={c} data-reveal="rise" className="flex min-h-14 items-center border-t border-maroon/20 py-3 font-display text-[clamp(19px,1.56vw,22.5px)] font-medium leading-[1.3] text-maroon [font-variation-settings:'wdth'_92]">
+                  <li key={c} data-reveal="rise" className="flex min-h-14 items-center border-t border-maroon/20 py-3 font-display text-[18px] font-medium leading-[1.3] text-maroon [font-variation-settings:'wdth'_92]">
                     <span>
                       {name}
                       {extra && <span className="text-dust"> ({extra}</span>}
