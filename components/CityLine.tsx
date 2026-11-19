@@ -22,13 +22,13 @@ const DRAWINGS = [
 /* Street trees and lamps fill the ground between the buildings, so the strip reads as one street.
    One group follows each building, in order; h is again against the tallest building. */
 const STREET: { file: string; r: number; h: number }[][] = [
-  [{ file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
-  [{ file: "lamp", r: 80 / 260, h: 0.4 }, { file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
-  [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
-  [{ file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "lamp", r: 80 / 260, h: 0.4 }],
-  [{ file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
-  [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
-  [{ file: "lamp", r: 80 / 260, h: 0.4 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
+  [{ file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
+  [{ file: "lamp", r: 80 / 260, h: 0.4 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
+  [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
+  [{ file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "lamp", r: 80 / 260, h: 0.4 }],
+  [{ file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
+  [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
+  [{ file: "lamp", r: 80 / 260, h: 0.4 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
 ];
 
 /** three copies, so the strip never runs out on a wide screen; the loop moves by exactly one copy */
