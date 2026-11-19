@@ -23,8 +23,8 @@ const DRAWINGS = [
 const COPIES = 3;
 
 /**
- * One row of drawings that never stops. On a wide screen the row drifts slowly to the left. On a phone each drawing has the
- * screen to itself: it holds, then slides away as the next one arrives. Off screen the row rests; for visitors who ask for
+ * One row of drawings that never stops. On a wide screen the row drifts slowly to the left. A phone shows the same drift, a
+ * little slower. Off screen the row rests; for visitors who ask for
  * reduced motion, or without JavaScript, it stays still and can be scrolled sideways.
  */
 export default function CityLine() {
@@ -34,10 +34,6 @@ export default function CityLine() {
     () => {
       const stage = root.current!;
       const track = stage.querySelector<HTMLElement>(".city-track")!;
-      const setSlot = () => stage.style.setProperty("--slot", `${stage.clientWidth}px`);
-      setSlot();
-      window.addEventListener("resize", setSlot);
-
       const mm = gsap.matchMedia();
       mm.add(
         { wide: "(min-width: 768px)", phone: "(max-width: 767px)", still: "(prefers-reduced-motion: reduce)" },
@@ -46,19 +42,9 @@ export default function CityLine() {
           if (still) return;
           stage.classList.add("is-moving");
 
-          let loop: gsap.core.Animation;
-          if (wide) {
-            // about 36 px a second: slow enough to read as calm
-            const span = () => track.scrollWidth / COPIES;
-            loop = gsap.fromTo(track, { x: 0 }, { x: () => -span(), duration: span() / 36, ease: "none", repeat: -1, paused: true });
-          } else {
-            const tl = gsap.timeline({ repeat: -1, paused: true });
-            for (let k = 1; k <= DRAWINGS.length; k++) {
-              tl.to(track, { x: () => -k * stage.clientWidth, duration: 1.1, ease: "power3.inOut" }, "+=2.2");
-            }
-            tl.set(track, { x: 0 });
-            loop = tl;
-          }
+          // one slow, continuous drift on every screen: about 36 px a second on a wide screen, 28 on a phone
+          const span = () => track.scrollWidth / COPIES;
+          const loop = gsap.fromTo(track, { x: 0 }, { x: () => -span(), duration: span() / (wide ? 36 : 28), ease: "none", repeat: -1, paused: true });
           const st = ScrollTrigger.create({ trigger: stage, start: "top bottom", end: "bottom top", onToggle: (s) => (s.isActive ? loop.play() : loop.pause()) });
           return () => {
             st.kill();
@@ -69,7 +55,6 @@ export default function CityLine() {
         },
       );
 
-      return () => window.removeEventListener("resize", setSlot);
     },
     { scope: root },
   );
@@ -79,10 +64,10 @@ export default function CityLine() {
       <div className="city-track flex w-max items-end">
         {Array.from({ length: COPIES }, (_, c) =>
           DRAWINGS.map((d) => (
-            <div key={`${c}-${d.file}`} aria-hidden="true" className="city-slot flex shrink-0 justify-center md:pr-[clamp(48px,6vw,104px)]">
+            <div key={`${c}-${d.file}`} aria-hidden="true" className="city-slot flex shrink-0 justify-center pr-[clamp(40px,6vw,104px)]">
               <div
                 className="city-lines"
-                style={{ aspectRatio: String(d.r), width: `min(76vw, calc(var(--city-h) * ${d.h * d.r}))`, ["--img" as string]: `url(/drawings/city-${d.file}.svg)` }}
+                style={{ aspectRatio: String(d.r), width: `min(64vw, calc(var(--city-h) * ${d.h * d.r}))`, ["--img" as string]: `url(/drawings/city-${d.file}.svg)` }}
               />
             </div>
           )),
