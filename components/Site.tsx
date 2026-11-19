@@ -121,7 +121,6 @@ export default function Site() {
           <div className={`${WRAP} ${ROW} mt-[clamp(72px,8vw,112px)]`}>
             <div className={NOTE}>
               <h3>Allied advisory</h3>
-              <p className="mt-1 text-base text-dust">Beyond legal advice</p>
             </div>
             <dl className={`${MAIN} grid max-w-[52em] grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2`}>
               {ALLIED.map(([name, what]) => (
