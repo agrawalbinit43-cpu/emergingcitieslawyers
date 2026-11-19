@@ -78,7 +78,9 @@ export default function Site() {
           </div>
         </section>
 
-        <section id="practice" className="pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)]">
+        <section id="practice" className="relative isolate overflow-clip pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)]">
+          {/* the landmarks where our lawyers trained and argue, drifting faintly behind the practice list */}
+          <Landmarks className="absolute inset-x-0 bottom-0 -z-10 h-[min(78%,620px)] opacity-[.085]" />
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>Practice</h2>
             <div className={MAIN}>
@@ -132,11 +134,8 @@ export default function Site() {
           </div>
         </section>
 
-        <section id="partners" className="on-maroon overflow-x-clip bg-maroon pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)] text-rose">
-          <div className={WRAP}>
-            <Landmarks />
-          </div>
-          <div className={`${WRAP} ${ROW} mt-[clamp(16px,2.5vw,40px)]`}>
+        <section id="partners" className={`on-maroon overflow-x-clip bg-maroon text-rose ${SECTION}`}>
+          <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>Partners</h2>
             <div className={`${MAIN} grid grid-cols-1 gap-x-[clamp(32px,4vw,64px)] gap-y-[72px] md:grid-cols-2`}>
               {PARTNERS.map((p) => (
@@ -151,7 +150,7 @@ export default function Site() {
                       {b}
                     </p>
                   ))}
-                  <p className="mb-4 max-w-[34em] text-base italic leading-[1.65] text-rose/65">
+                  <p className="mb-4 max-w-[34em] font-text text-base italic leading-[1.65] text-rose/65">
                     {p.edu[0]}
                     <br />
                     {p.edu[1]}
