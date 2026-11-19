@@ -61,7 +61,7 @@ export default function Site() {
           </div>
         </section>
 
-        <section id="ai" className={`bg-blush ${SECTION}`}>
+        <section id="ai" className={`bg-blush ${SECTION} lg:pt-[clamp(56px,9svh,112px)]`}>
           <div className={`${WRAP} ${ROW}`}>
             <h2 className={NOTE}>AI-native</h2>
             <div className={MAIN}>
@@ -73,7 +73,7 @@ export default function Site() {
               </p>
             </div>
           </div>
-          <div className={`${WRAP} mt-[clamp(40px,5vw,64px)]`}>
+          <div className={`${WRAP} mt-[clamp(40px,5vw,64px)] lg:mt-[clamp(28px,4.5svh,52px)]`}>
             <AiChamber />
           </div>
         </section>
