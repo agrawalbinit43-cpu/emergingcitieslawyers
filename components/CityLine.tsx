@@ -22,13 +22,13 @@ const DRAWINGS = [
 /* Street trees and lamps fill the ground between the buildings, so the strip reads as one street.
    One group follows each building, in order; h is again against the tallest building. */
 const STREET: { file: string; r: number; h: number }[][] = [
-  [{ file: "tree-a", r: 240 / 220, h: 0.55 }],
-  [{ file: "lamp", r: 80 / 260, h: 0.58 }, { file: "mast", r: 90 / 260, h: 0.58 }],
-  [{ file: "tree-b", r: 200 / 190, h: 0.45 }],
-  [{ file: "mast", r: 90 / 260, h: 0.58 }, { file: "tree-a", r: 240 / 220, h: 0.55 }],
-  [{ file: "tree-b", r: 200 / 190, h: 0.45 }, { file: "lamp", r: 80 / 260, h: 0.58 }],
-  [{ file: "tree-a", r: 240 / 220, h: 0.55 }],
-  [{ file: "lamp", r: 80 / 260, h: 0.58 }, { file: "mast", r: 90 / 260, h: 0.58 }],
+  [{ file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
+  [{ file: "lamp", r: 80 / 260, h: 0.4 }, { file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
+  [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
+  [{ file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "lamp", r: 80 / 260, h: 0.4 }],
+  [{ file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
+  [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
+  [{ file: "lamp", r: 80 / 260, h: 0.4 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
 ];
 
 /** three copies, so the strip never runs out on a wide screen; the loop moves by exactly one copy */
@@ -81,7 +81,7 @@ export default function CityLine() {
                 className="city-lines"
                 style={{ aspectRatio: String(d.r), width: `min(64vw, calc(var(--city-h) * ${d.h * d.r}))`, ["--img" as string]: `url(/drawings/city-${d.file}.svg)` }}
               />
-              <div className="flex items-end gap-[clamp(10px,1.4vw,22px)] px-[clamp(18px,2.6vw,44px)]">
+              <div className="flex items-end gap-[clamp(6px,0.9vw,14px)] px-[clamp(18px,2.6vw,44px)]">
                 {STREET[i].map((t, j) => (
                   <div
                     key={j}
