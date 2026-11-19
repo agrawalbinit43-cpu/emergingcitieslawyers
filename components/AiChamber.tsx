@@ -219,7 +219,7 @@ export default function AiChamber() {
             ))}
           </ul>
         </div>
-        <div aria-hidden="true" className="mt-8 w-[230px] shrink-0 md:mt-0">
+        <div aria-hidden="true" className="mt-8 w-[280px] max-w-full shrink-0 md:mt-0">
           <svg viewBox="0 0 172 44" className="sig w-full overflow-visible">
             <path d={SIGN} fill="none" stroke="var(--color-gold-deep)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
