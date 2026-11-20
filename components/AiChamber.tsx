@@ -40,7 +40,7 @@ function Local() {
         <line key={y} className={`i a sk-w sk-w${i}`} x1="265" y1={y} x2={x2} y2={y} pathLength={1} />
       ))}
       <circle className="gf a sk-led" cx="742" cy="785" r="9" />
-      {[0, 1.3, 2.6].map((d) => (
+      {[0, 1.6, 3.2].map((d) => (
         <circle key={d} className="gf a sk-orbit" r="10" style={{ offsetPath: `path("${ORBIT}")`, animationDelay: `-${d}s` }} />
       ))}
     </>
@@ -163,13 +163,14 @@ export default function AiChamber() {
   useGSAP(
     () => {
       const q = gsap.utils.selector(root);
-      // loops play only while their scene is on screen
-      (q(".sk") as HTMLElement[]).forEach((el) => ScrollTrigger.create({ trigger: el, start: "top bottom", end: "bottom top", toggleClass: "sk-on" }));
+      // loops start a little before a scene scrolls in, so the motion is already running when the reader arrives
+      const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle("sk-on", e.isIntersecting)), { rootMargin: "35% 0px 35% 0px" });
+      (q(".sk") as HTMLElement[]).forEach((el) => io.observe(el));
 
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         (q(".sk-ink") as HTMLElement[]).forEach((el) => {
-          gsap.fromTo(el, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 1.6, ease: "power2.inOut", scrollTrigger: { trigger: el, start: "top 85%", once: true } });
+          gsap.fromTo(el, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 1.3, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 98%", once: true } });
         });
         const sig = q(".sig path")[0] as unknown as SVGPathElement | undefined;
         if (sig) {
@@ -178,6 +179,7 @@ export default function AiChamber() {
           gsap.to(sig, { strokeDashoffset: 0, duration: 1.4, ease: "power1.out", scrollTrigger: { trigger: q(".checks")[0], start: "top 60%", once: true } });
         }
       });
+      return () => io.disconnect();
     },
     { scope: root },
   );

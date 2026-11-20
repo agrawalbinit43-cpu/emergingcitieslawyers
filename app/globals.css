@@ -252,15 +252,17 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .sk:not(.sk-on) .a { animation-play-state: paused; }
-  /* one shared 8s cycle: each scene starts 2s after the one before (--d), so only one peaks at a time */
-  .sk.sk .a:not(.sk-cloud):not(.sk-spark):not(.sk-led):not(.sk-turn):not(.sk-orbit) { animation-delay: var(--d, 0s); }
+  /* one shared 8s cycle, offset 2s per scene (--d). Negative delays start every scene at once, mid-cycle, so nothing waits or blinks. */
+  .sk.sk .a:not(.sk-cloud):not(.sk-spark):not(.sk-led):not(.sk-turn):not(.sk-orbit) { animation-delay: calc(-.4s - var(--d, 0s)); }
+  /* pen-like easing for every line that draws itself */
+  .sk.sk [class*="sk-w"], .sk.sk [class*="sk-cl"], .sk.sk [class*="sk-bar"], .sk.sk .sk-tick, .sk.sk .sk-ring, .sk.sk .sk-ring2, .sk.sk .sk-frame { animation-timing-function: cubic-bezier(.45,.05,.25,1); }
 
   /* 01 local */
-  .sk .sk-cloud { animation: sk-drift 16s linear infinite; }
-  .sk .sk-cloud.c2 { animation-duration: 22s; animation-delay: -9s; }
+  .sk .sk-cloud { animation: sk-drift 20s linear infinite; animation-delay: -7s; }
+  .sk .sk-cloud.c2 { animation-duration: 26s; animation-delay: -15s; }
   .sk .sk-spark { animation: sk-pulse 2.4s ease-in-out infinite; }
   .sk .sk-led { animation: sk-pulse 1.6s ease-in-out infinite; }
-  .sk .sk-orbit { opacity: .9; animation: sk-orbit 3.9s linear infinite; }
+  .sk .sk-orbit { opacity: .9; animation: sk-orbit 4.8s cubic-bezier(.45,.1,.55,.9) infinite; }
   .sk .sk-w0 { animation: sk-w0 8s ease-out infinite; }
   .sk .sk-w1 { animation: sk-w1 8s ease-out infinite; }
   .sk .sk-w2 { animation: sk-w2 8s ease-out infinite; }
@@ -273,7 +275,7 @@
   .sk .sk-hop2 { animation: sk-hop2 8s cubic-bezier(.5,0,.3,1) infinite; }
   .sk .sk-frame { animation: sk-frame 8s ease-out infinite; }
   .sk .sk-carry { animation: sk-carry 8s ease-in-out infinite; }
-  .sk .sk-turn { animation: sk-spin 6s linear infinite; }
+  .sk .sk-turn { animation: sk-spin 9s linear infinite; }
   .sk .sk-bar0 { animation: sk-bar0 8s ease-out infinite; }
   .sk .sk-bar1 { animation: sk-bar1 8s ease-out infinite; }
   .sk .sk-bar2 { animation: sk-bar2 8s ease-out infinite; }
@@ -304,7 +306,7 @@
   .sk .sk-ring2 { animation: sk-ring2 8s ease-out infinite; }
 }
 
-@keyframes sk-drift { from { transform: translateX(-260px); } to { transform: translateX(760px); } }
+@keyframes sk-drift { 0% { transform: translate(-260px, 0); } 25% { transform: translate(-5px, -7px); } 50% { transform: translate(250px, 0); } 75% { transform: translate(505px, 6px); } 100% { transform: translate(760px, 0); } }
 @keyframes sk-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(.7); opacity: .45; } }
 @keyframes sk-spin { to { transform: rotate(360deg); } }
 @keyframes sk-orbit { from { offset-distance: 0%; } to { offset-distance: 100%; } }
