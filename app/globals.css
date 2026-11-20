@@ -361,28 +361,28 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .ct:not(.ct-on) .a { animation-play-state: paused; }
-  .ct .ct-fig { animation: ct-walk 14s linear infinite; }
-  .ct .ct-rise { animation: ct-rise 14s cubic-bezier(.45, 0, .3, 1) infinite; }
-  .ct .ct-glow { animation: ct-glow 14s ease-in-out infinite; }
-  .ct .ct-bob { animation: ct-bob .45s ease-in-out infinite alternate; }
-  .ct .ct-lf-1, .ct .ct-lb-1 { animation: ct-thigh .9s ease-in-out infinite; }
-  .ct .ct-lf-2, .ct .ct-lb-2 { animation: ct-shin .9s ease-in-out infinite; }
-  .ct .ct-af-1, .ct .ct-ab-1 { animation: ct-arm .9s ease-in-out infinite; }
-  .ct .ct-af-2, .ct .ct-ab-2 { animation: ct-fore .9s ease-in-out infinite; }
-  .ct .ct-lb-1, .ct .ct-lb-2, .ct .ct-ab-1, .ct .ct-ab-2 { animation-delay: -.45s; }
+  .ct .ct-fig { animation: ct-walk 11s linear infinite; }
+  .ct .ct-rise { animation: ct-rise 11s cubic-bezier(.45, 0, .3, 1) infinite; }
+  .ct .ct-glow { animation: ct-glow 11s ease-in-out infinite; }
+  .ct .ct-bob { animation: ct-bob .375s ease-in-out infinite alternate; }
+  .ct .ct-lf-1, .ct .ct-lb-1 { animation: ct-thigh .75s ease-in-out infinite; }
+  .ct .ct-lf-2, .ct .ct-lb-2 { animation: ct-shin .75s ease-in-out infinite; }
+  .ct .ct-af-1, .ct .ct-ab-1 { animation: ct-arm .75s ease-in-out infinite; }
+  .ct .ct-af-2, .ct .ct-ab-2 { animation: ct-fore .75s ease-in-out infinite; }
+  .ct .ct-lb-1, .ct .ct-lb-2, .ct .ct-ab-1, .ct .ct-ab-2 { animation-delay: -.375s; }
 
   @keyframes ct-walk {
-    0% { opacity: 0; transform: translate(130px, 470px); }
-    4% { opacity: 1; }
-    64% { opacity: 1; transform: translate(600px, 470px) scale(1); }
-    73% { opacity: 0; transform: translate(604px, 470px) scale(.86); }
+    0% { opacity: 0; transform: translate(160px, 470px); }
+    5% { opacity: 1; }
+    60% { opacity: 1; transform: translate(600px, 470px) scale(1); }
+    69% { opacity: 0; transform: translate(604px, 470px) scale(.86); }
     100% { opacity: 0; transform: translate(604px, 470px) scale(.86); }
   }
-  @keyframes ct-glow { 0%, 58% { opacity: 0; } 72%, 86% { opacity: .55; } 97%, 100% { opacity: 0; } }
+  @keyframes ct-glow { 0%, 54% { opacity: 0; } 68%, 90% { opacity: .55; } 98%, 100% { opacity: 0; } }
   @keyframes ct-bob { from { transform: translateY(0); } to { transform: translateY(-1.6px); } }
   @keyframes ct-thigh { 0%, 100% { transform: rotate(-23deg); } 50% { transform: rotate(21deg); } }
   @keyframes ct-shin { 0% { transform: rotate(2deg); } 45% { transform: rotate(8deg); } 70% { transform: rotate(52deg); } 88% { transform: rotate(14deg); } 100% { transform: rotate(2deg); } }
-  @keyframes ct-arm { 0%, 100% { transform: rotate(20deg); } 50% { transform: rotate(-22deg); } }
-  @keyframes ct-fore { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(-30deg); } }
-  @keyframes ct-rise { 0.00% { transform: translateY(0px); } 22.60% { transform: translateY(0px); } 24.51% { transform: translateY(-11px); } 26.14% { transform: translateY(-11px); } 28.05% { transform: translateY(-22px); } 29.69% { transform: translateY(-22px); } 31.59% { transform: translateY(-33px); } 33.23% { transform: translateY(-33px); } 35.13% { transform: translateY(-44px); } 36.77% { transform: translateY(-44px); } 38.67% { transform: translateY(-55px); } 40.85% { transform: translateY(-55px); } 42.76% { transform: translateY(-65px); } 64.00% { transform: translateY(-65px); } 64.01%, 100% { transform: translateY(-65px); } }
+  @keyframes ct-arm { 0%, 100% { transform: rotate(13deg); } 50% { transform: rotate(-14deg); } }
+  @keyframes ct-fore { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(-20deg); } }
+  @keyframes ct-rise { 0.00% { transform: translateY(0px); } 18.55% { transform: translateY(0px); } 20.45% { transform: translateY(-11px); } 22.09% { transform: translateY(-11px); } 24.00% { transform: translateY(-22px); } 25.64% { transform: translateY(-22px); } 27.55% { transform: translateY(-33px); } 29.18% { transform: translateY(-33px); } 31.09% { transform: translateY(-44px); } 32.73% { transform: translateY(-44px); } 34.64% { transform: translateY(-55px); } 36.82% { transform: translateY(-55px); } 38.73% { transform: translateY(-65px); } 60.00% { transform: translateY(-65px); } 60.01%, 100% { transform: translateY(-65px); } }
 }

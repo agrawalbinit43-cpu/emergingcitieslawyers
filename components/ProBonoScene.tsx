@@ -4,7 +4,7 @@ import { useEffect, useId, useRef } from "react";
 import { CT_DOOR, CT_LINES, CT_SOFT } from "./court-art";
 
 /* Pro bono: a court, drawn in the pencil line of the About strip and the AI scenes, and one person walking into it.
-   One 14s loop: they walk in from the left, climb a step per footstep, cross the portico and pass into the doorway as it
+   One 11s loop: they walk in from the left, climb a step per footstep, cross the portico and pass into the doorway as it
    warms. Gold-deep is the person and the light they bring in; the building stays maroon. Purely decorative (aria-hidden).
    Motion lives in globals.css (.ct); it plays only on screen. Under reduced motion the person stands at the open door. */
 export default function ProBonoScene({ crop = false, className = "" }: { crop?: boolean; className?: string }) {
