@@ -345,15 +345,16 @@
 @keyframes sk-cg { 0% { opacity: 0; transform: translate(696px, 155px); } 18% { opacity: 0; transform: translate(696px, 155px); } 19% { opacity: 1; transform: translate(696px, 155px); } 29% { opacity: 1; transform: translate(1166px, 155px); } 30% { opacity: 0; transform: translate(1166px, 155px); } 44% { opacity: 0; transform: translate(696px, 285px); } 45% { opacity: 1; transform: translate(696px, 285px); } 55% { opacity: 1; transform: translate(1116px, 285px); } 56% { opacity: 0; transform: translate(1116px, 285px); } 100% { opacity: 0; transform: translate(1116px, 285px); } }
 
 /* Pro bono court (ProBonoScene.tsx). Rest state, used under reduced motion: the pair stands at the open, lit door. */
-.ct .i { fill: none; stroke: var(--color-maroon); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
-.ct .soft { opacity: .45; }
-.ct .ct-in { fill: var(--color-maroon); opacity: .1; }
-.ct .ct-glow { opacity: .5; }
-.ct .ct-client { fill: var(--color-gold-deep); stroke: var(--color-gold-deep); }
-.ct .ct-lawyer { fill: var(--color-maroon-ink); stroke: var(--color-maroon-ink); }
-.ct .ct-pair line { stroke-width: 5.4; stroke-linecap: round; }
-.ct .ct-pair line.arm { stroke-width: 4.4; }
-.ct .ct-lawyer line.arm { stroke-width: 6; }
+.ct .i { fill: none; stroke: var(--color-maroon); stroke-width: 1.05; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+.ct .re { opacity: .38; stroke-width: .8; }
+.ct .hat { opacity: .5; stroke-width: .7; }
+.ct .ct-in { fill: var(--color-maroon); opacity: .06; }
+.ct .ct-glow { opacity: .65; }
+.ct .ct-pair path { stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+.ct .ct-client { stroke: var(--color-gold-deep); color: var(--color-gold-deep); }
+.ct .ct-lawyer { stroke: var(--color-maroon-ink); color: var(--color-maroon-ink); }
+.ct .ct-pair .fold { stroke-width: .7; opacity: .7; }
+.ct .ct-lawyer .fold { stroke: var(--color-blush); opacity: .55; }
 .ct .ct-pair { transform: translate(600px, 444px) scale(.95); }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -364,8 +365,8 @@
   .ct .ct-l1, .ct .ct-a2 { animation: ct-step .75s ease-in-out infinite; }
   .ct .ct-l2, .ct .ct-a1 { animation: ct-step .75s ease-in-out -.375s infinite; }
 
-  @keyframes ct-glow { 0%, 54% { opacity: 0; } 68%, 90% { opacity: .55; } 98%, 100% { opacity: 0; } }
+  @keyframes ct-glow { 0%, 54% { opacity: 0; } 68%, 90% { opacity: .72; } 98%, 100% { opacity: 0; } }
   @keyframes ct-bob { from { transform: translateY(0); } to { transform: translateY(-1.4px); } }
-  @keyframes ct-step { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(.84); } }
-  @keyframes ct-pair { 0.0% { opacity: 0; transform: translate(600px, 600px) scale(1.220); } 4.0% { opacity: 1; transform: translate(600px, 594px) scale(1.200); } 44.0% { opacity: 1; transform: translate(600px, 484px) scale(1.000); } 45.6% { opacity: 1; transform: translate(600px, 484px) scale(1.000); } 47.4% { opacity: 1; transform: translate(600px, 474px) scale(0.988); } 49.0% { opacity: 1; transform: translate(600px, 474px) scale(0.988); } 50.8% { opacity: 1; transform: translate(600px, 464px) scale(0.976); } 52.4% { opacity: 1; transform: translate(600px, 464px) scale(0.976); } 54.2% { opacity: 1; transform: translate(600px, 454px) scale(0.964); } 55.8% { opacity: 1; transform: translate(600px, 454px) scale(0.964); } 57.6% { opacity: 1; transform: translate(600px, 444px) scale(0.952); } 60.0% { opacity: 1; transform: translate(600px, 442px) scale(0.950); } 68.0% { opacity: 0; transform: translate(600px, 440px) scale(0.800); } 100.0% { opacity: 0; transform: translate(600px, 440px) scale(0.800); } }
+  @keyframes ct-step { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(.88); } }
+  @keyframes ct-pair { 0.0% { opacity: 0; transform: translate(600px, 606px) scale(1.420); } 4.0% { opacity: 1; transform: translate(600px, 598px) scale(1.380); } 44.0% { opacity: 1; transform: translate(600px, 484px) scale(1.000); } 45.6% { opacity: 1; transform: translate(600px, 484px) scale(1.000); } 47.4% { opacity: 1; transform: translate(600px, 474px) scale(0.988); } 49.0% { opacity: 1; transform: translate(600px, 474px) scale(0.988); } 50.8% { opacity: 1; transform: translate(600px, 464px) scale(0.976); } 52.4% { opacity: 1; transform: translate(600px, 464px) scale(0.976); } 54.2% { opacity: 1; transform: translate(600px, 454px) scale(0.964); } 55.8% { opacity: 1; transform: translate(600px, 454px) scale(0.964); } 57.6% { opacity: 1; transform: translate(600px, 444px) scale(0.952); } 60.0% { opacity: 1; transform: translate(600px, 442px) scale(0.950); } 68.0% { opacity: 0; transform: translate(600px, 440px) scale(0.800); } 100.0% { opacity: 0; transform: translate(600px, 440px) scale(0.800); } }
 }
