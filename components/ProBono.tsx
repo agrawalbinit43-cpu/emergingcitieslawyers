@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
+import ProBonoScene from "./ProBonoScene";
 
 /* Requests go by email to the partner who reads them, through FormSubmit (free, no account; the first request sends
    an activation link to that inbox). The hidden "_honey" field catches bots. */
@@ -38,7 +39,7 @@ export default function ProBono() {
   }
 
   return (
-    <section id="pro-bono" className={`bg-blush ${SECTION} min-h-[70svh]`}>
+    <section id="pro-bono" className={`bg-blush ${SECTION} min-h-[70svh] !pb-[clamp(24px,3vw,48px)]`}>
       <div className={`${WRAP} ${ROW}`}>
         <p className={NOTE}>Pro bono</p>
         <div className={MAIN}>
@@ -104,6 +105,9 @@ export default function ProBono() {
             </form>
           )}
         </div>
+      </div>
+      <div className={`${WRAP} mt-[clamp(40px,5vw,72px)]`}>
+        <ProBonoScene />
       </div>
     </section>
   );
