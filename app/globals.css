@@ -344,45 +344,45 @@
 @keyframes sk-cm { 0% { opacity: 0; transform: translate(696px, 90px); } 5% { opacity: 0; transform: translate(696px, 90px); } 6% { opacity: 1; transform: translate(696px, 90px); } 16% { opacity: 1; transform: translate(1246px, 90px); } 17% { opacity: 0; transform: translate(1246px, 90px); } 31% { opacity: 0; transform: translate(696px, 220px); } 32% { opacity: 1; transform: translate(696px, 220px); } 42% { opacity: 1; transform: translate(1226px, 220px); } 43% { opacity: 0; transform: translate(1226px, 220px); } 57% { opacity: 0; transform: translate(696px, 350px); } 58% { opacity: 1; transform: translate(696px, 350px); } 68% { opacity: 1; transform: translate(976px, 350px); } 69% { opacity: 0; transform: translate(976px, 350px); } 100% { opacity: 0; transform: translate(976px, 350px); } }
 @keyframes sk-cg { 0% { opacity: 0; transform: translate(696px, 155px); } 18% { opacity: 0; transform: translate(696px, 155px); } 19% { opacity: 1; transform: translate(696px, 155px); } 29% { opacity: 1; transform: translate(1166px, 155px); } 30% { opacity: 0; transform: translate(1166px, 155px); } 44% { opacity: 0; transform: translate(696px, 285px); } 45% { opacity: 1; transform: translate(696px, 285px); } 55% { opacity: 1; transform: translate(1116px, 285px); } 56% { opacity: 0; transform: translate(1116px, 285px); } 100% { opacity: 0; transform: translate(1116px, 285px); } }
 
-/* Pro bono street (ProBonoScene.tsx). Rest state, used under reduced motion: home lit, both at the court door, the door lit. */
-.pb .i, .pb .g { fill: none; stroke: var(--color-maroon); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
-.pb .g { stroke: var(--color-gold-deep); }
-.pb .soft { opacity: .5; }
-.pb .gf { fill: var(--color-gold-deep); }
-.pb .mf { fill: var(--color-maroon); }
-.pb .pb-glow { fill: var(--color-gold); opacity: .4; }
-.pb .pb-door { fill: var(--color-maroon); opacity: .16; }
-.pb .pb-letter { opacity: 0; offset-rotate: 0deg; }
-.pb .pb-you { transform: translate(1680px, 500px); }
-.pb .pb-us { transform: translate(1720px, 500px); }
-@media (max-width: 767px) { .pb .pb-you, .pb .pb-us { r: 18px; } }
+/* Pro bono court (ProBonoScene.tsx). Rest state, used under reduced motion: the person stands at the open, lit door. */
+.ct .i { fill: none; stroke: var(--color-maroon); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+.ct .soft { opacity: .45; }
+.ct .ct-in { fill: var(--color-maroon); opacity: .1; }
+.ct .ct-glow { opacity: .5; }
+.ct .fig line { stroke: var(--color-gold-deep); stroke-width: 4.6; stroke-linecap: round; }
+.ct .fig .torso { stroke-width: 10.5; }
+.ct .fig .head { fill: var(--color-gold-deep); }
+.ct .fig .back { opacity: .55; }
+.ct .ct-fig { transform: translate(566px, 470px); }
+.ct .ct-rise { transform: translateY(-65px); }
+.ct .ct-lb-1 { transform: rotate(9deg); } .ct .ct-lf-1 { transform: rotate(-9deg); } .ct .ct-lf-2 { transform: rotate(4deg); }
+.ct .ct-ab-1 { transform: rotate(-8deg); } .ct .ct-af-1 { transform: rotate(8deg); }
+.ct .ct-ab-2, .ct .ct-af-2 { transform: rotate(-14deg); }
 
 @media (prefers-reduced-motion: no-preference) {
-  .pb:not(.pb-on) .a { animation-play-state: paused; }
-  .pb .pb-g0 { animation: pb-g0 16s ease-in-out infinite; }
-  .pb .pb-g2 { animation: pb-g2 16s ease-in-out infinite; }
-  .pb .pb-letter { animation: pb-letter 16s ease-in-out infinite; }
-  .pb .pb-you { animation: pb-you 16s linear infinite; }
-  .pb .pb-us { animation: pb-us 16s linear infinite; }
+  .ct:not(.ct-on) .a { animation-play-state: paused; }
+  .ct .ct-fig { animation: ct-walk 14s linear infinite; }
+  .ct .ct-rise { animation: ct-rise 14s cubic-bezier(.45, 0, .3, 1) infinite; }
+  .ct .ct-glow { animation: ct-glow 14s ease-in-out infinite; }
+  .ct .ct-bob { animation: ct-bob .45s ease-in-out infinite alternate; }
+  .ct .ct-lf-1, .ct .ct-lb-1 { animation: ct-thigh .9s ease-in-out infinite; }
+  .ct .ct-lf-2, .ct .ct-lb-2 { animation: ct-shin .9s ease-in-out infinite; }
+  .ct .ct-af-1, .ct .ct-ab-1 { animation: ct-arm .9s ease-in-out infinite; }
+  .ct .ct-af-2, .ct .ct-ab-2 { animation: ct-fore .9s ease-in-out infinite; }
+  .ct .ct-lb-1, .ct .ct-lb-2, .ct .ct-ab-1, .ct .ct-ab-2 { animation-delay: -.45s; }
 
-  @keyframes pb-g0 { 0% { opacity: 0; } 6%, 92% { opacity: .4; } 98%, 100% { opacity: 0; } }
-  @keyframes pb-g2 { 0%, 84% { opacity: 0; } 89%, 93% { opacity: .16; } 98%, 100% { opacity: 0; } }
-  @keyframes pb-letter { 0%, 6% { opacity: 0; offset-distance: 0%; } 8% { opacity: 1; } 20% { opacity: 1; offset-distance: 100%; } 22%, 100% { opacity: 0; offset-distance: 100%; } }
-  @keyframes pb-you {
-    0%, 26% { opacity: 0; transform: translate(145px, 564px); }
-    29% { opacity: 1; transform: translate(145px, 564px); }
-    54%, 60% { opacity: 1; transform: translate(862px, 564px); }
-    78% { transform: translate(1400px, 564px); }
-    81% { transform: translate(1470px, 500px); }
-    87%, 94% { opacity: 1; transform: translate(1680px, 500px); }
-    98%, 100% { opacity: 0; transform: translate(1680px, 500px); }
+  @keyframes ct-walk {
+    0% { opacity: 0; transform: translate(130px, 470px); }
+    4% { opacity: 1; }
+    64% { opacity: 1; transform: translate(600px, 470px) scale(1); }
+    73% { opacity: 0; transform: translate(604px, 470px) scale(.86); }
+    100% { opacity: 0; transform: translate(604px, 470px) scale(.86); }
   }
-  @keyframes pb-us {
-    0%, 55% { opacity: 0; transform: translate(898px, 564px); }
-    59%, 60% { opacity: 1; transform: translate(898px, 564px); }
-    77% { transform: translate(1410px, 564px); }
-    80% { transform: translate(1480px, 500px); }
-    86.5%, 94% { opacity: 1; transform: translate(1720px, 500px); }
-    98%, 100% { opacity: 0; transform: translate(1720px, 500px); }
-  }
+  @keyframes ct-glow { 0%, 58% { opacity: 0; } 72%, 86% { opacity: .55; } 97%, 100% { opacity: 0; } }
+  @keyframes ct-bob { from { transform: translateY(0); } to { transform: translateY(-1.6px); } }
+  @keyframes ct-thigh { 0%, 100% { transform: rotate(-23deg); } 50% { transform: rotate(21deg); } }
+  @keyframes ct-shin { 0% { transform: rotate(2deg); } 45% { transform: rotate(8deg); } 70% { transform: rotate(52deg); } 88% { transform: rotate(14deg); } 100% { transform: rotate(2deg); } }
+  @keyframes ct-arm { 0%, 100% { transform: rotate(20deg); } 50% { transform: rotate(-22deg); } }
+  @keyframes ct-fore { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(-30deg); } }
+  @keyframes ct-rise { 0.00% { transform: translateY(0px); } 22.60% { transform: translateY(0px); } 24.51% { transform: translateY(-11px); } 26.14% { transform: translateY(-11px); } 28.05% { transform: translateY(-22px); } 29.69% { transform: translateY(-22px); } 31.59% { transform: translateY(-33px); } 33.23% { transform: translateY(-33px); } 35.13% { transform: translateY(-44px); } 36.77% { transform: translateY(-44px); } 38.67% { transform: translateY(-55px); } 40.85% { transform: translateY(-55px); } 42.76% { transform: translateY(-65px); } 64.00% { transform: translateY(-65px); } 64.01%, 100% { transform: translateY(-65px); } }
 }

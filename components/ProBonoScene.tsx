@@ -1,44 +1,72 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { PB_LINES, PB_SOFT } from "./probono-art";
+import { useEffect, useId, useRef } from "react";
+import { CT_DOOR, CT_LINES, CT_SOFT } from "./court-art";
 
-/* Pro bono, in the hand of the About strip and the AI scenes: a home, a street, a lawyer's chambers and a district court on one
-   ground line. One 16s loop in three beats: a light comes on at home and a letter (the request) arcs to the chambers; the person
-   (gold) and counsel (maroon) walk side by side to the court, whose door lights; a short hold, then a fade. Purely decorative.
-   Motion lives in globals.css (.pb); it plays only on screen, and under reduced motion the scene rests on its last frame. */
-/* phone: crop to the chambers, street and court so the detail stays readable; the letter flies in from the left edge */
+/* Pro bono: a court, drawn in the pencil line of the About strip and the AI scenes, and one person walking into it.
+   One 14s loop: they walk in from the left, climb a step per footstep, cross the portico and pass into the doorway as it
+   warms. Gold-deep is the person and the light they bring in; the building stays maroon. Purely decorative (aria-hidden).
+   Motion lives in globals.css (.ct); it plays only on screen. Under reduced motion the person stands at the open door. */
 export default function ProBonoScene({ crop = false, className = "" }: { crop?: boolean; className?: string }) {
   const root = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = root.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => el.classList.toggle("pb-on", e.isIntersecting));
+    const io = new IntersectionObserver(([e]) => el.classList.toggle("ct-on", e.isIntersecting));
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
-  return (
-    <div
-      ref={root}
-      aria-hidden="true"
-      className={`pb relative w-full overflow-hidden ${className}`}
-    >
-      <svg viewBox={crop ? "690 255 1300 340" : "0 250 2000 345"} className="block h-auto w-full overflow-visible" aria-hidden="true">
-        {/* gold is the person and their request: the home window, the letter, the gold dot; the court door answers in maroon */}
-        <rect className="pb-glow a pb-g0" x="220" y="450" width="70" height="62" />
-        <rect className="pb-door a pb-g2" x="1678" y="440" width="44" height="76" />
-        <path className="i soft" d={PB_SOFT} />
-        <path className="i" d={PB_LINES} />
-        <circle className="mf" cx="160" cy="536" r="2.5" />
-        {/* the request */}
-        <g className="a pb-letter" style={{ offsetPath: `path("M255 476 Q505 210 770 388")` }}>
-          <path className="g" d="M-18 -12 H18 V12 H-18 Z M-18 -12 L0 2 L18 -12" />
+  const d = CT_DOOR;
+  const gid = `ct-${useId().replace(/:/g, "")}`;
+  /* one limb: a thigh (or upper arm) swinging from its joint, with a shin (or forearm) hinged at the knee */
+  const limb = (cls: string, a: number, b: number, foot = false) => (
+    <g className={`a ${cls}-1`}>
+      <line x1="0" y1="0" x2="0" y2={a} />
+      <g transform={`translate(0 ${a})`}>
+        <g className={`a ${cls}-2`}>
+          <line x1="0" y1="0" x2="0" y2={b} />
+          {foot && <line x1="0" y1={b} x2="5.5" y2={b} />}
         </g>
-        {/* the person and counsel */}
-        <circle className="gf a pb-you" cx="0" cy="0" r="16" />
-        <circle className="mf a pb-us" cx="0" cy="0" r="16" />
+      </g>
+    </g>
+  );
+
+  return (
+    <div ref={root} aria-hidden="true" className={`ct relative w-full overflow-hidden ${className}`}>
+      <svg viewBox={crop ? "250 112 700 372" : "100 108 1000 378"} className="block h-auto w-full" aria-hidden="true">
+        <rect className="ct-in" x={d.x} y={d.y} width={d.w} height={d.h} />
+        <defs>
+          <linearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="var(--color-gold)" stopOpacity=".35" />
+            <stop offset="1" stopColor="var(--color-gold)" stopOpacity="1" />
+          </linearGradient>
+        </defs>
+        {/* the light from inside: fills the doorway and spills onto the top step */}
+        <g className="ct-glow a" fill={`url(#${gid})`}>
+          <rect x={d.x} y={d.y} width={d.w} height={d.h} />
+          <path d={`M${d.x} ${d.y + d.h}H${d.x + d.w}L${d.x + d.w + 30} ${d.y + d.h + 10}H${d.x - 30}Z`} />
+        </g>
+        <path className="i soft" d={CT_SOFT} />
+        <path className="i" d={CT_LINES} />
+        {/* the person: feet at the origin, facing right */}
+        <g className="ct-fig a">
+          <g className="ct-rise a">
+            <g transform="scale(1.12)">
+            <g className="ct-bob a fig">
+              <g className="back">
+                <g transform="translate(0 -32)">{limb("ct-lb", 16, 16, true)}</g>
+                <g transform="translate(2 -51)">{limb("ct-ab", 12.5, 11.5)}</g>
+              </g>
+              <line className="torso" x1="0.5" y1="-33" x2="2" y2="-50" />
+              <circle className="head" cx="3.4" cy="-61" r="6.4" />
+              <g transform="translate(0 -32)">{limb("ct-lf", 16, 16, true)}</g>
+              <g transform="translate(2 -51)">{limb("ct-af", 12.5, 11.5)}</g>
+            </g>
+            </g>
+          </g>
+        </g>
       </svg>
     </div>
   );
