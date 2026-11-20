@@ -39,7 +39,7 @@ export default function ProBono() {
   }
 
   return (
-    <section id="pro-bono" className={`bg-blush ${SECTION} min-h-[70svh] !pb-[clamp(24px,3vw,48px)]`}>
+    <section id="pro-bono" className={`bg-blush ${SECTION} min-h-[70svh]`}>
       <div className={`${WRAP} ${ROW}`}>
         <p className={NOTE}>Pro bono</p>
         <div className={MAIN}>
@@ -49,6 +49,8 @@ export default function ProBono() {
           <p data-reveal="rise" className="max-w-[34em] text-[clamp(18px,1.35vw,21px)] leading-[1.6] [text-wrap:pretty]">
             If you urgently need a lawyer and cannot afford one, tell us about your situation below. We read each request. We will find you counsel who will act free of charge.
           </p>
+
+          <ProBonoScene className="mt-[clamp(32px,3.5vw,52px)] hidden md:block" />
 
           {state === "sent" ? (
             <div role="status" className="mt-10 max-w-[40em] border-l-2 border-gold-deep bg-paper px-5 py-4">
@@ -104,10 +106,8 @@ export default function ProBono() {
               </div>
             </form>
           )}
+          <ProBonoScene crop className="mt-14 md:hidden" />
         </div>
-      </div>
-      <div className={`${WRAP} mt-[clamp(40px,5vw,72px)]`}>
-        <ProBonoScene />
       </div>
     </section>
   );

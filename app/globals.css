@@ -344,49 +344,45 @@
 @keyframes sk-cm { 0% { opacity: 0; transform: translate(696px, 90px); } 5% { opacity: 0; transform: translate(696px, 90px); } 6% { opacity: 1; transform: translate(696px, 90px); } 16% { opacity: 1; transform: translate(1246px, 90px); } 17% { opacity: 0; transform: translate(1246px, 90px); } 31% { opacity: 0; transform: translate(696px, 220px); } 32% { opacity: 1; transform: translate(696px, 220px); } 42% { opacity: 1; transform: translate(1226px, 220px); } 43% { opacity: 0; transform: translate(1226px, 220px); } 57% { opacity: 0; transform: translate(696px, 350px); } 58% { opacity: 1; transform: translate(696px, 350px); } 68% { opacity: 1; transform: translate(976px, 350px); } 69% { opacity: 0; transform: translate(976px, 350px); } 100% { opacity: 0; transform: translate(976px, 350px); } }
 @keyframes sk-cg { 0% { opacity: 0; transform: translate(696px, 155px); } 18% { opacity: 0; transform: translate(696px, 155px); } 19% { opacity: 1; transform: translate(696px, 155px); } 29% { opacity: 1; transform: translate(1166px, 155px); } 30% { opacity: 0; transform: translate(1166px, 155px); } 44% { opacity: 0; transform: translate(696px, 285px); } 45% { opacity: 1; transform: translate(696px, 285px); } 55% { opacity: 1; transform: translate(1116px, 285px); } 56% { opacity: 0; transform: translate(1116px, 285px); } 100% { opacity: 0; transform: translate(1116px, 285px); } }
 
-/* Pro bono street (ProBonoScene.tsx). Rest state, used under reduced motion: lights on, both at the court door, the scale level. */
+/* Pro bono street (ProBonoScene.tsx). Rest state, used under reduced motion: home lit, both at the court door, the door lit. */
 .pb .i, .pb .g { fill: none; stroke: var(--color-maroon); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
 .pb .g { stroke: var(--color-gold-deep); }
 .pb .soft { opacity: .5; }
 .pb .gf { fill: var(--color-gold-deep); }
 .pb .mf { fill: var(--color-maroon); }
 .pb .pb-glow { fill: var(--color-gold); opacity: .4; }
-.pb .pb-beam { transform-box: view-box; transform-origin: 1700px 300px; }
+.pb .pb-door { fill: var(--color-maroon); opacity: .16; }
 .pb .pb-letter { opacity: 0; offset-rotate: 0deg; }
-.pb .pb-you { transform: translate(1683px, 503px); }
-.pb .pb-us { transform: translate(1717px, 503px); }
-@media (max-width: 767px) { .pb .pb-you, .pb .pb-us { r: 17px; } }
+.pb .pb-you { transform: translate(1680px, 500px); }
+.pb .pb-us { transform: translate(1720px, 500px); }
+@media (max-width: 767px) { .pb .pb-you, .pb .pb-us { r: 18px; } }
 
 @media (prefers-reduced-motion: no-preference) {
   .pb:not(.pb-on) .a { animation-play-state: paused; }
   .pb .pb-g0 { animation: pb-g0 16s ease-in-out infinite; }
-  .pb .pb-g1 { animation: pb-g1 16s ease-in-out infinite; }
   .pb .pb-g2 { animation: pb-g2 16s ease-in-out infinite; }
   .pb .pb-letter { animation: pb-letter 16s ease-in-out infinite; }
   .pb .pb-you { animation: pb-you 16s linear infinite; }
   .pb .pb-us { animation: pb-us 16s linear infinite; }
-  .pb .pb-beam { animation: pb-beam 16s ease-in-out infinite; }
 
   @keyframes pb-g0 { 0% { opacity: 0; } 6%, 92% { opacity: .4; } 98%, 100% { opacity: 0; } }
-  @keyframes pb-g1 { 0%, 20% { opacity: 0; } 25%, 92% { opacity: .4; } 98%, 100% { opacity: 0; } }
-  @keyframes pb-g2 { 0%, 84% { opacity: 0; } 89%, 92% { opacity: .4; } 98%, 100% { opacity: 0; } }
+  @keyframes pb-g2 { 0%, 84% { opacity: 0; } 89%, 93% { opacity: .16; } 98%, 100% { opacity: 0; } }
   @keyframes pb-letter { 0%, 6% { opacity: 0; offset-distance: 0%; } 8% { opacity: 1; } 20% { opacity: 1; offset-distance: 100%; } 22%, 100% { opacity: 0; offset-distance: 100%; } }
   @keyframes pb-you {
-    0%, 26% { opacity: 0; transform: translate(145px, 567px); }
-    29% { opacity: 1; transform: translate(145px, 567px); }
-    54%, 60% { opacity: 1; transform: translate(862px, 567px); }
-    78% { transform: translate(1400px, 567px); }
-    81% { transform: translate(1470px, 503px); }
-    87%, 94% { opacity: 1; transform: translate(1683px, 503px); }
-    98%, 100% { opacity: 0; transform: translate(1683px, 503px); }
+    0%, 26% { opacity: 0; transform: translate(145px, 564px); }
+    29% { opacity: 1; transform: translate(145px, 564px); }
+    54%, 60% { opacity: 1; transform: translate(862px, 564px); }
+    78% { transform: translate(1400px, 564px); }
+    81% { transform: translate(1470px, 500px); }
+    87%, 94% { opacity: 1; transform: translate(1680px, 500px); }
+    98%, 100% { opacity: 0; transform: translate(1680px, 500px); }
   }
   @keyframes pb-us {
-    0%, 55% { opacity: 0; transform: translate(898px, 567px); }
-    59%, 60% { opacity: 1; transform: translate(898px, 567px); }
-    77% { transform: translate(1410px, 567px); }
-    80% { transform: translate(1480px, 503px); }
-    86.5%, 94% { opacity: 1; transform: translate(1717px, 503px); }
-    98%, 100% { opacity: 0; transform: translate(1717px, 503px); }
+    0%, 55% { opacity: 0; transform: translate(898px, 564px); }
+    59%, 60% { opacity: 1; transform: translate(898px, 564px); }
+    77% { transform: translate(1410px, 564px); }
+    80% { transform: translate(1480px, 500px); }
+    86.5%, 94% { opacity: 1; transform: translate(1720px, 500px); }
+    98%, 100% { opacity: 0; transform: translate(1720px, 500px); }
   }
-  @keyframes pb-beam { 0%, 85% { transform: rotate(-11deg); } 91%, 95% { transform: rotate(0deg); } 100% { transform: rotate(-11deg); } }
 }
