@@ -50,7 +50,7 @@ export default function ProBono() {
             If you urgently need a lawyer and cannot afford one, tell us about your situation below. We read each request. We will find you counsel who will act free of charge.
           </p>
 
-          <ProBonoScene className="mt-[clamp(32px,3.5vw,52px)] hidden md:block" />
+          <ProBonoScene className="mt-[clamp(28px,3vw,44px)] hidden max-w-[44em] md:block" />
 
           {state === "sent" ? (
             <div role="status" className="mt-10 max-w-[40em] border-l-2 border-gold-deep bg-paper px-5 py-4">
@@ -106,7 +106,7 @@ export default function ProBono() {
               </div>
             </form>
           )}
-          <ProBonoScene crop className="mt-14 md:hidden" />
+          <ProBonoScene crop className="mx-auto mt-12 max-w-[30em] md:hidden" />
         </div>
       </div>
     </section>
