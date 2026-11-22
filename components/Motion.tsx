@@ -19,6 +19,7 @@ declare global {
  *   data-reveal="rise"   fades up; neighbours entering together are staggered
  *   data-reveal="wipe"   a picture opens from the bottom as it settles from a slight zoom
  *   data-reveal="draw"   a rule draws from the left
+ *   data-reveal="ink"    a pen drawing inks in from the left, as in the AI-native figures
  *   data-reveal="slide"  slides in from the left; rows entering together are staggered
  * Every section's side heading also gets a short gold rule that draws in beneath it.
  */
@@ -72,6 +73,10 @@ export default function Motion() {
         const tl = gsap.timeline({ scrollTrigger: once(el) });
         tl.fromTo(el, { autoAlpha: 1, clipPath: "inset(100% 0% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.4, ease: "expo.out" });
         if (img) tl.from(img, { scale: 1.18, duration: 1.8, ease: "expo.out" }, 0);
+      });
+
+      gsap.utils.toArray<HTMLElement>('[data-reveal="ink"]').forEach((el, i) => {
+        gsap.fromTo(el, { autoAlpha: 1, clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 1.4, delay: (i % 3) * 0.15, ease: "power2.out", scrollTrigger: once(el, "top 94%") });
       });
 
       gsap.utils.toArray<HTMLElement>('[data-reveal="draw"]').forEach((el) => {

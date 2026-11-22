@@ -3,6 +3,7 @@ import Gate from "@/components/Gate";
 import Hero from "@/components/Hero";
 import Motion from "@/components/Motion";
 import Nav from "@/components/Nav";
+import FeatureCards from "@/components/FeatureCards";
 import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
 import Footer from "@/components/Footer";
@@ -204,7 +205,14 @@ export default function Site() {
             <h2 className={NOTE}>Thought leadership</h2>
             <div className={MAIN}>
               <h3 className="mb-2 font-display text-[21px] font-semibold">Commentary</h3>
-              <Pieces items={COMMENTARY} />
+              <FeatureCards
+                items={[
+                  { piece: COMMENTARY[0], art: "tl-jantar", alt: "the sundials of Jantar Mantar behind an empty police barricade" },
+                  { piece: COMMENTARY[1], art: "tl-digital", alt: "a phone on a tea-stall bench under a mobile tower" },
+                  { piece: COMMENTARY[2], art: "tl-gold", alt: "a gold bracelet weighed against tax forms on a brass scale" },
+                ]}
+              />
+              <Pieces items={COMMENTARY.slice(3)} />
               <h3 className="mb-2 mt-[72px] font-display text-[21px] font-semibold">Journals &amp; books</h3>
               <Pieces items={JOURNALS} />
               <h3 className="mb-2 mt-[72px] font-display text-[21px] font-semibold">Speaking</h3>
