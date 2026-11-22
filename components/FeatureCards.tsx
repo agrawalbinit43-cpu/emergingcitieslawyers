@@ -31,7 +31,6 @@ export default function FeatureCards({ items }: { items: Feature[] }) {
               {p.title}
               <span className="sr-only"> (opens in a new tab)</span>
             </h4>
-            <p className="mt-2 text-[14px] leading-[1.45] text-dust">{p.by}</p>
           </a>
         </li>
       ))}
