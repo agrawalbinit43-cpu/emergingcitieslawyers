@@ -6,9 +6,9 @@ export type Feature = { piece: Piece; art: string; alt: string };
 
 export default function FeatureCards({ items }: { items: Feature[] }) {
   return (
-    <ul className="mb-10 grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-x-0">
+    <ul className="mb-10 grid grid-cols-1 gap-y-10 md:grid-cols-3 md:gap-x-0">
       {items.map(({ piece: p, art, alt }) => (
-        <li key={p.href} data-reveal="rise" className="md:px-[clamp(16px,1.8vw,28px)] md:first:pl-0 md:last:pr-0 md:[&+&]:border-l md:[&+&]:border-maroon/25">
+        <li key={p.href} data-reveal="rise" className="[&+&]:border-t [&+&]:border-maroon/25 [&+&]:pt-10 md:[&+&]:border-t-0 md:[&+&]:pt-0 md:px-[clamp(16px,1.8vw,28px)] md:first:pl-0 md:last:pr-0 md:[&+&]:border-l md:[&+&]:border-maroon/25">
           <a href={p.href} target="_blank" rel="noopener" className="group block">
             <div className="flex h-[clamp(170px,46vw,240px)] md:h-[clamp(140px,12.5vw,180px)] items-end justify-center border-b border-maroon/40 pb-0">
               <div
