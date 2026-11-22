@@ -19,7 +19,7 @@ export const GRAPH_NODES = [
   { label: "Yale", x: 150, y: 220, note: "Yale Law School is one of the world’s foremost law schools. Prannv earned his LL.M. there." },
   { label: "NLSIU", x: 440, y: 62, note: "National Law School of India University is India’s best law school. Binit and Prannv both studied law there." },
   { label: "University of Vienna", x: 640, y: 178, note: "The University of Vienna is among Europe’s oldest universities. Binit earned a European Master in Law and Economics there." },
-  { label: "Supreme Court of India", x: 640, y: 432, note: "Binit and Prannv have appeared before the Supreme Court in varied disputes, and Prannv clerked for Justice B.V. Nagarathna." },
+  { label: "Supreme Court of India", x: 640, y: 432, note: "Binit and Prannv have appeared before the Supreme Court in varied disputes. Prannv clerked for Justice B.V. Nagarathna and is Assisting Counsel to the Court’s Legal Services Committee." },
   { label: "Competition Commission", x: 560, y: 668, note: "The CCI is India’s antitrust regulator. Binit has appeared before it on merger filings and antitrust cases." },
   { label: "Bae, Kim & Lee", x: 668, y: 832, note: "Bae, Kim & Lee is one of South Korea’s largest law firms. Binit trained there for 6 months in its technology and corporate teams." },
   { label: "BigLaw", x: 316, y: 798, note: "Khaitan & Co is one of India’s oldest and largest law firms. Binit worked in its PE/VC team in Bengaluru." },

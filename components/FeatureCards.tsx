@@ -2,12 +2,12 @@ import type { Piece } from "@/lib/writing";
 
 /* The three newest pieces as cards, each under a light pencil sketch of the publication's masthead
    (public/drawings/tl-*.svg, used as CSS masks so the line takes the site's maroon). The rest stay in the list below. */
-export type Feature = { piece: Piece; art: string; alt: string };
+export type Feature = { piece: Piece; art: string; alt: string; tall?: boolean };
 
 export default function FeatureCards({ items }: { items: Feature[] }) {
   return (
     <ul className="mb-10 grid grid-cols-1 gap-y-10 md:grid-cols-3 md:gap-x-0">
-      {items.map(({ piece: p, art, alt }) => (
+      {items.map(({ piece: p, art, alt, tall }) => (
         <li key={p.href} data-reveal="rise" className="[&+&]:border-t [&+&]:border-maroon/25 [&+&]:pt-10 md:[&+&]:border-t-0 md:[&+&]:pt-0 md:px-[clamp(16px,1.8vw,28px)] md:first:pl-0 md:last:pr-0 md:[&+&]:border-l md:[&+&]:border-maroon/25">
           <a href={p.href} target="_blank" rel="noopener" className="group block">
             <div className="flex h-[clamp(150px,40vw,200px)] md:h-[clamp(120px,10.5vw,150px)] items-center justify-center border-b border-maroon/40 pb-0">
@@ -15,7 +15,7 @@ export default function FeatureCards({ items }: { items: Feature[] }) {
                 role="img"
                 aria-label={alt}
                 data-reveal="ink"
-                className="city-lines h-[78%] w-[88%] [mask-position:center] transition-[background-color] duration-300 group-hover:bg-maroon-ink"
+                className={`city-lines ${tall ? "mb-2 h-[118%] self-end" : "h-[78%]"} w-[88%] [mask-position:center] transition-[background-color] duration-300 group-hover:bg-maroon-ink`}
                 style={{ ["--img" as string]: `url(/drawings/${art}.svg)` }}
               />
             </div>

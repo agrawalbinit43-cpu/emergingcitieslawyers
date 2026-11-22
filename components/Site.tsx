@@ -227,7 +227,7 @@ export default function Site() {
                 items={[
                   { piece: SPEAKING[0], art: "tl-lawmic", alt: "LawMic podcast logo, sketched in pencil" },
                   { piece: SPEAKING[1], art: "tl-amicus", alt: "Yale Amicus podcast logo, sketched in pencil" },
-                  { piece: SPEAKING[2], art: "tl-undp", alt: "UNDP logo, sketched in pencil" },
+                  { piece: SPEAKING[2], art: "tl-undp", alt: "UNDP logo, sketched in pencil", tall: true },
                 ]}
               />
               <Pieces items={SPEAKING.slice(3)} />
