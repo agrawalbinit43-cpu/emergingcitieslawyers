@@ -214,9 +214,23 @@ export default function Site() {
               />
               <Pieces items={COMMENTARY.slice(3)} />
               <h3 className="mb-2 mt-[72px] font-display text-[21px] font-semibold">Journals &amp; books</h3>
-              <Pieces items={JOURNALS} />
+              <FeatureCards
+                items={[
+                  { piece: JOURNALS[0], art: "tl-oup", alt: "Oxford University Press logo, sketched in pencil" },
+                  { piece: JOURNALS[1], art: "tl-elgar", alt: "Edward Elgar Publishing logo, sketched in pencil" },
+                  { piece: JOURNALS[2], art: "tl-kluwer", alt: "Wolters Kluwer logo, sketched in pencil" },
+                ]}
+              />
+              <Pieces items={JOURNALS.slice(3)} />
               <h3 className="mb-2 mt-[72px] font-display text-[21px] font-semibold">Speaking</h3>
-              <Pieces items={SPEAKING} />
+              <FeatureCards
+                items={[
+                  { piece: SPEAKING[0], art: "tl-lawmic", alt: "LawMic podcast logo, sketched in pencil" },
+                  { piece: SPEAKING[1], art: "tl-amicus", alt: "Yale Amicus podcast logo, sketched in pencil" },
+                  { piece: SPEAKING[2], art: "tl-undp", alt: "UNDP logo, sketched in pencil" },
+                ]}
+              />
+              <Pieces items={SPEAKING.slice(3)} />
             </div>
           </div>
         </section>
