@@ -207,9 +207,9 @@ export default function Site() {
               <h3 className="mb-2 font-display text-[21px] font-semibold">Commentary</h3>
               <FeatureCards
                 items={[
-                  { piece: COMMENTARY[0], art: "tl-jantar", alt: "the sundials of Jantar Mantar behind an empty police barricade" },
-                  { piece: COMMENTARY[1], art: "tl-digital", alt: "a phone on a tea-stall bench under a mobile tower" },
-                  { piece: COMMENTARY[2], art: "tl-gold", alt: "a gold bangle in a jeweller's weighing pan, resting on an open account ledger" },
+                  { piece: COMMENTARY[0], art: "tl-sco", alt: "Supreme Court Observer logo, sketched in pencil" },
+                  { piece: COMMENTARY[1], art: "tl-frontline", alt: "Frontline logo, sketched in pencil" },
+                  { piece: COMMENTARY[2], art: "tl-toi", alt: "The Times of India logo, sketched in pencil" },
                 ]}
               />
               <Pieces items={COMMENTARY.slice(3)} />
