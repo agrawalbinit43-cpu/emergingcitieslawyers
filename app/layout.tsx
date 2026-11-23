@@ -10,7 +10,7 @@ const DESCRIPTION =
   "Emerging Cities Lawyers LLP is an Indian law firm for start-ups, growing companies, funds and foreign businesses, in the cities beyond the metros. Corporate, disputes, tax, trade marks and India entry.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://emergingcitieslawyers.com"),
+  metadataBase: new URL("https://www.emergingcitieslawyers.com"),
   title: "Emerging Cities Lawyers LLP | Law for emerging India",
   description: DESCRIPTION,
   alternates: { canonical: "/" },

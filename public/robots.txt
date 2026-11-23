@@ -1,0 +1,28 @@
+# Emerging Cities Lawyers: robots.txt
+# Search engines and AI search/retrieval crawlers may read the whole site.
+
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: DuckAssistBot
+User-agent: Applebot
+Allow: /
+
+# AI training crawlers: allowed. To opt out of model training, change "Allow: /" below to "Disallow: /".
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.emergingcitieslawyers.com/sitemap.xml
