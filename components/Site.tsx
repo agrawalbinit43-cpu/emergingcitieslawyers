@@ -8,6 +8,7 @@ import Pieces from "@/components/Pieces";
 import Landmarks from "@/components/Landmarks";
 import Footer from "@/components/Footer";
 import AiChamber from "@/components/AiChamber";
+import ContactForm from "@/components/ContactForm";
 import { ALLIED, CLIENTS, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS, SPEAKING } from "@/lib/writing";
@@ -242,6 +243,8 @@ export default function Site() {
               <p data-reveal="lines" className="lead mb-[.55em] text-maroon">
                 Write to us.
               </p>
+              <ContactForm />
+              <p className="mb-6 mt-14 font-display text-[15px] font-semibold text-dust">Or email a partner directly</p>
               <div className="flex flex-col gap-7">
                 {PARTNERS.map((p) => (
                   <a key={p.email} href={`mailto:${p.email}`} data-reveal="rise" className="group flex w-fit max-w-full flex-col gap-1">
