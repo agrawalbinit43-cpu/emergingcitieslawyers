@@ -29,6 +29,9 @@ const GTM = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date(
 // Leadfeeder visitor tracking (site id lAxoEaKjXOB4OYGd).
 const LEADFEEDER = `(function(ss,ex){window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));};(function(d,s){fs=d.getElementsByTagName(s)[0];function ce(src){var cs=d.createElement(s);cs.src=src;cs.async=1;fs.parentNode.insertBefore(cs,fs);};ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');})(document,'script');})('lAxoEaKjXOB4OYGd');`;
 
+// Reddit pixel (advertiser a2_k2l2on093409): page visits for ad optimisation; ContactForm fires "Lead" on a confirmed send.
+const REDDIT = `!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_k2l2on093409');rdt('track','PageVisit');`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" className={`${archivo.variable} ${caslon.variable}`} suppressHydrationWarning>
@@ -36,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: BOOT }} />
         <script dangerouslySetInnerHTML={{ __html: GTM }} />
         <script dangerouslySetInnerHTML={{ __html: LEADFEEDER }} />
+        <script dangerouslySetInnerHTML={{ __html: REDDIT }} />
       </head>
       <body>
         <noscript>

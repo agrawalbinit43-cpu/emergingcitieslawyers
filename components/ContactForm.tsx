@@ -30,6 +30,7 @@ export default function ContactForm() {
       const out = await res.json().catch(() => ({}));
       if (!res.ok || String(out.success) === "false") throw new Error("not sent");
       form.reset();
+      (window as unknown as { rdt?: (...a: unknown[]) => void }).rdt?.("track", "Lead");
       setState("sent");
     } catch {
       setState("failed");
