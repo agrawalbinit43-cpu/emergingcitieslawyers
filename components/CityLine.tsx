@@ -10,26 +10,26 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 /* Line drawings of what emerging India is building (public/drawings/city-*.svg, white shapes used as CSS masks over maroon).
    r is width / height; h is the drawn height against the tallest, so the set keeps one believable scale on a shared ground line. */
 const DRAWINGS = [
+  { file: "build", r: 1376 / 2057, h: 1, alt: "an office tower rising under a crane" },
+  { file: "metro", r: 2490 / 590, h: 0.34, alt: "an elevated metro line running from the office tower to a factory" },
+  { file: "factory", r: 2200 / 680, h: 0.4, alt: "a manufacturing plant" },
+  { file: "rpr", r: 2250 / 977, h: 0.6, alt: "the Mantralaya in Nava Raipur" },
   { file: "cowork", r: 1614 / 1427, h: 0.85, alt: "a co-working building for start-ups" },
   { file: "blr", r: 2479 / 741, h: 0.6, alt: "the Vidhana Soudha in Bangalore" },
   { file: "bungalow", r: 2010 / 1140, h: 0.62, alt: "an old bungalow turned into a start-up office" },
-  { file: "build", r: 1376 / 2057, h: 1, alt: "an office tower rising under a crane" },
-  { file: "metro", r: 2490 / 590, h: 0.42, alt: "an elevated metro line running from the office tower to a factory" },
-  { file: "factory", r: 2200 / 680, h: 0.4, alt: "a manufacturing plant" },
-  { file: "rpr", r: 2250 / 977, h: 0.6, alt: "the Mantralaya in Nava Raipur" },
 ];
 
 /* Street trees and lamps fill the ground between the buildings, so the strip reads as one street.
    One group follows each building, in order; h is again against the tallest building.
    The office tower and the metro have no group: the metro runs straight from the tower to the factory. */
 const STREET: { file: string; r: number; h: number }[][] = [
-  [{ file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
-  [{ file: "lamp", r: 80 / 260, h: 0.4 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
-  [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
   [],
   [],
   [{ file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "lamp", r: 80 / 260, h: 0.4 }],
   [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
+  [{ file: "tree-a", r: 240 / 220, h: 0.36 }, { file: "tree-b", r: 200 / 190, h: 0.29 }],
+  [{ file: "lamp", r: 80 / 260, h: 0.4 }, { file: "mast", r: 90 / 260, h: 0.38 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
+  [{ file: "tree-b", r: 200 / 190, h: 0.29 }, { file: "tree-a", r: 240 / 220, h: 0.36 }],
 ];
 
 /** three copies, so the strip never runs out on a wide screen; the loop moves by exactly one copy */
@@ -80,7 +80,7 @@ export default function CityLine() {
             <div key={`${c}-${d.file}`} aria-hidden="true" className="city-slot flex shrink-0 items-end">
               <div
                 className="city-lines"
-                style={{ aspectRatio: String(d.r), width: `min(${d.file === "metro" ? 96 : 64}vw, calc(var(--city-h) * ${d.h * d.r}))`, ["--img" as string]: `url(/drawings/city-${d.file}.svg)` }}
+                style={{ aspectRatio: String(d.r), width: `min(${d.file === "metro" ? 96 : 64}vw, calc(var(--city-h) * ${d.h * d.r}))`, ["--img" as string]: `url(/drawings/city-${d.file}.svg)`, ...(d.file === "metro" && { marginInline: "clamp(18px, 2.6vw, 44px)" }) }}
               />
               {STREET[i].length > 0 && <div className="flex items-end gap-[clamp(6px,0.9vw,14px)] px-[clamp(18px,2.6vw,44px)]">
                 {STREET[i].map((t, j) => (
