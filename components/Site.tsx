@@ -13,6 +13,22 @@ import { ALLIED, CLIENTS, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS, SPEAKING } from "@/lib/writing";
 
+/* Commentary cards: each piece is matched to its masthead sketch by outlet, so removing or adding a piece never shifts a logo onto the wrong article. */
+const ART: Record<string, { art: string; alt: string }> = {
+  Frontline: { art: "tl-frontline", alt: "Frontline logo, sketched in pencil" },
+  "The Times of India": { art: "tl-toi", alt: "The Times of India logo, sketched in pencil" },
+  Moneycontrol: { art: "tl-moneycontrol", alt: "Moneycontrol logo, sketched in pencil" },
+};
+const FEATURED = [
+  "https://frontline.thehindu.com/the-nation/digital-activism-tools-democracy-internet-censorship/article71587652.ece",
+  "https://timesofindia.indiatimes.com/toi-blogs/opinion-desk/what-a-gold-bracelet-asks-of-indias-tax-law/articleshow/133396298.cms",
+  "https://www.moneycontrol.com/news/opinion/genai-calls-for-a-relook-at-what-constitutes-anti-competitive-practice-12767339.html",
+];
+const COMMENTARY_FEATURES = FEATURED.flatMap((href) => {
+  const piece = COMMENTARY.find((p) => p.href === href);
+  return piece ? [{ piece, ...ART[piece.outlet] }] : [];
+});
+
 
 export default function Site() {
   return (
@@ -206,14 +222,8 @@ export default function Site() {
             <h2 className={NOTE}>Thought leadership</h2>
             <div className={MAIN}>
               <h3 className="mb-2 font-display text-[21px] font-semibold">Commentary</h3>
-              <FeatureCards
-                items={[
-                  { piece: COMMENTARY[0], art: "tl-sco", alt: "Supreme Court Observer logo, sketched in pencil" },
-                  { piece: COMMENTARY[1], art: "tl-frontline", alt: "Frontline logo, sketched in pencil" },
-                  { piece: COMMENTARY[2], art: "tl-toi", alt: "The Times of India logo, sketched in pencil" },
-                ]}
-              />
-              <Pieces items={COMMENTARY.slice(3)} />
+              <FeatureCards items={COMMENTARY_FEATURES} />
+              <Pieces items={COMMENTARY.filter((p) => !COMMENTARY_FEATURES.some((f) => f.piece === p))} />
               <h3 className="mb-2 mt-[72px] font-display text-[21px] font-semibold">Journals &amp; books</h3>
               <FeatureCards
                 items={[
