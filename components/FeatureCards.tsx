@@ -6,9 +6,9 @@ export type Feature = { piece: Piece; art: string; alt: string; tall?: boolean }
 
 export default function FeatureCards({ items }: { items: Feature[] }) {
   return (
-    <ul className="mb-10 grid grid-cols-1 gap-y-10 md:grid-cols-3 md:gap-x-0">
+    <ul className="mb-10 grid grid-cols-1 gap-y-10 md:grid-cols-3 md:gap-x-0 md:-mx-[clamp(16px,1.8vw,28px)]">
       {items.map(({ piece: p, art, alt, tall }) => (
-        <li key={p.href} data-reveal="rise" className="[&+&]:border-t [&+&]:border-maroon/25 [&+&]:pt-10 md:[&+&]:border-t-0 md:[&+&]:pt-0 md:px-[clamp(16px,1.8vw,28px)] md:first:pl-0 md:last:pr-0 md:[&+&]:border-l md:[&+&]:border-maroon/25">
+        <li key={p.href} data-reveal="rise" className="[&+&]:border-t [&+&]:border-maroon/25 [&+&]:pt-10 md:[&+&]:border-t-0 md:[&+&]:pt-0 md:px-[clamp(16px,1.8vw,28px)] md:[&+&]:border-l md:[&+&]:border-maroon/25">
           <a href={p.href} target="_blank" rel="noopener" className="group block">
             <div className="flex h-[clamp(150px,40vw,200px)] md:h-[clamp(120px,10.5vw,150px)] items-center justify-center border-b border-maroon/40 pb-0">
               <div
