@@ -20,7 +20,7 @@ const ART: Record<string, { art: string; alt: string }> = {
   Moneycontrol: { art: "tl-moneycontrol", alt: "Moneycontrol logo, sketched in pencil" },
 };
 const FEATURED = [
-  "https://frontline.thehindu.com/the-nation/digital-activism-tools-democracy-internet-censorship/article71587652.ece",
+  "https://timesofindia.indiatimes.com/toi-plus/law/sovereignty-starts-with-equal-access/articleshow/128542824.cms",
   "https://timesofindia.indiatimes.com/toi-blogs/opinion-desk/what-a-gold-bracelet-asks-of-indias-tax-law/articleshow/133396298.cms",
   "https://www.moneycontrol.com/news/opinion/genai-calls-for-a-relook-at-what-constitutes-anti-competitive-practice-12767339.html",
 ];
