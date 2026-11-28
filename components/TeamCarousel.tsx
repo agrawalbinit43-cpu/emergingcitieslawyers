@@ -14,6 +14,12 @@ const ROTATE_MS = 15000;
 function Card({ p, open, onToggle }: { p: Person; open: boolean; onToggle: () => void }) {
   const [first, ...rest] = p.bio;
   const more = rest.length > 0;
+  /* education sits under the first paragraph; once "Read more" opens, it moves below the rest of the bio */
+  const edu = p.edu.length > 0 && (
+    <p className="mb-3 font-text text-base italic leading-[1.6] text-rose/80">
+      {p.edu.map((e, i) => (<span key={e}>{i > 0 && <br />}{e}</span>))}
+    </p>
+  );
   const id = `bio-${p.name.toLowerCase().replace(/[^a-z]+/g, "-")}`;
   return (
     <article>
@@ -23,17 +29,14 @@ function Card({ p, open, onToggle }: { p: Person; open: boolean; onToggle: () =>
       <h4 className="mb-2 font-display text-[clamp(24px,2vw,30px)] font-semibold leading-[1.05] tracking-[-0.02em] text-rose [font-variation-settings:'wdth'_90]">{p.name}</h4>
       <p className="mb-4 font-display text-[15px] font-medium text-gold">{p.role}</p>
       <p className="mb-3 text-[15.5px] leading-[1.6] text-rose/85">{first}</p>
-      {p.edu.length > 0 && (
-        <p className="mb-3 font-text text-base italic leading-[1.6] text-rose/80">
-          {p.edu.map((e, i) => (<span key={e}>{i > 0 && <br />}{e}</span>))}
-        </p>
-      )}
+      {!(more && open) && edu}
       {more && (
         <>
           <div id={id} hidden={!open}>
             {rest.map((b) => (
               <p key={b.slice(0, 24)} className="mb-3 text-[15.5px] leading-[1.6] text-rose/85">{b}</p>
             ))}
+            {open && edu}
           </div>
           <button
             type="button"
