@@ -9,7 +9,8 @@ import Landmarks from "@/components/Landmarks";
 import Footer from "@/components/Footer";
 import AiChamber from "@/components/AiChamber";
 import ContactForm from "@/components/ContactForm";
-import { ALLIED, CLIENTS, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, WORK } from "@/lib/content";
+import TeamCarousel from "@/components/TeamCarousel";
+import { ALLIED, CLIENTS, OFFICES, PARTNERS, PRACTICE, PRINCIPLES, TEAM, WORK } from "@/lib/content";
 import { MAIN, NOTE, ROW, SECTION, WRAP } from "@/lib/ui";
 import { COMMENTARY, JOURNALS, SPEAKING } from "@/lib/writing";
 
@@ -96,6 +97,16 @@ export default function Site() {
           </div>
         </section>
 
+        <section id="team" className={`on-maroon overflow-x-clip bg-maroon text-rose ${SECTION}`}>
+          <div className={`${WRAP} ${ROW}`}>
+            <h2 className={NOTE}>Team</h2>
+            <div className={MAIN}>
+              <TeamCarousel people={[...PARTNERS, ...TEAM]} />
+            </div>
+          </div>
+        </section>
+
+
         <section id="practice" className="relative isolate overflow-clip pb-[clamp(88px,10vw,144px)] pt-[clamp(48px,6vw,88px)]">
           {/* the landmarks where our lawyers trained and argue, drifting faintly behind the practice list */}
           <Landmarks className="absolute inset-x-0 bottom-0 -z-10 h-[min(78%,620px)] opacity-[.2]" />
@@ -148,41 +159,6 @@ export default function Site() {
                 </div>
               ))}
             </dl>
-          </div>
-        </section>
-
-        <section id="partners" className={`on-maroon overflow-x-clip bg-maroon text-rose ${SECTION}`}>
-          <div className={`${WRAP} ${ROW}`}>
-            <h2 className={NOTE}>Partners</h2>
-            <div className={`${MAIN} grid grid-cols-1 gap-x-[clamp(32px,4vw,64px)] gap-y-[72px] md:grid-cols-2`}>
-              {PARTNERS.map((p) => (
-                <article key={p.name}>
-                  <div data-reveal="wipe" className="mb-6 h-[325px] w-[260px] overflow-hidden bg-paper">
-                    <img src={p.photo} alt={p.name} width={480} height={600} loading="lazy" decoding="async" className="h-full w-full object-cover grayscale contrast-[1.05]" />
-                  </div>
-                  <h3 className="mb-2 font-display text-[clamp(28px,2.6vw,40px)] font-semibold leading-none tracking-[-0.02em] text-rose [font-variation-settings:'wdth'_90]">{p.name}</h3>
-                  <p className="mb-[18px] font-display text-[15px] font-medium text-gold">{p.role}</p>
-                  {p.bio.map((b) => (
-                    <p key={b.slice(0, 24)} className="mb-4 max-w-[34em] text-base leading-[1.65] text-rose/85">
-                      {b}
-                    </p>
-                  ))}
-                  <p className="mb-4 max-w-[34em] font-text text-base italic leading-[1.65] text-rose/65">
-                    {p.edu[0]}
-                    <br />
-                    {p.edu[1]}
-                  </p>
-                  <p className="flex flex-wrap gap-x-5 gap-y-1.5 font-display text-[15px] font-semibold">
-                    <a href={`mailto:${p.email}`} className="text-rose underline decoration-gold/60 underline-offset-4 transition-colors hover:text-gold hover:decoration-gold">
-                      {p.email}
-                    </a>
-                    <a href={p.linkedin} target="_blank" rel="noopener" className="text-rose underline decoration-gold/60 underline-offset-4 transition-colors hover:text-gold hover:decoration-gold">
-                      LinkedIn<span className="sr-only"> (opens in a new tab)</span>
-                    </a>
-                  </p>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 

@@ -3,9 +3,9 @@
 export const SECTIONS = [
   { id: "about", label: "About" },
   { id: "ai", label: "AI" },
+  { id: "team", label: "Team" },
   { id: "practice", label: "Practice" },
   { id: "approach", label: "Approach" },
-  { id: "partners", label: "Partners" },
   { id: "work", label: "Work" },
   { id: "writing", label: "Thought leadership" },
   { id: "contact", label: "Contact" },
@@ -88,7 +88,7 @@ export const PARTNERS = [
   {
     name: "Binit Agrawal",
     photo: "/img/binit-agrawal.jpg",
-    role: "Corporate, transactions, competition, technology",
+    role: "Co-founder · Corporate, transactions, competition, technology",
     bio: [
       "Binit advises on VC and PE deals, corporate work, competition law and technology regulation. He worked in the PE/VC team at Khaitan & Co, and filed merger notices before the CCI at Axiom5 Law Chambers, a competition boutique. He also trained for six months with the technology and corporate teams of Bae, Kim & Lee in Seoul. As Head of Strategy at Lucio, a legal AI company, he led its expansion abroad, fundraising and hiring.",
       "He has worked as a consultant with UNDP, the Digital Cooperation Organisation in Saudi Arabia, Open Society Foundations and GIZ. He is an Affiliate Fellow of the Cyril Shroff Centre for AI, Law & Regulation, and has appeared before the Supreme Court, several High Courts and the NCLAT.",
@@ -100,14 +100,64 @@ export const PARTNERS = [
   {
     name: "Prannv Dhawan",
     photo: "/img/prannv-dhawan.jpg",
-    role: "Disputes, constitutional and public law, tax",
+    role: "Co-founder · Disputes, constitutional and public law, tax",
     bio: [
-      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the international tax team at Deloitte, New York. He was a Research Associate at the Centre for Policy Research and a Visiting Researcher at the Centre de Sciences Humaines. He is Assisting Counsel to the Supreme Court Legal Services Committee and a special invitee to the Karnataka High Court’s Accessibility Committee.",
+      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the international tax team at Deloitte, New York. He is a member of the Appeal Committee of the Delhi Soccer Association.",
+      "He was a Research Associate at the Centre for Policy Research and a Visiting Researcher at the Centre de Sciences Humaines. He is Assisting Counsel to the Supreme Court Legal Services Committee and a special invitee to the Karnataka High Court’s Accessibility Committee.",
       "At Yale Law School he studied corporate and international tax. He was a Resident Fellow at the Information Society Project and is associated with the Paul Tsai China Center. He served as Editor of the Yale Journal on Regulation and the Yale Law & Policy Review. Through the Lowenstein International Human Rights Clinic, he advised domestic and international civil society organisations. He was also part of the Ludwig Program in Public Sector Leadership and holds the MacMillan Translation Fellowship.",
     ],
     edu: ["LL.M., Yale Law School", "B.A. LL.B. (Hons.), National Law School of India University"],
     email: "pd@emergingcitieslawyers.com",
     linkedin: "https://www.linkedin.com/in/prannv-dhawan-296b79155/",
+  },
+];
+
+/** The wider team, shown after the co-founders in the same layout. */
+export const TEAM: { name: string; photo: string; role: string; bio: string[]; edu: string[]; email?: string; linkedin?: string }[] = [
+  {
+    name: "Divya Kumar Garg",
+    linkedin: "https://www.linkedin.com/in/divya-kumar-garg-57662410a/",
+    photo: "/img/divya-kumar-garg.jpg",
+    role: "Strategic Advisor",
+    bio: [
+      "Divya leads growth and strategy at Rodha, which aims to bridge costly private schooling and India's public institutions after school. Before that, Divya worked at McKinsey & Company in Gurugram. A summer at its Mumbai office had ended in a pre-placement offer.",
+      "A lawyer by training, Divya interned at S&R Associates, which also made a pre-placement offer, and spent two years teaching and consulting at Unacademy.",
+    ],
+    edu: ["MBA, Indian Institute of Management Ahmedabad", "B.A. LL.B. (Hons.), National Law School of India University"],
+  },
+  {
+    name: "Tara Krishnaswamy",
+    linkedin: "https://www.linkedin.com/in/tara-krishnaswamy-8308672/",
+    photo: "/img/tara-krishnaswamy.jpg",
+    role: "Policy Counsel",
+    bio: [
+      "Tara works on democracy, federalism and public policy. She co-founded Political Shakti, a non-partisan collective that presses for more women MLAs and MPs. Its Selfless Selfie campaign for the Bihar elections won a Cannes Lions Gold and two Silvers in 2022. It also won the Spikes Asia Grand Prix and two Clio Bronzes for social impact.",
+      "She has presented to two Rajya Sabha Standing Committees and to the Justice Verma Committee on rape law reform. She was a special invitee to the 15th Finance Commission workshop on fiscal federalism. As co-founder of Citizens for Bengaluru, she worked with the Karnataka government on suburban rail and bus lanes, and with the BBMP on ward committees. For 12 years she has advised election campaigns, from city wards to national races.",
+      "Before public life, Tara was Director of Software Development, Asia Pacific, at Oracle. Earlier, she held regional and engineering leadership roles at Sun Microsystems and Hewlett-Packard. She holds US patents and the company's President's Award. She writes for the Times of India, Hindustan Times, Mint and Deccan Herald, and contributed to Penguin's Her Right to Equality.",
+    ],
+    edu: [],
+  },
+  {
+    name: "Aman Naqvi",
+    linkedin: "https://www.linkedin.com/in/amannaqvi2704/",
+    photo: "/img/aman-naqvi.jpg",
+    role: "Of Counsel",
+    bio: [
+      "Aman is an advocate in Delhi with his own practice. He works on constitutional litigation, criminal matters and high-stakes commercial disputes.",
+      "He was an Associate in the chambers of Shadan Farasat, Senior Advocate. Before that, he spent three years as an Advocate at Farasat Law Offices.",
+    ],
+    edu: ["B.A. LL.B., Chanakya National Law University, Patna"],
+  },
+  {
+    name: "Ayushman Tripathi",
+    linkedin: "https://www.linkedin.com/in/ayushman-tripathi/",
+    photo: "/img/ayushman-tripathi.jpg",
+    role: "Technology Consultant",
+    bio: [
+      "Ayushman advises ECL on legal technology, data protection and AI governance, with a focus on banking and finance. He designs AI-enabled workflows for regulatory and transactional documents.",
+      "His research covers the DPDP Act, 2023, the IT Rules, 2021, competition law in digital markets and intellectual property. He has taught at MNLU Mumbai and as guest faculty at TISS. He has presented at Georgetown University and Queen Mary University of London. He has written two books.",
+    ],
+    edu: ["Ph.D., Hidayatullah National Law University, Raipur", "LL.M., Maharashtra National Law University, Mumbai"],
   },
 ];
 
