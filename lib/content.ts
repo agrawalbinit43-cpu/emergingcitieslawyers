@@ -135,7 +135,7 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
       "She has presented to two Rajya Sabha Standing Committees and to the Justice Verma Committee on rape law reform. She was a special invitee to the 15th Finance Commission workshop on fiscal federalism. As co-founder of Citizens for Bengaluru, she worked with the Karnataka government on suburban rail and bus lanes, and with the BBMP on ward committees. For 12 years she has advised election campaigns, from city wards to national races.",
       "Before Oracle, Tara held regional and engineering leadership roles at Sun Microsystems and Hewlett-Packard. She holds US patents and a President's Award. She writes for the Times of India, Hindustan Times, Mint and Deccan Herald, and contributed to Penguin's Her Right to Equality.",
     ],
-    edu: [],
+    edu: ["M.S., Computer Science, University of South Carolina", "Certificate in Public Policy Analysis, London School of Economics and Political Science"],
   },
   {
     name: "Aman Naqvi",
