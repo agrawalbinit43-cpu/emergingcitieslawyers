@@ -153,7 +153,7 @@ export const TEAM: { name: string; photo?: string; role: string; bio: string[]; 
     photo: "/img/amit-agrawal.jpg",
     role: "Of Counsel",
     bio: [
-      "Amit is an advocate with his own practice in Raipur and Delhi. He handles commercial disputes and advises businesses across Chhattisgarh on contracts, compliance, arbitration and real estate. Earlier, he was an Associate at Cyril Amarchand Mangaldas in Bengaluru.",
+      "Amit is an advocate practising in Raipur and Delhi. He handles commercial disputes and advises businesses across Chhattisgarh on contracts, compliance, arbitration and real estate. Earlier, he was an Associate at Cyril Amarchand Mangaldas in Bengaluru.",
       "At Cyril Amarchand Mangaldas, he worked on M&A and private equity deals, property transactions and commercial litigation. He ran due diligence, drafted share purchase agreements and schemes of amalgamation, and advised on stamp duty and registration.",
     ],
     edu: ["B.Sc. LL.B. (Hons.), Gujarat National Law University, Gandhinagar"],
@@ -164,13 +164,14 @@ export const TEAM: { name: string; photo?: string; role: string; bio: string[]; 
     photo: "/img/aman-naqvi.jpg",
     role: "Of Counsel",
     bio: [
-      "Aman is an advocate with his own practice in Delhi and Prayagraj (Allahabad). He works on constitutional litigation, criminal matters and high-stakes commercial disputes.",
+      "Aman is an advocate practising in Delhi and Prayagraj (Allahabad). He works on constitutional litigation, criminal matters and high-stakes commercial disputes.",
       "He was an Associate in the chambers of Shadan Farasat, Senior Advocate. Before that, he spent three years as an Advocate at Farasat Law Offices.",
     ],
     edu: ["B.A. LL.B., Chanakya National Law University, Patna"],
   },
   {
     name: "Vandana Bansal",
+    photo: "/img/vandana-bansal.jpg",
     role: "Of Counsel",
     bio: [
       "Vandana is an advocate practising in Raipur and Delhi on insolvency, corporate and commercial matters. Before going into practice, Vandana spent four years as In-House Counsel at Tech Mahindra.",
