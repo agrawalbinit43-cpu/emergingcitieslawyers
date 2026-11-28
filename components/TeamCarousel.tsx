@@ -24,7 +24,13 @@ function Card({ p, open, onToggle }: { p: Person; open: boolean; onToggle: () =>
   return (
     <article>
       <div className="mb-5 aspect-[4/5] w-full max-w-[260px] overflow-hidden bg-paper">
-        <img src={p.photo} alt={p.name} width={480} height={600} loading="lazy" decoding="async" className="h-full w-full object-cover grayscale contrast-[1.05]" />
+        {p.photo ? (
+          <img src={p.photo} alt={p.name} width={480} height={600} loading="lazy" decoding="async" className="h-full w-full object-cover grayscale contrast-[1.05]" />
+        ) : (
+          <div aria-hidden="true" className="grid h-full w-full place-items-center font-display text-[56px] font-semibold text-maroon/40">
+            {p.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+          </div>
+        )}
       </div>
       <h4 className="mb-2 font-display text-[clamp(24px,2vw,30px)] font-semibold leading-[1.05] tracking-[-0.02em] text-rose [font-variation-settings:'wdth'_90]">{p.name}</h4>
       <p className="mb-4 font-display text-[15px] font-medium text-gold">{p.role}</p>

@@ -113,7 +113,7 @@ export const PARTNERS = [
 ];
 
 /** The wider team, shown after the co-founders in the same layout. */
-export const TEAM: { name: string; photo: string; role: string; bio: string[]; edu: string[]; email?: string; linkedin?: string }[] = [
+export const TEAM: { name: string; photo?: string; role: string; bio: string[]; edu: string[]; email?: string; linkedin?: string }[] = [
   {
     name: "Tara Krishnaswamy",
     linkedin: "https://www.linkedin.com/in/tara-krishnaswamy-8308672/",
@@ -168,6 +168,15 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
       "He was an Associate in the chambers of Shadan Farasat, Senior Advocate. Before that, he spent three years as an Advocate at Farasat Law Offices.",
     ],
     edu: ["B.A. LL.B., Chanakya National Law University, Patna"],
+  },
+  {
+    name: "Vandana Bansal",
+    role: "Of Counsel",
+    bio: [
+      "Vandana is an advocate practising in Raipur and Delhi on insolvency, corporate and commercial matters. Before going into practice, Vandana spent four years as In-House Counsel at Tech Mahindra.",
+      "Published work covers the Insolvency and Bankruptcy Code, including the rights of dissenting financial creditors. Vandana's LL.M. thesis examined corporate rescue and the real estate sector.",
+    ],
+    edu: ["LL.M., National Law University, Delhi", "Amity University"],
   },
 ];
 
