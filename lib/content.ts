@@ -120,8 +120,8 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
     photo: "/img/divya-kumar-garg.jpg",
     role: "Strategic Advisor",
     bio: [
-      "Divya leads growth and strategy at Rodha, which aims to bridge costly private schooling and India's public institutions after school. Before that, Divya worked at McKinsey & Company in Gurugram. A summer at its Mumbai office had ended in a pre-placement offer.",
-      "A lawyer by training, Divya interned at S&R Associates, which also made a pre-placement offer, and spent two years teaching and consulting at Unacademy.",
+      "Divya leads growth and strategy at Rodha, which aims to bridge costly private schooling and India's public institutions after school. Before that, Divya worked at McKinsey & Company in Gurugram. A lawyer turned business executive, he earned his MBA at IIM Ahmedabad.",
+      "Divya interned at S&R Associates, which made him a pre-placement offer, and spent two years teaching and consulting at Unacademy.",
     ],
     edu: ["MBA, Indian Institute of Management Ahmedabad", "B.A. LL.B. (Hons.), National Law School of India University"],
   },
