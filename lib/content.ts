@@ -138,17 +138,6 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
     edu: ["MBA, Indian Institute of Management Ahmedabad", "B.A. LL.B. (Hons.), National Law School of India University"],
   },
   {
-    name: "Aman Naqvi",
-    linkedin: "https://www.linkedin.com/in/amannaqvi2704/",
-    photo: "/img/aman-naqvi.jpg",
-    role: "Of Counsel",
-    bio: [
-      "Aman is an advocate with his own practice in Delhi and Prayagraj (Allahabad). He works on constitutional litigation, criminal matters and high-stakes commercial disputes.",
-      "He was an Associate in the chambers of Shadan Farasat, Senior Advocate. Before that, he spent three years as an Advocate at Farasat Law Offices.",
-    ],
-    edu: ["B.A. LL.B., Chanakya National Law University, Patna"],
-  },
-  {
     name: "Ayushman Tripathi",
     linkedin: "https://www.linkedin.com/in/ayushman-tripathi/",
     photo: "/img/ayushman-tripathi.jpg",
@@ -158,6 +147,27 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
       "His research covers the DPDP Act, 2023, the IT Rules, 2021, competition law in digital markets and intellectual property. He has taught at MNLU Mumbai and as guest faculty at TISS. He has presented at Georgetown University and Queen Mary University of London. He has written two books.",
     ],
     edu: ["Ph.D., Hidayatullah National Law University, Raipur", "LL.M., Maharashtra National Law University, Mumbai"],
+  },
+  {
+    name: "Amit Agrawal",
+    photo: "/img/amit-agrawal.jpg",
+    role: "Of Counsel",
+    bio: [
+      "Amit is an advocate in Raipur with his own practice. He handles commercial disputes and advises businesses across Chhattisgarh on contracts, compliance, arbitration and real estate. Earlier, he was an Associate at Cyril Amarchand Mangaldas in Bengaluru.",
+      "At Cyril Amarchand Mangaldas, he worked on M&A and private equity deals, property transactions and commercial litigation. He ran due diligence, drafted share purchase agreements and schemes of amalgamation, and advised on stamp duty and registration.",
+    ],
+    edu: ["B.Sc. LL.B. (Hons.), Gujarat National Law University, Gandhinagar"],
+  },
+  {
+    name: "Aman Naqvi",
+    linkedin: "https://www.linkedin.com/in/amannaqvi2704/",
+    photo: "/img/aman-naqvi.jpg",
+    role: "Of Counsel",
+    bio: [
+      "Aman is an advocate with his own practice in Delhi and Prayagraj (Allahabad). He works on constitutional litigation, criminal matters and high-stakes commercial disputes.",
+      "He was an Associate in the chambers of Shadan Farasat, Senior Advocate. Before that, he spent three years as an Advocate at Farasat Law Offices.",
+    ],
+    edu: ["B.A. LL.B., Chanakya National Law University, Patna"],
   },
 ];
 
