@@ -115,17 +115,6 @@ export const PARTNERS = [
 /** The wider team, shown after the co-founders in the same layout. */
 export const TEAM: { name: string; photo: string; role: string; bio: string[]; edu: string[]; email?: string; linkedin?: string }[] = [
   {
-    name: "Divya Kumar Garg",
-    linkedin: "https://www.linkedin.com/in/divya-kumar-garg-57662410a/",
-    photo: "/img/divya-kumar-garg.jpg",
-    role: "Strategic Advisor",
-    bio: [
-      "Divya leads growth and strategy at Rodha, which aims to bridge costly private schooling and India's public institutions after school. Before that, Divya worked at McKinsey & Company in Gurugram. A lawyer turned business executive, he earned his MBA at IIM Ahmedabad.",
-      "Divya interned at S&R Associates, which made him a pre-placement offer, and spent two years teaching and consulting at Unacademy.",
-    ],
-    edu: ["MBA, Indian Institute of Management Ahmedabad", "B.A. LL.B. (Hons.), National Law School of India University"],
-  },
-  {
     name: "Tara Krishnaswamy",
     linkedin: "https://www.linkedin.com/in/tara-krishnaswamy-8308672/",
     photo: "/img/tara-krishnaswamy.jpg",
@@ -136,6 +125,17 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
       "Before Oracle, Tara held regional and engineering leadership roles at Sun Microsystems and Hewlett-Packard. She holds US patents and a President's Award. She writes for the Times of India, Hindustan Times, Mint and Deccan Herald, and contributed to Penguin's Her Right to Equality.",
     ],
     edu: ["M.S., Computer Science, University of South Carolina", "Certificate in Public Policy Analysis, London School of Economics and Political Science"],
+  },
+  {
+    name: "Divya Kumar Garg",
+    linkedin: "https://www.linkedin.com/in/divya-kumar-garg-57662410a/",
+    photo: "/img/divya-kumar-garg.jpg",
+    role: "Strategic Advisor",
+    bio: [
+      "Divya leads growth and strategy at Rodha, which aims to bridge costly private schooling and India's public institutions after school. Before that, Divya worked at McKinsey & Company in Gurugram. A lawyer turned business executive, he earned his MBA at IIM Ahmedabad.",
+      "Divya interned at S&R Associates, which made him a pre-placement offer, and spent two years teaching and consulting at Unacademy.",
+    ],
+    edu: ["MBA, Indian Institute of Management Ahmedabad", "B.A. LL.B. (Hons.), National Law School of India University"],
   },
   {
     name: "Aman Naqvi",
