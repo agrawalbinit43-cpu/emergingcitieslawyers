@@ -88,7 +88,7 @@ export const PARTNERS = [
   {
     name: "Binit Agrawal",
     photo: "/img/binit-agrawal.jpg",
-    role: "Co-founder · Corporate, transactions, competition, technology",
+    role: "Co-founder",
     bio: [
       "Binit advises on transactions, corporate work and competition law. He worked in the PE/VC team at Khaitan & Co, and filed merger notices before the CCI at Axiom5 Law Chambers, a competition boutique. He also trained for six months with the technology and corporate teams of Bae, Kim & Lee in Seoul. As Head of Strategy at Lucio, a legal AI company, he led its expansion abroad, fundraising and hiring.",
       "He has worked as a consultant with UNDP, the Digital Cooperation Organisation in Saudi Arabia, Open Society Foundations and GIZ. He is an Affiliate Fellow of the Cyril Shroff Centre for AI, Law & Regulation, and has appeared before the Supreme Court, several High Courts and the NCLAT.",
@@ -100,7 +100,7 @@ export const PARTNERS = [
   {
     name: "Prannv Dhawan",
     photo: "/img/prannv-dhawan.jpg",
-    role: "Co-founder · Disputes, constitutional and public law, tax",
+    role: "Co-founder",
     bio: [
       "Prannv specialises in commercial disputes and tax matters. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the international tax team at Deloitte, New York. He is a member of the Appeal Committee of the Delhi Soccer Association.",
       "He was a Research Associate at the Centre for Policy Research and a Visiting Researcher at the Centre de Sciences Humaines. He is Assisting Counsel to the Supreme Court Legal Services Committee and a special invitee to the Karnataka High Court’s Accessibility Committee.",
