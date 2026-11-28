@@ -7,13 +7,13 @@ type Person = (typeof TEAM)[number];
 
 /* The team, founders first. Desktop: one row, three cards in view, arrows to move, and a slow auto-advance
    (every 15 s) that pauses on hover, keyboard focus, an open "Read more", or reduced-motion settings.
-   Phone: a plain vertical list. Every card shows its first paragraph; the rest sits behind "Read more". */
+   Phone: a plain vertical list. Every card shows its first paragraph and education; the rest sits behind "Read more". */
 
 const ROTATE_MS = 15000;
 
 function Card({ p, open, onToggle }: { p: Person; open: boolean; onToggle: () => void }) {
   const [first, ...rest] = p.bio;
-  const more = rest.length > 0 || p.edu.length > 0;
+  const more = rest.length > 0;
   const id = `bio-${p.name.toLowerCase().replace(/[^a-z]+/g, "-")}`;
   return (
     <article>
@@ -23,17 +23,17 @@ function Card({ p, open, onToggle }: { p: Person; open: boolean; onToggle: () =>
       <h4 className="mb-2 font-display text-[clamp(24px,2vw,30px)] font-semibold leading-[1.05] tracking-[-0.02em] text-rose [font-variation-settings:'wdth'_90]">{p.name}</h4>
       <p className="mb-4 font-display text-[15px] font-medium text-gold">{p.role}</p>
       <p className="mb-3 text-[15.5px] leading-[1.6] text-rose/85">{first}</p>
+      {p.edu.length > 0 && (
+        <p className="mb-3 font-text text-base italic leading-[1.6] text-rose/80">
+          {p.edu.map((e, i) => (<span key={e}>{i > 0 && <br />}{e}</span>))}
+        </p>
+      )}
       {more && (
         <>
           <div id={id} hidden={!open}>
             {rest.map((b) => (
               <p key={b.slice(0, 24)} className="mb-3 text-[15.5px] leading-[1.6] text-rose/85">{b}</p>
             ))}
-            {p.edu.length > 0 && (
-              <p className="mb-3 font-text text-base italic leading-[1.6] text-rose/80">
-                {p.edu.map((e, i) => (<span key={e}>{i > 0 && <br />}{e}</span>))}
-              </p>
-            )}
           </div>
           <button
             type="button"
