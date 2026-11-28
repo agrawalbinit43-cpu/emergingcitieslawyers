@@ -357,3 +357,8 @@
 .ct .ct-lawyer { stroke: var(--color-maroon-ink); color: var(--color-maroon-ink); }
 .ct .thin { stroke-width: .6 !important; opacity: .75; }
 #pro-bono .note, .pb-note { font-size: clamp(20px, 1.7vw, 24px); letter-spacing: .1em; }
+
+/* Team row: gold ring around the arrow fills while the row waits to move */
+@keyframes team-ring { to { stroke-dashoffset: 0; } }
+.team-ring { animation: team-ring linear forwards; }
+@media (prefers-reduced-motion: reduce) { .team-ring { animation: none; stroke-dashoffset: 1; } }

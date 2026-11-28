@@ -6,10 +6,10 @@ import type { TEAM } from "@/lib/content";
 type Person = (typeof TEAM)[number];
 
 /* The team, founders first. Desktop: one row, three cards in view, arrows to move, and a slow auto-advance
-   (every 25 s) that pauses on hover, keyboard focus, an open "Read more", or reduced-motion settings.
+   (every 15 s) that pauses on hover, keyboard focus, an open "Read more", or reduced-motion settings.
    Phone: a plain vertical list. Every card shows its first paragraph; the rest sits behind "Read more". */
 
-const ROTATE_MS = 25000;
+const ROTATE_MS = 15000;
 
 function Card({ p, open, onToggle }: { p: Person; open: boolean; onToggle: () => void }) {
   const [first, ...rest] = p.bio;
@@ -81,8 +81,7 @@ export default function TeamCarousel({ people }: { people: Person[] }) {
     return () => window.clearTimeout(t);
   }, [idx, paused, anyOpen, last, go]);
 
-  const btn =
-    "grid h-11 w-11 place-items-center rounded-full border border-gold/60 text-rose transition-colors hover:border-gold hover:bg-gold hover:text-maroon disabled:opacity-40";
+  const running = last > 0 && !paused && !anyOpen;
 
   return (
     <>
@@ -95,7 +94,7 @@ export default function TeamCarousel({ people }: { people: Person[] }) {
 
       {/* Desktop: rotating row of three */}
       <div
-        className="hidden md:block"
+        className="relative hidden md:block"
         role="region"
         aria-roledescription="carousel"
         aria-label="Team"
@@ -120,17 +119,25 @@ export default function TeamCarousel({ people }: { people: Person[] }) {
           </ul>
         </div>
         {last > 0 && (
-          <div className="mt-8 flex items-center gap-3">
-            <button type="button" className={btn} onClick={() => go(-1)} aria-label="Previous profiles">
-              <span aria-hidden="true">←</span>
-            </button>
-            <button type="button" className={btn} onClick={() => go(1)} aria-label="Next profiles">
-              <span aria-hidden="true">→</span>
-            </button>
-            <p className="ml-2 font-display text-[14px] tabular-nums text-rose/70" aria-live="polite">
-              {idx + 1}–{Math.min(idx + PER, people.length)} of {people.length}
-            </p>
-          </div>
+          /* one arrow beside the third photo; the gold ring fills over the 15 s wait, so the row reads as moving */
+          <button
+            type="button"
+            onClick={() => go(1)}
+            aria-label={`Next profiles (showing ${idx + 1} to ${Math.min(idx + PER, people.length)} of ${people.length})`}
+            className="group absolute right-0 top-[clamp(110px,11vw,150px)] grid h-12 w-12 translate-x-1/2 place-items-center rounded-full bg-maroon text-rose shadow-[0_0_0_6px_var(--color-maroon)] transition-colors hover:text-gold"
+          >
+            <svg viewBox="0 0 48 48" className="absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
+              <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" strokeOpacity=".25" strokeWidth="1.5" />
+              <circle
+                key={idx}
+                cx="24" cy="24" r="22.5" fill="none" stroke="var(--color-gold)" strokeWidth="1.5"
+                pathLength={1} strokeDasharray="1" strokeDashoffset="1"
+                className="team-ring"
+                style={{ animationDuration: `${ROTATE_MS}ms`, animationPlayState: running ? "running" : "paused" }}
+              />
+            </svg>
+            <span aria-hidden="true" className="relative text-[20px] leading-none transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+          </button>
         )}
       </div>
     </>

@@ -90,7 +90,7 @@ export const PARTNERS = [
     photo: "/img/binit-agrawal.jpg",
     role: "Co-founder · Corporate, transactions, competition, technology",
     bio: [
-      "Binit advises on VC and PE deals, corporate work, competition law and technology regulation. He worked in the PE/VC team at Khaitan & Co, and filed merger notices before the CCI at Axiom5 Law Chambers, a competition boutique. He also trained for six months with the technology and corporate teams of Bae, Kim & Lee in Seoul. As Head of Strategy at Lucio, a legal AI company, he led its expansion abroad, fundraising and hiring.",
+      "Binit advises on transactions, corporate work and competition law. He worked in the PE/VC team at Khaitan & Co, and filed merger notices before the CCI at Axiom5 Law Chambers, a competition boutique. He also trained for six months with the technology and corporate teams of Bae, Kim & Lee in Seoul. As Head of Strategy at Lucio, a legal AI company, he led its expansion abroad, fundraising and hiring.",
       "He has worked as a consultant with UNDP, the Digital Cooperation Organisation in Saudi Arabia, Open Society Foundations and GIZ. He is an Affiliate Fellow of the Cyril Shroff Centre for AI, Law & Regulation, and has appeared before the Supreme Court, several High Courts and the NCLAT.",
     ],
     edu: ["B.A. LL.B. (Hons.), National Law School of India University", "M.A. LL.M., University of Vienna (European Master in Law and Economics)"],
@@ -102,7 +102,7 @@ export const PARTNERS = [
     photo: "/img/prannv-dhawan.jpg",
     role: "Co-founder · Disputes, constitutional and public law, tax",
     bio: [
-      "Prannv is an advocate enrolled with the Bar Council of Delhi. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the international tax team at Deloitte, New York. He is a member of the Appeal Committee of the Delhi Soccer Association.",
+      "Prannv specialises in commercial disputes and tax matters. He clerked for Justice B.V. Nagarathna at the Supreme Court of India, then practised trial and appellate litigation at Farasat Law Offices before the Supreme Court and High Courts. Earlier, he worked in the international tax team at Deloitte, New York. He is a member of the Appeal Committee of the Delhi Soccer Association.",
       "He was a Research Associate at the Centre for Policy Research and a Visiting Researcher at the Centre de Sciences Humaines. He is Assisting Counsel to the Supreme Court Legal Services Committee and a special invitee to the Karnataka High Court’s Accessibility Committee.",
       "At Yale Law School he studied corporate and international tax. He was a Resident Fellow at the Information Society Project and is associated with the Paul Tsai China Center. He served as Editor of the Yale Journal on Regulation and the Yale Law & Policy Review. Through the Lowenstein International Human Rights Clinic, he advised domestic and international civil society organisations. He was also part of the Ludwig Program in Public Sector Leadership and holds the MacMillan Translation Fellowship.",
     ],
