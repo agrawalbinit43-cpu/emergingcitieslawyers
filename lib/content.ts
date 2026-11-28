@@ -153,7 +153,7 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
     photo: "/img/amit-agrawal.jpg",
     role: "Of Counsel",
     bio: [
-      "Amit is an advocate in Raipur with his own practice. He handles commercial disputes and advises businesses across Chhattisgarh on contracts, compliance, arbitration and real estate. Earlier, he was an Associate at Cyril Amarchand Mangaldas in Bengaluru.",
+      "Amit is an advocate with his own practice in Raipur and Delhi. He handles commercial disputes and advises businesses across Chhattisgarh on contracts, compliance, arbitration and real estate. Earlier, he was an Associate at Cyril Amarchand Mangaldas in Bengaluru.",
       "At Cyril Amarchand Mangaldas, he worked on M&A and private equity deals, property transactions and commercial litigation. He ran due diligence, drafted share purchase agreements and schemes of amalgamation, and advised on stamp duty and registration.",
     ],
     edu: ["B.Sc. LL.B. (Hons.), Gujarat National Law University, Gandhinagar"],
