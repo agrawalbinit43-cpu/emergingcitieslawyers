@@ -131,9 +131,9 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
     photo: "/img/tara-krishnaswamy.jpg",
     role: "Policy Counsel",
     bio: [
-      "Tara works on democracy, federalism and public policy. She co-founded Political Shakti, a non-partisan collective that presses for more women MLAs and MPs. Its Selfless Selfie campaign for the Bihar elections won a Cannes Lions Gold and two Silvers in 2022. It also won the Spikes Asia Grand Prix and two Clio Bronzes for social impact.",
+      "Tara works on democracy, federalism and public policy. She co-founded Political Shakti, a non-partisan collective that presses for more women MLAs and MPs. Earlier, she was Director of Software Development, Asia Pacific, at Oracle. Political Shakti's Selfless Selfie campaign for the Bihar elections won a Cannes Lions Gold and two Silvers in 2022. It also won the Spikes Asia Grand Prix and two Clio Bronzes for social impact.",
       "She has presented to two Rajya Sabha Standing Committees and to the Justice Verma Committee on rape law reform. She was a special invitee to the 15th Finance Commission workshop on fiscal federalism. As co-founder of Citizens for Bengaluru, she worked with the Karnataka government on suburban rail and bus lanes, and with the BBMP on ward committees. For 12 years she has advised election campaigns, from city wards to national races.",
-      "Before public life, Tara was Director of Software Development, Asia Pacific, at Oracle. Earlier, she held regional and engineering leadership roles at Sun Microsystems and Hewlett-Packard. She holds US patents and the company's President's Award. She writes for the Times of India, Hindustan Times, Mint and Deccan Herald, and contributed to Penguin's Her Right to Equality.",
+      "Before Oracle, Tara held regional and engineering leadership roles at Sun Microsystems and Hewlett-Packard. She holds US patents and a President's Award. She writes for the Times of India, Hindustan Times, Mint and Deccan Herald, and contributed to Penguin's Her Right to Equality.",
     ],
     edu: [],
   },
@@ -143,7 +143,7 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
     photo: "/img/aman-naqvi.jpg",
     role: "Of Counsel",
     bio: [
-      "Aman is an advocate in Delhi with his own practice. He works on constitutional litigation, criminal matters and high-stakes commercial disputes.",
+      "Aman is an advocate with his own practice in Delhi and Prayagraj (Allahabad). He works on constitutional litigation, criminal matters and high-stakes commercial disputes.",
       "He was an Associate in the chambers of Shadan Farasat, Senior Advocate. Before that, he spent three years as an Advocate at Farasat Law Offices.",
     ],
     edu: ["B.A. LL.B., Chanakya National Law University, Patna"],
@@ -154,7 +154,7 @@ export const TEAM: { name: string; photo: string; role: string; bio: string[]; e
     photo: "/img/ayushman-tripathi.jpg",
     role: "Technology Consultant",
     bio: [
-      "Ayushman advises ECL on legal technology, data protection and AI governance, with a focus on banking and finance. He designs AI-enabled workflows for regulatory and transactional documents.",
+      "Ayushman advises ECL on legal technology, data protection and AI governance. He designs AI-enabled workflows for regulatory and transactional documents.",
       "His research covers the DPDP Act, 2023, the IT Rules, 2021, competition law in digital markets and intellectual property. He has taught at MNLU Mumbai and as guest faculty at TISS. He has presented at Georgetown University and Queen Mary University of London. He has written two books.",
     ],
     edu: ["Ph.D., Hidayatullah National Law University, Raipur", "LL.M., Maharashtra National Law University, Mumbai"],
