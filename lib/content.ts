@@ -138,7 +138,7 @@ export const CLIENTS = [
   "AI and technology companies",
   "SMEs",
   "Family businesses",
-  "Funds (PE, VC and debt)",
+  "Funds",
   "Foreign companies entering India",
   "International organisations",
   "Individuals",
